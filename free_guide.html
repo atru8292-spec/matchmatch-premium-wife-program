@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10 признаков зрелого мужчины — Бесплатный гид от Match Match</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --red: #c0392b;
+        --red-soft: rgba(192, 57, 43, 0.06);
+        --beige: #f3e5cd;
+        --beige-hover: #e8d5b8;
+        --cream: #ffffff;
+        --cream-bg: #fdfbf8;
+        --dark: #1a1a1a;
+        --text: #2c2c2c;
+        --text-light: #666;
+        --text-muted: #999;
+        --border: #eee;
+        --border-light: #f5f0ea;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Lora", serif;
+        background: var(--cream-bg);
+        color: var(--text);
+        overflow-x: hidden;
+        line-height: 1.75;
+        font-size: 16px;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Playfair Display", serif;
+        font-weight: 400;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      /* NAV */
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.97);
+        backdrop-filter: blur(12px);
+        z-index: 1000;
+        padding: 16px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+      }
+      .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+      }
+      .nav-logo-text {
+        font-family: "Playfair Display", serif;
+        font-size: 1.05rem;
+        color: var(--dark);
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        line-height: 1.1;
+      }
+      .nav-logo-text span {
+        color: var(--red);
+      }
+
+      /* HEADER */
+      .header {
+        max-width: 780px;
+        margin: 100px auto 60px auto;
+        padding: 0 20px;
+        text-align: center;
+      }
+      .header-kicker {
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.62rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--red);
+        margin-bottom: 20px;
+        font-weight: 500;
+      }
+      .header h1 {
+        font-size: clamp(2rem, 4vw, 3.2rem);
+        color: var(--dark);
+        line-height: 1.2;
+        margin-bottom: 20px;
+      }
+      .header h1 em {
+        font-style: italic;
+        display: block;
+        margin-top: 8px;
+      }
+      .header-subtitle {
+        font-size: 1.08rem;
+        color: var(--text-light);
+        line-height: 1.7;
+        max-width: 640px;
+        margin: 0 auto;
+      }
+
+      /* INTRO */
+      .intro {
+        max-width: 720px;
+        margin: 0 auto 80px auto;
+        padding: 50px 45px;
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+      }
+      .intro p {
+        font-size: 1.05rem;
+        line-height: 1.85;
+        margin-bottom: 18px;
+        color: var(--text);
+      }
+      .intro-fears {
+        margin: 30px 0;
+        padding-left: 0;
+        list-style: none;
+      }
+      .intro-fears li {
+        font-size: 0.98rem;
+        color: #555;
+        font-style: italic;
+        margin-bottom: 12px;
+        padding-left: 26px;
+        position: relative;
+        line-height: 1.7;
+      }
+      .intro-fears li::before {
+        content: '"';
+        position: absolute;
+        left: 0;
+        top: -4px;
+        font-size: 2rem;
+        color: var(--red);
+        opacity: 0.3;
+        font-family: "Playfair Display", serif;
+      }
+      .intro-author {
+        margin-top: 30px;
+        padding-top: 25px;
+        border-top: 1px solid var(--border-light);
+        font-size: 0.95rem;
+        color: var(--text-light);
+        line-height: 1.75;
+      }
+      .intro-author strong {
+        color: var(--dark);
+        font-weight: 500;
+      }
+
+      /* CHECKLIST */
+      .checklist {
+        max-width: 900px;
+        margin: 0 auto 80px auto;
+        padding: 0 20px;
+      }
+      .checklist-title {
+        font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+        text-align: center;
+        margin-bottom: 15px;
+        color: var(--dark);
+        font-style: italic;
+      }
+      .checklist-subtitle {
+        text-align: center;
+        font-size: 0.95rem;
+        color: var(--text-light);
+        max-width: 600px;
+        margin: 0 auto 50px;
+        line-height: 1.75;
+      }
+      .check-item {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 35px 32px;
+        margin-bottom: 24px;
+        transition: all 0.3s;
+      }
+      .check-item:hover {
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+        transform: translateY(-2px);
+      }
+      .check-item h3 {
+        font-size: 1.25rem;
+        margin-bottom: 20px;
+        color: var(--dark);
+        font-style: italic;
+      }
+      .check-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-bottom: 18px;
+      }
+      .check-col {
+        padding: 18px 20px;
+        border-radius: 8px;
+        font-size: 0.92rem;
+        line-height: 1.7;
+      }
+      .check-col-red {
+        background: #fff5f5;
+        border-left: 3px solid #e74c3c;
+        color: #555;
+      }
+      .check-col-green {
+        background: #f0fdf4;
+        border-left: 3px solid #10b981;
+        color: #555;
+      }
+      .check-col strong {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 600;
+      }
+      .check-col-red strong {
+        color: #e74c3c;
+      }
+      .check-col-green strong {
+        color: #10b981;
+      }
+      .check-insight {
+        font-size: 0.9rem;
+        color: var(--text-light);
+        font-style: italic;
+        margin-top: 12px;
+        padding-left: 20px;
+        border-left: 2px solid var(--beige);
+        line-height: 1.75;
+      }
+
+      /* RESULTS BOX */
+      .results-box {
+        max-width: 720px;
+        margin: 0 auto 80px auto;
+        padding: 45px 40px;
+        background: var(--dark);
+        color: #fff;
+        border-radius: 12px;
+      }
+      .results-box h2 {
+        font-size: 1.6rem;
+        margin-bottom: 25px;
+        text-align: center;
+        font-style: italic;
+        color: #fff;
+      }
+      .result-item {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .result-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
+      .result-item strong {
+        font-family: "Playfair Display", serif;
+        font-size: 1.05rem;
+        display: block;
+        margin-bottom: 8px;
+        color: var(--beige);
+      }
+      .result-item p {
+        font-size: 0.92rem;
+        line-height: 1.75;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      /* CTA FINAL */
+      .cta-final {
+        max-width: 720px;
+        margin: 0 auto 100px auto;
+        padding: 50px 45px;
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        text-align: center;
+      }
+      .cta-final h2 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        font-style: italic;
+        color: var(--dark);
+        line-height: 1.3;
+      }
+      .cta-final p {
+        font-size: 1.02rem;
+        line-height: 1.85;
+        color: var(--text-light);
+        margin-bottom: 18px;
+      }
+      .cta-final .cta-highlight {
+        font-size: 1.08rem;
+        color: var(--text);
+        font-weight: 500;
+        margin: 25px 0;
+        line-height: 1.75;
+      }
+
+      /* BUTTON */
+      .btn {
+        background: var(--beige);
+        color: var(--dark);
+        padding: 18px 44px;
+        border: none;
+        font-size: 0.72rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.3s;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        justify-content: center;
+        margin-top: 15px;
+      }
+      .btn:hover {
+        background: var(--beige-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+      }
+      .btn-glow {
+        position: relative;
+        overflow: hidden;
+      }
+      .btn-glow::after {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.3) 0%,
+          transparent 70%
+        );
+        animation: shimmer 2.5s infinite;
+        pointer-events: none;
+      }
+      @keyframes shimmer {
+        0% {
+          transform: translateX(-100%) rotate(25deg);
+        }
+        100% {
+          transform: translateX(100%) rotate(25deg);
+        }
+      }
+
+      /* FOOTER */
+      footer {
+        background: #111;
+        padding: 35px 20px;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.3);
+        font-size: 0.72rem;
+        font-family: "Montserrat", sans-serif;
+      }
+      footer a {
+        color: rgba(255, 255, 255, 0.45);
+        text-decoration: none;
+      }
+      footer a:hover {
+        color: #fff;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 768px) {
+        nav {
+          padding: 14px 16px;
+        }
+        .header {
+          margin: 80px auto 50px auto;
+        }
+        .intro,
+        .cta-final {
+          padding: 35px 25px;
+        }
+        .check-item {
+          padding: 28px 22px;
+        }
+        .check-row {
+          grid-template-columns: 1fr;
+          gap: 15px;
+        }
+        .results-box {
+          padding: 35px 25px;
+        }
+      }
+      ::-webkit-scrollbar {
+        width: 4px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f5f5f5;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav>
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-text">Match<br /><span>Match</span></div>
+      </a>
+    </nav>
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="header-kicker">Бесплатный гид от Match Match</div>
+      <h1>
+        Он точно тот — или снова кажется?
+        <em>10 признаков зрелого мужчины, которые видно сразу</em>
+      </h1>
+      <p class="header-subtitle">
+        (Проверь ДО того, как увлечёшься — и не попадёшь в ловушку)
+      </p>
+    </div>
+
+    <!-- INTRO -->
+    <div class="intro">
+      <p>
+        Ты мечтаешь о достойных отношениях и жизни «как в хорошем фильме», но в
+        голове прокручиваются тревоги:
+      </p>
+
+      <ul class="intro-fears">
+        <li>Если у мужчины деньги, значит он эгоист или абьюзер?</li>
+        <li>В его мире — золотая клетка, в которой нельзя быть собой…</li>
+        <li>Я ему не подхожу, он быстро бросит</li>
+        <li>
+          У таких — все женщины на одну ночь, а свою он выбирает «из лучших»…
+        </li>
+        <li>Я слишком обычная, не из их круга</li>
+        <li>Где-то точно подвох, потому что так хорошо не бывает</li>
+      </ul>
+
+      <p>
+        Эти страхи не из воздуха — у многих они сформировались годами:
+        перекладываешь ответственность, зависишь или просто не знаешь, как
+        по-настоящему ценить себя, а не деньги рядом.
+      </p>
+
+      <div class="intro-author">
+        <strong>Я — Юлия Люмен, нейропсихолог.</strong> За 20 лет работы с
+        женщинами я услышала все эти мысли сотни раз.<br /><br />
+        Проверь этот чек-лист — чтобы не попасть в зависимость и больше не
+        тратить годы на «игру в шанс».
+      </div>
+    </div>
+
+    <!-- CHECKLIST -->
+    <div class="checklist">
+      <h2 class="checklist-title">10 маркеров зрелого мужчины</h2>
+      <p class="checklist-subtitle">
+        Как отличить не просто «богатого», а зрелого, неопасного и НЕ
+        манипулятора — чтобы не попасть в золотую клетку
+      </p>
+
+      <!-- 1 -->
+      <div class="check-item">
+        <h3>1. Как говорит о бывших</h3>
+        <div class="check-row">
+          <div class="check-col check-col-red">
+            <strong>🔴 Тревожный знак</strong>
+            Обесценивает, злится → ищет виноватых во всех женщинах
+          </div>
+          <div class="check-col check-col-green">
+            <strong>🟢 Зрелость</strong>
+            Спокоен, уважительно говорит о прошлом
+          </div>
+        </div>
+        <div class="check-insight">
+          → Богатый, но незрелый обвиняет всех вокруг, зрелый — держит лицо и не
+          вешает ярлыков.
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="check-item">
+        <h3>2. Как относится к твоему времени и границам</h3>
+        <div class="check-row">
+          <div class="check-col check-col-red">
+            <strong>🔴 Тревожный знак</strong>
+            Использует, опаздывает, сбрасывает планы
+          </div>
+          <div class="check-col check-col-green">
+            <strong>🟢 Зрелость</strong>
+            Уважает твои «нет» и твои желания
+          </div>
+        </div>
+        <div class="check-insight">
+          → Для зрелого мужчины твои границы важны, а не только его интерес.
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="check-item">
+        <h3>3. Делает ли тебе место в своей жизни</h3>
+        <div class="check-row">
+          <div class="check-col check-col-red">
+            <strong>🔴 Тревожный знак</strong>
+            Ты всегда «на подхвате», нет стабильности
+          </div>
+          <div class="check-col check-col-green">
+            <strong>🟢 Зрелость</strong>
+            Планирует, учитывает твои интересы и не манипулирует временем
+          </div>
+        </div>
+        <div class="check-insight">
+          → Не будет золотой клетки — будет поддержка.
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="check-item">
+        <h3>4. Как ведёт себя «под маской»</h3>
+        <div class="check-row">
+          <div class="check-col check-col-red">
+            <strong>🔴 Тревожный знак</strong>
+            На публику щедрый, за дверями — жесткий контроль
+          </div>
+          <div class="check-col check-col-green">
+            <strong>🟢 Зрелость</strong>
+            Естественный, не «выпендривается» статусом
+          </div>
+        </div>
+        <div class="check-insight">
+          → Твой комфорт для него важен и на людях, и в жизни.
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="check-item">
+        <h3>5. Деньги: щедрость или инструмент давления?</h3>
+        <div class="check-row">
+          <div class="check-col check-col-red">
+            <strong>🔴 Тревожный знак</strong>
+            Много тратит, но «напоминает», что ты на содержании
+          </div>
+          <div class="check-col check-col-green">
+            <strong>🟢 Зрелость</strong>
+            Дарит от души, не подчёркивает «кто главный»
+          </div>
+        </div>
+        <div class="check-insight">
+          → Если появляется тревога «я ему должна» — это не твой сценарий.
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="check-item">
+        <h3>6. Реакция на проблемы и стресс</h3>
+        <div class="check-row">
+          <div class="check-col check-col-red">
+            <strong>🔴 Тревожный знак</strong>
+            Абьюзит, обвиняет, пугает, шантажирует
+          </div>
+          <div class="check-col check-col-green">
+            <strong>🟢 Зрелость</strong>
+            Умеет говорить, решать, не «разрушать»
+          </div>
+        </div>
+        <div class="check-insight">
+          → Зрелый не превращает женщину в «жертву».
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="check-item">
+        <h3>7. Твои желания и «нет»</h3>
+        <div class="check-row">
+          <div class="check-col check-col-red">
+            <strong>🔴 Тревожный знак</strong>
+            Давит, исподтишка манипулирует, включает чувство вины
+          </div>
+          <div class="check-col check-col-green">
+            <strong>🟢 Зрелость</strong>
+            Уважает твои решения, не заставляет «зарабатывать любовь»
+          </div>
+        </div>
+        <div class="check-insight">
+          → Твои «нет» — проверка на зрелость мужчины.
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="check-item">
+        <h3>8. Слышит тебя — или слышит только свои желания</h3>
+        <div class="check-row">
+          <div class="check-col check-col-red">
+            <strong>🔴 Тревожный знак</strong>
+            Переводит всё на себя, шутит оскорбительно
+          </div>
+          <div class="check-col check-col-green">
+            <strong>🟢 Зрелость</strong>
+            Видит, что ты чувствуешь, и считается с этим
+          </div>
+        </div>
+        <div class="check-insight">
+          → Важно не только, что он даёт — но и КАК слушает.
+        </div>
+      </div>
+
+      <!-- 9 -->
+      <div class="check-item">
+        <h3>9. Связь с семьёй и своими корнями</h3>
+        <div class="check-row">
+          <div class="check-col check-col-red">
+            <strong>🔴 Тревожный знак</strong>
+            Держит тебя в изоляции («никого не слушай, только я»)
+          </div>
+          <div class="check-col check-col-green">
+            <strong>🟢 Зрелость</strong>
+            Принимает твое окружение, даёт знакомиться с его людьми
+          </div>
+        </div>
+        <div class="check-insight">
+          → Богатый абьюзер делает всё, чтобы ты зависела только от него.
+          Настоящий — за твои связи.
+        </div>
+      </div>
+
+      <!-- 10 -->
+      <div class="check-item">
+        <h3>10. Ты — украшение или партнер?</h3>
+        <div class="check-row">
+          <div class="check-col check-col-red">
+            <strong>🔴 Тревожный знак</strong>
+            Требует «соответствовать», держит «на витрине» и внушает
+            малоценность
+          </div>
+          <div class="check-col check-col-green">
+            <strong>🟢 Зрелость</strong>
+            Видит тебя ценной, даже когда у тебя пока нет своих достижений
+          </div>
+        </div>
+        <div class="check-insight">
+          → Если ты чувствуешь «я лишняя, не дотягиваю» — это не мужчина твоей
+          зрелости.
+        </div>
+      </div>
+    </div>
+
+    <!-- RESULTS BOX -->
+    <div class="results-box">
+      <h2>Как трактовать чек-лист</h2>
+      <div class="result-item">
+        <strong>8–10 зелёных:</strong>
+        <p>
+          Такое бывает! Но ты чувствуешь себя спокойно — и не боишься «быть
+          недостаточной».
+        </p>
+      </div>
+      <div class="result-item">
+        <strong>5–7 зелёных:</strong>
+        <p>
+          Будь внимательна. Боишься — доверяй интуиции, не влюбляйся в иллюзию
+          заботы.
+        </p>
+      </div>
+      <div class="result-item">
+        <strong>Меньше 5:</strong>
+        <p>
+          Ты попала в чужой сценарий. Признай это честно, и решай для себя:
+          хочешь так жить дальше?
+        </p>
+      </div>
+    </div>
+
+    <!-- CTA FINAL -->
+    <div class="cta-final">
+      <h2>Знать маркеры — это только начало</h2>
+      <p>
+        Все твои страхи — «не такая», «он бросит», «я попадусь», «слишком хорошо
+        — значит подвох» — это не фантазии, а частые сценарии женщин, которые
+        привыкли жить «деньгами мужчины, не своим весом».
+      </p>
+
+      <p class="cta-highlight">
+        Просто знать маркеры — мало. Всё меняется только тогда, когда меняешь
+        внутреннюю программу: разрешаешь себе быть ценной, не зависящей, и НЕ
+        проигрывающей по умолчанию.
+      </p>
+
+      <p>
+        Именно этому я учу на программе <strong>«Жена Миллионера»</strong>.
+        Здесь не учат «как понравиться», а меняют сценарий глубоко — чтобы
+        притягивать достойных и не бояться жить по-настоящему.
+      </p>
+
+      <p
+        style="
+          margin-top: 30px;
+          margin-bottom: 25px;
+          font-size: 1.05rem;
+          color: var(--text);
+        "
+      >
+        Готова встать на свой путь? Жми — и узнай, как стать той, которой
+        достойный мужчина ДАЁТ и уважает, а не забирает и ломает.
+      </p>
+
+      <a href="index.html#program" class="btn btn-glow"
+        >Хочу изменить сценарий</a
+      >
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div style="margin-bottom: 12px">
+        <span
+          style="
+            font-family: 'Playfair Display', serif;
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 1px;
+          "
+        >
+          MATCH <span style="color: rgba(192, 57, 43, 0.6)">MATCH</span>
+        </span>
+      </div>
+      <p style="margin-bottom: 8px">International Matchmaking</p>
+      <p style="margin-bottom: 10px">
+        <a href="tel:+79150981866">+7 915 098-18-66</a> ·
+        <a href="mailto:mila@matchmatchagency.com">mila@matchmatchagency.com</a>
+      </p>
+      <p><a href="#">Privacy Policy</a> · <a href="#">Terms & Conditions</a></p>
+      <p style="margin-top: 8px">© 2026 Match Match. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
