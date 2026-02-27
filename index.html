@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Match Match — Авторская программа подготовки</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --red: #c0392b;
+        --red-soft: rgba(192, 57, 43, 0.06);
+        --beige: #f3e5cd;
+        --beige-hover: #e8d5b8;
+        --cream: #ffffff;
+        --cream-bg: #fdfbf8;
+        --dark: #1a1a1a;
+        --text: #2c2c2c;
+        --text-light: #666;
+        --text-muted: #999;
+        --border: #eee;
+        --border-light: #f5f0ea;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Lora", serif;
+        background: var(--cream);
+        color: var(--text);
+        overflow-x: hidden;
+        line-height: 1.75;
+        font-size: 16px;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Playfair Display", serif;
+        font-weight: 400;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      /* NAV */
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.97);
+        backdrop-filter: blur(12px);
+        z-index: 1000;
+        padding: 16px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+      }
+      .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+      }
+      .nav-logo-text {
+        font-family: "Playfair Display", serif;
+        font-size: 1.05rem;
+        color: var(--dark);
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        line-height: 1.1;
+      }
+      .nav-logo-text span {
+        color: var(--red);
+      }
+      .nav-links {
+        display: flex;
+        gap: 28px;
+        list-style: none;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: var(--text);
+        font-size: 0.65rem;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        font-family: "Montserrat", sans-serif;
+        transition: color 0.3s;
+      }
+      .nav-links a:hover {
+        color: var(--red);
+      }
+
+      /* BUTTONS */
+      .btn {
+        background: var(--beige);
+        color: var(--dark);
+        padding: 18px 44px;
+        border: none;
+        font-size: 0.72rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.3s;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        justify-content: center;
+      }
+      .btn:hover {
+        background: var(--beige-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+      }
+
+      /* ANIMATED BTN */
+      .btn-glow {
+        position: relative;
+        overflow: hidden;
+      }
+      .btn-glow::after {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.3) 0%,
+          transparent 70%
+        );
+        animation: shimmer 2.5s infinite;
+        pointer-events: none;
+      }
+      @keyframes shimmer {
+        0% {
+          transform: translateX(-100%) rotate(25deg);
+        }
+        100% {
+          transform: translateX(100%) rotate(25deg);
+        }
+      }
+
+      .cta-sticker {
+        display: inline-block;
+        background: #ffe5e1;
+        color: var(--red);
+        border-radius: 6px;
+        padding: 3px 10px;
+        font-size: 0.6rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        text-transform: none;
+        animation: pulse 1.7s infinite;
+      }
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(192, 57, 43, 0.15);
+        }
+        70% {
+          box-shadow: 0 0 0 10px rgba(192, 57, 43, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(192, 57, 43, 0);
+        }
+      }
+
+      .cta-block {
+        text-align: center;
+        padding: 45px 20px 10px;
+      }
+      .cta-exclusive {
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.58rem;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        display: block;
+        margin-top: 10px;
+      }
+      .scarcity-note {
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.68rem;
+        color: var(--red);
+        font-weight: 600;
+        margin-top: 12px;
+        letter-spacing: 0.5px;
+      }
+
+      /* HERO */
+      .hero {
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 58px;
+      }
+      .hero-image {
+        background: url("https://i.ibb.co/BHKvgfpM/d65fcca7fde6471f7e22442a019f8c17-636ff846-5d98-4d4d-80e2-db7a2e8835db.jpg")
+          center/cover no-repeat;
+        min-height: 500px;
+      }
+      .hero-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 80px 60px;
+        background: var(--cream);
+      }
+      .hero-from {
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.62rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--red);
+        margin-bottom: 25px;
+        font-weight: 500;
+      }
+      .hero h1 {
+        font-size: clamp(2rem, 3.8vw, 3rem);
+        color: var(--dark);
+        line-height: 1.15;
+        margin-bottom: 25px;
+      }
+      .hero h1 em {
+        font-style: italic;
+        display: block;
+      }
+      .hero-text {
+        font-size: 1.02rem;
+        color: var(--text-light);
+        margin-bottom: 20px;
+        max-width: 440px;
+        line-height: 1.85;
+      }
+      .hero-cta {
+        margin-top: 15px;
+      }
+      .hero-price {
+        font-family: "Playfair Display", serif;
+        font-size: 1.8rem;
+        color: var(--dark);
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+      .hero-price-note {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        margin-bottom: 20px;
+      }
+
+      /* SECTIONS */
+      section {
+        padding: 100px 20px;
+      }
+      .section-label {
+        text-align: center;
+        color: var(--red);
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.6rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        display: block;
+        font-weight: 500;
+      }
+      .section-title {
+        text-align: center;
+        font-size: clamp(1.7rem, 3.5vw, 2.5rem);
+        color: var(--dark);
+        margin-bottom: 20px;
+        line-height: 1.25;
+      }
+      .section-title em {
+        font-style: italic;
+      }
+      .section-desc {
+        text-align: center;
+        font-size: 0.93rem;
+        color: var(--text-light);
+        max-width: 540px;
+        margin: 0 auto 60px;
+        line-height: 1.85;
+      }
+
+      /* LETTER */
+      .letter-mail {
+        max-width: 680px;
+        margin: 60px auto 50px auto;
+        padding: 50px 45px 40px 45px;
+        background: #fffdf9;
+        border: 1.5px solid #e8d5b8;
+        border-radius: 20px;
+        box-shadow: 0 6px 30px rgba(192, 57, 43, 0.08);
+        position: relative;
+        transition: all 0.3s ease;
+      }
+      .letter-mail:hover {
+        box-shadow: 0 10px 40px rgba(192, 57, 43, 0.12);
+        transform: translateY(-2px);
+      }
+      .letter-mail::after {
+        content: "";
+        position: absolute;
+        right: 28px;
+        top: 24px;
+        width: 42px;
+        height: 30px;
+        background: url("https://cdn-icons-png.flaticon.com/512/481/481513.png")
+          center/contain no-repeat;
+        opacity: 0.12;
+        pointer-events: none;
+      }
+      .letter-mail h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.4rem;
+        color: var(--red);
+        font-style: italic;
+        margin-bottom: 28px;
+        letter-spacing: 0.02em;
+        line-height: 1.3;
+      }
+      .letter-mail p {
+        font-family: "Lora", serif;
+        font-size: 1.05rem;
+        color: var(--text);
+        margin-bottom: 20px;
+        line-height: 1.85;
+        text-align: left;
+      }
+      .letter-mail p:last-of-type {
+        margin-bottom: 0;
+      }
+      .letter-mail .signature {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        color: #a68a63;
+        font-size: 1.15rem;
+        margin-top: 32px;
+        text-align: right;
+        display: block;
+        letter-spacing: 0.01em;
+      }
+
+      /* EXPERT */
+      .expert {
+        padding: 0;
+      }
+      .expert-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 600px;
+      }
+      .expert-img-wrap {
+        overflow: hidden;
+      }
+      .expert-img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+      }
+      .expert-content {
+        padding: 80px 55px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .expert-content .section-label {
+        text-align: left;
+      }
+      .expert-name {
+        font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+        margin-bottom: 8px;
+        line-height: 1.1;
+      }
+      .expert-role {
+        font-size: 0.93rem;
+        color: var(--text-light);
+        margin-bottom: 22px;
+      }
+      .expert-bio {
+        font-size: 0.93rem;
+        color: var(--text-light);
+        line-height: 1.85;
+        margin-bottom: 18px;
+      }
+      .expert-quote {
+        font-style: italic;
+        font-size: 1.02rem;
+        border-left: 2px solid var(--red);
+        padding-left: 20px;
+        margin: 20px 0;
+        color: #555;
+        line-height: 1.8;
+      }
+
+      /* LEAD MAGNET */
+      .lead-magnet {
+        background: var(--cream-bg);
+        text-align: center;
+      }
+      .lm-box {
+        max-width: 620px;
+        margin: 0 auto;
+        padding: 50px 40px;
+        border: 1px solid var(--border);
+        background: #fff;
+      }
+      .lm-icon {
+        font-size: 1.8rem;
+        margin-bottom: 18px;
+        display: block;
+        color: var(--red);
+      }
+      .lm-title {
+        font-size: 1.35rem;
+        font-style: italic;
+        color: var(--dark);
+        margin-bottom: 15px;
+        line-height: 1.3;
+      }
+      .lm-desc {
+        font-size: 0.93rem;
+        color: var(--text-light);
+        line-height: 1.85;
+        margin-bottom: 25px;
+      }
+      .lm-btn {
+        background: var(--dark);
+        color: #fff;
+        padding: 16px 40px;
+        border: none;
+        font-size: 0.7rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.3s;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+      }
+      .lm-btn:hover {
+        background: #333;
+        transform: translateY(-2px);
+      }
+      .lm-note {
+        font-size: 0.62rem;
+        color: var(--text-muted);
+        margin-top: 12px;
+        font-family: "Montserrat", sans-serif;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      /* RESULTS */
+      .get-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+        gap: 20px;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      .get-card {
+        background: #fff;
+        padding: 30px 24px;
+        border-top: 2px solid var(--red);
+        transition: all 0.3s;
+      }
+      .get-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+      }
+      .get-num {
+        font-family: "Playfair Display", serif;
+        font-size: 2rem;
+        color: var(--red);
+        opacity: 0.19;
+        line-height: 1;
+        margin-bottom: 10px;
+      }
+      .get-card h3 {
+        font-size: 1.02rem;
+        margin-bottom: 10px;
+        color: var(--dark);
+        font-weight: 500;
+      }
+      .get-card p {
+        font-size: 0.86rem;
+        color: var(--text-light);
+        line-height: 1.9;
+      }
+
+      /* PROGRAM */
+      .program-box {
+        max-width: 780px;
+        margin: 0 auto;
+        background: #fff;
+        border: 1px solid var(--border);
+        padding: 55px 45px;
+        text-align: center;
+      }
+      .program-intro {
+        font-size: 1rem;
+        color: var(--text-light);
+        margin-bottom: 35px;
+        max-width: 540px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.85;
+      }
+      .format-list {
+        text-align: left;
+        max-width: 520px;
+        margin: 0 auto 35px;
+        list-style: none;
+      }
+      .format-list li {
+        margin-bottom: 14px;
+        padding-left: 25px;
+        position: relative;
+        font-size: 0.93rem;
+        color: #444;
+        line-height: 1.7;
+      }
+      .format-list li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 9px;
+        width: 6px;
+        height: 6px;
+        border: 1px solid var(--red);
+        transform: rotate(45deg);
+      }
+      .format-list li strong {
+        color: var(--dark);
+      }
+      .topics-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-bottom: 35px;
+      }
+      .topic-item {
+        padding: 16px 18px;
+        background: var(--cream-bg);
+        border: 1px solid var(--border-light);
+        text-align: left;
+      }
+      .topic-item strong {
+        display: block;
+        font-family: "Playfair Display", serif;
+        font-size: 0.93rem;
+        font-weight: 500;
+        margin-bottom: 3px;
+        color: var(--dark);
+      }
+      .topic-item span {
+        font-size: 0.8rem;
+        color: var(--text-light);
+        line-height: 1.6;
+      }
+
+      /* PROGRAM OPTIONS */
+      .program-options {
+        max-width: 650px;
+        margin: 50px auto;
+      }
+      .program-options h2 {
+        text-align: center;
+        margin-bottom: 22px;
+        font-family: "Playfair Display", serif;
+        font-size: 1.6rem;
+        color: var(--dark);
+      }
+      .options-grid {
+        display: flex;
+        gap: 24px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .option-card {
+        background: #fff7f2;
+        border: 1px solid #f3e5cd;
+        border-radius: 14px;
+        padding: 32px 28px;
+        max-width: 290px;
+        flex: 1;
+        text-align: center;
+      }
+      .option-card.premium {
+        background: #fffcf7;
+        border: 2px solid #f3e5cd;
+      }
+      .option-card h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.25rem;
+        margin-bottom: 8px;
+        color: var(--dark);
+      }
+      .option-card ul {
+        font-size: 0.88rem;
+        line-height: 1.7;
+        margin-bottom: 13px;
+        padding-left: 16px;
+        text-align: left;
+        color: var(--text-light);
+      }
+      .option-card ul li {
+        margin-bottom: 8px;
+      }
+      .option-price {
+        font-size: 2rem;
+        color: var(--red);
+        font-weight: 600;
+        font-family: "Playfair Display", serif;
+        margin-bottom: 12px;
+      }
+
+      /* CASES */
+      .cases {
+        background: var(--cream-bg);
+        overflow: hidden;
+      }
+      .cases-carousel-wrap {
+        max-width: 1100px;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+      }
+      .cases-carousel-track {
+        display: flex;
+        transition: transform 0.5s ease;
+      }
+      .case-slide {
+        width: 100%;
+        flex: 0 0 100%;
+        padding: 0 10px;
+      }
+      .case-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        background: #fff;
+        border: 1px solid var(--border);
+      }
+      .case-col {
+        padding: 32px 24px;
+        min-width: 0;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+      }
+      .case-col + .case-col {
+        border-left: 1px solid var(--border);
+      }
+      .case-col-label {
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.58rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--red);
+        font-weight: 600;
+        margin-bottom: 14px;
+        display: block;
+      }
+      .case-col h3 {
+        font-size: 1.1rem;
+        font-style: italic;
+        margin-bottom: 10px;
+        line-height: 1.3;
+        color: var(--dark);
+      }
+      .case-col p {
+        font-size: 0.86rem;
+        color: var(--text-light);
+        line-height: 1.75;
+      }
+      .case-col-result {
+        background: var(--red-soft);
+      }
+      .case-big-number {
+        font-family: "Playfair Display", serif;
+        font-size: 2.8rem;
+        color: var(--red);
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 8px;
+      }
+      .case-big-number span {
+        font-size: 1rem;
+        font-weight: 400;
+        opacity: 0.6;
+      }
+      .case-col-review {
+        background: var(--cream-bg);
+      }
+      .case-col-review blockquote {
+        font-style: italic;
+        font-size: 0.9rem;
+        color: #555;
+        line-height: 1.75;
+        border-left: 2px solid var(--red);
+        padding-left: 14px;
+        margin: 0;
+      }
+      .case-col-author {
+        font-family: "Playfair Display", serif;
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--dark);
+        margin-top: 12px;
+        font-style: normal;
+      }
+      .cases-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        margin-top: 28px;
+      }
+      .cases-btn {
+        width: 40px;
+        height: 40px;
+        border: 1px solid var(--border);
+        background: transparent;
+        color: var(--text);
+        cursor: pointer;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+        font-family: "Playfair Display", serif;
+      }
+      .cases-btn:hover {
+        background: var(--dark);
+        color: #fff;
+        border-color: var(--dark);
+      }
+      .cases-counter {
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.7rem;
+        color: var(--text-muted);
+        letter-spacing: 1px;
+      }
+
+      /* FAQ */
+      .faq-list {
+        max-width: 620px;
+        margin: 0 auto;
+      }
+      .faq-item {
+        border-bottom: 1px solid var(--border);
+        padding: 20px 0;
+      }
+      .faq-q {
+        font-family: "Playfair Display", serif;
+        font-size: 1.02rem;
+        color: var(--dark);
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+      }
+      .faq-q::after {
+        content: "+";
+        font-size: 1.3rem;
+        color: var(--red);
+        transition: transform 0.3s;
+        flex-shrink: 0;
+      }
+      .faq-q.open::after {
+        transform: rotate(45deg);
+      }
+      .faq-a {
+        font-size: 0.88rem;
+        color: var(--text-light);
+        line-height: 1.8;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.3s ease;
+      }
+      .faq-a.open {
+        max-height: 350px;
+        padding-top: 15px;
+      }
+      .faq-toggle {
+        text-align: center;
+        margin-top: 20px;
+      }
+      .faq-toggle-btn {
+        background: none;
+        border: 1px solid var(--border);
+        color: var(--text);
+        padding: 12px 32px;
+        font-size: 0.7rem;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        cursor: pointer;
+        font-family: "Montserrat", sans-serif;
+        transition: all 0.3s;
+      }
+      .faq-toggle-btn:hover {
+        background: var(--cream-bg);
+      }
+      .faq-hidden {
+        display: none;
+      }
+
+      /* FINAL */
+      .final {
+        text-align: center;
+        padding: 100px 20px;
+        background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.7)),
+          url("https://images.unsplash.com/photo-1494774157365-9e04c6720e47?q=80&w=2940&auto=format&fit=crop")
+            center/cover no-repeat;
+        color: #fff;
+      }
+      .final h2 {
+        font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+        margin-bottom: 20px;
+        font-style: italic;
+        line-height: 1.3;
+        color: #fff;
+      }
+      .final p {
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 0.95rem;
+        max-width: 460px;
+        margin: 0 auto 12px;
+        line-height: 1.8;
+      }
+      .final-signature {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        color: rgba(255, 255, 255, 0.45);
+        font-size: 0.95rem;
+        margin-bottom: 35px;
+      }
+      .final .btn {
+        background: #fff;
+        color: var(--dark);
+      }
+      .final .btn:hover {
+        background: var(--beige);
+      }
+      .final .cta-exclusive {
+        color: rgba(255, 255, 255, 0.4);
+      }
+
+      /* FOOTER */
+      footer {
+        background: #111;
+        padding: 35px 20px;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.3);
+        font-size: 0.72rem;
+        font-family: "Montserrat", sans-serif;
+      }
+      footer a {
+        color: rgba(255, 255, 255, 0.45);
+        text-decoration: none;
+      }
+      footer a:hover {
+        color: #fff;
+      }
+
+      /* FLOAT BTN */
+      .float-btn {
+        position: fixed;
+        bottom: 28px;
+        right: 28px;
+        z-index: 9999;
+        background: #2aabee;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s;
+        text-decoration: none;
+      }
+      .float-btn:hover {
+        transform: scale(1.08);
+      }
+      .float-btn svg {
+        width: 28px;
+        height: 28px;
+        fill: #fff;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 768px) {
+        nav {
+          padding: 14px 16px;
+        }
+        .nav-links {
+          display: none;
+        }
+        .hero {
+          grid-template-columns: 1fr;
+          margin-top: 52px;
+        }
+        .hero-image {
+          min-height: 300px;
+        }
+        .hero-content {
+          padding: 45px 22px;
+        }
+        section {
+          padding: 60px 16px;
+        }
+        .expert-grid {
+          grid-template-columns: 1fr;
+        }
+        .expert-content {
+          padding: 45px 22px;
+        }
+        .program-box {
+          padding: 30px 18px;
+        }
+        .topics-grid {
+          grid-template-columns: 1fr;
+        }
+        .final {
+          padding: 60px 16px;
+        }
+        .btn {
+          padding: 16px 28px;
+          font-size: 0.65rem;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        .case-row {
+          grid-template-columns: 1fr;
+        }
+        .case-col + .case-col {
+          border-left: none;
+          border-top: 1px solid var(--border);
+        }
+        .case-col {
+          padding: 22px 18px;
+        }
+        .case-big-number {
+          font-size: 2.2rem;
+        }
+        .options-grid {
+          flex-direction: column;
+        }
+        .option-card {
+          max-width: 100%;
+        }
+        .letter-mail {
+          max-width: 90%;
+          padding: 38px 28px 32px 28px;
+          margin: 45px auto 40px auto;
+        }
+        .letter-mail h2 {
+          font-size: 1.25rem;
+          margin-bottom: 22px;
+        }
+        .letter-mail p {
+          font-size: 1rem;
+          line-height: 1.8;
+          margin-bottom: 18px;
+        }
+        .letter-mail::after {
+          width: 36px;
+          height: 26px;
+          right: 20px;
+          top: 20px;
+        }
+      }
+      @media (max-width: 480px) {
+        .letter-mail {
+          padding: 32px 22px 28px 22px;
+          margin: 35px auto 30px auto;
+          border-radius: 16px;
+        }
+        .letter-mail h2 {
+          font-size: 1.15rem;
+          margin-bottom: 20px;
+        }
+        .letter-mail p {
+          font-size: 0.95rem;
+          line-height: 1.75;
+          margin-bottom: 16px;
+        }
+        .letter-mail .signature {
+          font-size: 1.05rem;
+          margin-top: 26px;
+        }
+        .letter-mail::after {
+          display: none;
+        }
+      }
+      ::-webkit-scrollbar {
+        width: 4px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f5f5f5;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <a
+      href="https://t.me/JuliaEnergopraktika"
+      class="float-btn"
+      target="_blank"
+    >
+      <svg viewBox="0 0 24 24">
+        <path
+          d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"
+        />
+      </svg>
+    </a>
+
+    <nav>
+      <a href="#top" class="nav-logo">
+        <div class="nav-logo-text">Match<br /><span>Match</span></div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#letter">Программа</a></li>
+        <li><a href="#expert">Эксперт</a></li>
+        <li><a href="#program">Участие</a></li>
+        <li><a href="#cases">Истории</a></li>
+      </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="top" style="padding: 0">
+      <div class="hero-image"></div>
+      <div class="hero-content">
+        <div class="hero-from">Эксклюзивно для клиенток Match Match</div>
+        <h1>Подготовьтесь к встрече<br /><em>с мужчиной вашей мечты</em></h1>
+        <p class="hero-text">
+          Мы подбираем для вас лучших мужчин. Но чтобы первая встреча стала
+          началом настоящей истории — важно чувствовать себя спокойно и уверенно
+          изнутри.
+        </p>
+        <div class="hero-price">от 7 700 ₽</div>
+        <p class="hero-price-note">Два формата участия на выбор</p>
+        <div class="hero-cta">
+          <a href="#program" class="btn btn-glow">
+            Выбрать формат
+            <span class="cta-sticker">Осталось 20 мест</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- LETTER -->
+    <div class="letter-mail">
+      <h2>Приветствуем!</h2>
+      <p>
+        Мы — Аня и Мила, основательницы Match Match.<br />
+        Каждый день нам пишут удивительные женщины с похожими вопросами: «Почему
+        вроде бы всё делаю правильно, а знакомства не переходят в настоящее
+        общение?»
+      </p>
+      <p>
+        За годы работы мы поняли — важна не только внешность и правильные слова,
+        а то, что вы чувствуете внутри. Это настроение, лёгкость, уверенность,
+        спокойствие — именно это мужчины считывают в переписке и на встрече.
+      </p>
+      <p>
+        Мы видели, как многих останавливает волнение, усталость от прошлых
+        опытов или просто неуверенность. Поэтому вместе с Юлией Люмен, экспертом
+        и нейропсихологом, мы собрали простую и практичную программу по вашим
+        запросам: чтобы подготовиться к важной встрече, почувствовать себя легко
+        и быть собой.
+      </p>
+      <p>
+        Всё, что в ней — это то, что действительно работает для женщин Match
+        Match. Будем рады видеть вас среди участниц!
+      </p>
+      <div class="signature">Аня и Мила, Match Match agency ♥</div>
+    </div>
+
+    <!-- EXPERT -->
+    <section class="expert" id="expert">
+      <div class="expert-grid">
+        <div class="expert-img-wrap">
+          <img
+            src="https://i.ibb.co/nsRGz6sT/IMG-5902-resized-1.jpg"
+            alt="Юлия Люмен"
+          />
+        </div>
+        <div class="expert-content">
+          <span class="section-label">Автор программы</span>
+          <h2 class="expert-name">Юлия Люмен</h2>
+          <p class="expert-role">
+            Нейропсихолог · Эксперт по психологии отношений
+          </p>
+          <p class="expert-bio">
+            За моими плечами 20 лет в собственном бизнесе. Всю жизнь я вращаюсь
+            в состоятельных слоях общества, поэтому знаю законы и правила этих
+            людей изнутри.<br /><br />
+            Мужчины высокого уровня за секунды считывают состояние женщины. Моя
+            задача — сделать так, чтобы он увидел в тебе ту единственную.
+          </p>
+          <p class="expert-quote">
+            После работы со мной ты не «стараешься» вести себя иначе — ты просто
+            становишься другой. На уровне нейронных связей, а не советов «люби
+            себя». Той, которую выбирают и остаются навсегда.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ЛИД-МАГНИТ ✅ -->
+    <section class="lead-magnet">
+      <div class="lm-box">
+        <span class="lm-icon">✦</span>
+        <h2 class="lm-title">
+          Бесплатный чек-лист: Проверь его до того, как влюбилась
+
+
+        </h2>
+        <p class="lm-desc">
+          10 честных маркеров, которые помогут избежать разочарований и не попасть в зависимость.
+        </p>
+        <a href="free_guide.html" class="lm-btn">Получить бесплатно</a>
+                <div class="lm-note"> Откроется на отдельной странице</div>
+      </div>
+    </section>
+
+    <!-- PROGRAM -->
+    <section id="program" style="background: var(--cream)">
+      <span class="section-label">Авторская программа</span>
+      <h2 class="section-title">
+        Уникальный интенсив<br /><em>«Жена Миллионера»</em>
+      </h2>
+      <p class="section-desc">
+        Материалы в удобном формате — проходите в своём темпе, из любой точки
+        мира.
+      </p>
+      <div class="program-box">
+        <p class="program-intro">
+          Программа создана специально для клиенток агентства Match Match —
+          чтобы вы чувствовали себя увереннее на каждом этапе общения.
+        </p>
+        <div style="text-align: left; max-width: 520px; margin: 0 auto">
+          <h3
+            style="font-style: italic; margin-bottom: 18px; text-align: center"
+          >
+            Форматы
+          </h3>
+          <ul class="format-list">
+            <li>
+              <strong>Видеоуроки</strong> — ключевые темы в коротких, ёмких
+              видео
+            </li>
+            <li>
+              <strong>Аудиомедитации</strong> — трансформационные практики для
+              внутреннего состояния
+            </li>
+            <li>
+              <strong>Рабочие материалы</strong> — упражнения и чек-листы для
+              закрепления
+            </li>
+          </ul>
+        </div>
+
+        <h3
+          style="
+            font-style: italic;
+            margin-bottom: 18px;
+            margin-top: 35px;
+            text-align: center;
+          "
+        >
+        <h3 style="font-style: italic; margin-bottom: 18px; text-align: center">
+          Темы программы
+        </h3>
+        <div class="topics-grid">
+          <div class="topic-item">
+            <strong>Свобода от прошлого</strong>
+            <span>Перестанешь жить страхами и сценариями прошлого — будешь готова к новому без внутреннего сопротивления.</span>
+          </div>
+          <div class="topic-item">
+            <strong>Внутренняя ценность</strong>
+            <span>Ощутишь свою настоящую значимость — уверенность, которая притягивает достойных мужчин.</span>
+          </div>
+          <div class="topic-item">
+            <strong>Состояние выбора</strong>
+            <span>Сделаешь шаг из позиции “меня выбрали” в “я выбираю” — свобода и опора внутри.</span>
+          </div>
+          <div class="topic-item">
+            <strong>Искусство принимать</strong>
+            <span>Научишься с лёгкостью и благодарностью принимать заботу, внимание и подарки.</span>
+          </div>
+        </div>
+
+        <!-- 2 ТАРИФА -->
+        <div class="program-options">
+          <h2>Выберите формат участия</h2>
+          <div class="options-grid">
+            <div class="option-card">
+              <h3>Самостоятельно</h3>
+              <ul>
+                <li>Доступ ко всем материалам курса</li>
+                <li>Видеоуроки, практики, аудиомедитации</li>
+                <li>Без чата и обратной связи</li>
+              </ul>
+              <div class="option-price">7 700 ₽</div>
+              <a
+                class="btn"
+                href="https://t.me/JuliaEnergopraktika"
+                target="_blank"
+                >Выбрать</a
+              >
+            </div>
+
+            <div class="option-card premium">
+              <h3>С поддержкой</h3>
+              <ul>
+                <li>Всё из самостоятельного формата</li>
+                <li>Доступ в общий чат участниц</li>
+                <li>Поддержка и обмен опытом в чате</li>
+                <li>1 раз в неделю — ответы Юлии на вопросы группы</li>
+              </ul>
+              <div class="option-price">14 900 ₽</div>
+              <a
+                class="btn"
+                href="https://t.me/JuliaEnergopraktika"
+                target="_blank"
+                >Выбрать</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <span class="cta-exclusive">Эксклюзивно для клиенток Match Match</span>
+      </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section style="background: var(--cream-bg)">
+      <span class="section-label">Результаты</span>
+      <h2 class="section-title">Что изменится <em>после программы</em></h2>
+      <p class="section-desc">
+        Это не временные техники. Это глубокие изменения в том, как вы себя
+        чувствуете — и как вас воспринимают мужчины.
+      </p>
+      <div class="get-grid">
+        <div class="get-card">
+          <div class="get-num">01</div>
+          <h3>Спокойствие в общении</h3>
+          <p>
+            Вы перестанете тревожиться в переписке и на видеозвонках. Появится
+            естественное достоинство — без масок и напряжения.
+          </p>
+        </div>
+        <div class="get-card">
+          <div class="get-num">02</div>
+          <h3>Правильная энергия</h3>
+          <p>
+            Мужчина начнёт видеть в вас женщину, которая выбирает. Ту, рядом с
+            которой хочется остаться.
+          </p>
+        </div>
+        <div class="get-card">
+          <div class="get-num">03</div>
+          <h3>Свобода от старых сценариев</h3>
+          <p>
+            Отношения начнут развиваться по-новому — легко, естественно, без
+            повторения прошлых ошибок.
+          </p>
+        </div>
+        <div class="get-card">
+          <div class="get-num">04</div>
+          <h3>Умение принимать</h3>
+          <p>
+            Внимание, забота и щедрость станут естественной частью жизни. Без
+            тревоги и чувства обязанности.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CASES -->
+<section class="cases" id="cases">
+  <span class="section-label">Истории</span>
+  <h2 class="section-title">
+    Реальные истории<br /><em>наших клиенток</em>
+  </h2>
+  <div class="cases-carousel-wrap">
+    <div class="cases-carousel-track" id="casesTrack">
+      
+      <!-- CASE 1 -->
+      <div class="case-slide">
+        <div class="case-row">
+          <div class="case-col case-col-desc">
+            <span class="case-col-label">Кейс</span>
+            <h3>Девушка, 32 года</h3>
+            <p>Не была замужем, долго в роли любовницы. Не видела перспектив в здоровых отношениях.</p>
+          </div>
+          <div class="case-col case-col-result">
+            <span class="case-col-label">Результат</span>
+            <div class="case-big-number">3 <span>мес.</span></div>
+            <p>после начала терапии уже была замужем. Изменилось всё. Переехали в Нью-Йорк. Она стала психологом. Крепкие, любящие отношения.</p>
+          </div>
+          <div class="case-col case-col-review">
+            <span class="case-col-label">Отзыв</span>
+            <blockquote>«Я не верила, что такое возможно. Но после работы с Юлией я поняла: дело было не в мужчинах — дело было во мне. Я перестала быть "запасным вариантом" и стала той, кого выбирают навсегда.»</blockquote>
+          </div>
+        </div>
+      </div>
+
+      <!-- CASE 2 -->
+      <div class="case-slide">
+        <div class="case-row">
+          <div class="case-col case-col-desc">
+            <span class="case-col-label">Кейс</span>
+            <h3>Бизнес-вумен, 38 лет</h3>
+            <p>Разводилась с мужем. Все мужчины были либо слабые, либо абьюзивные. В отношениях всегда качели: нет спокойствия, нет стабильности.</p>
+          </div>
+          <div class="case-col case-col-result">
+            <span class="case-col-label">Результат</span>
+            <div class="case-big-number">3 <span>сессии</span></div>
+            <p>потеряла интерес к выматывающим отношениям. Начали появляться мужчины, которые уважают, ухаживают красиво, мужчины с серьёзными намерениями.</p>
+          </div>
+          <div class="case-col case-col-review">
+            <span class="case-col-label">Отзыв</span>
+            <blockquote>«Примерно через три сессии я поняла: я притягивала именно то, что было у меня внутри — страх и тревогу. Когда я изменила себя, изменились и мужчины вокруг меня.»</blockquote>
+          </div>
+        </div>
+      </div>
+
+      <!-- CASE 3 -->
+      <div class="case-slide">
+        <div class="case-row">
+          <div class="case-col case-col-desc">
+            <span class="case-col-label">Кейс</span>
+            <h3>Девушка, 29 лет</h3>
+            <p>Живёт с очень богатым мужчиной. Между ними хорошие отношения, но он её не вводит в свой социум, не приглашает, всё время оставляет дома. Это не устраивало.</p>
+          </div>
+          <div class="case-col case-col-result">
+            <span class="case-col-label">Результат</span>
+            <div class="case-big-number">4 <span>мес.</span></div>
+            <p>терапии — отношения очень улучшились. Он начал её ценить не только как женщину, которая сидит дома, а как партнёра, с которой нужно выходить в свет. Дал гораздо больше возможностей и власти.</p>
+          </div>
+          <div class="case-col case-col-review">
+            <span class="case-col-label">Отзыв</span>
+            <blockquote>«Раньше я ждала, что он меня "возьмёт с собой". Теперь я сама выбираю, где мне быть. Я перестала быть "домашней женой" и стала его партнёром. Он это почувствовал и изменил своё отношение.»</blockquote>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="cases-nav">
+      <button class="cases-btn" onclick="moveCases(-1)">←</button>
+      <span class="cases-counter"><span id="caseNum">1</span> / 3</span>
+      <button class="cases-btn" onclick="moveCases(1)">→</button>
+    </div>
+  </div>
+</section>
+    <!-- FAQ -->
+    <section id="faq">
+      <span class="section-label">Частые вопросы</span>
+      <h2 class="section-title" style="margin-bottom: 45px">
+        Ответы на <em>ваши вопросы</em>
+      </h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Какой формат участия выбрать?
+          </div>
+          <div class="faq-a">
+            Если вы хотите пройти программу полностью в своём ритме — выбирайте
+            самостоятельный доступ. Если вам важны общение, разборы типовых
+            ситуаций и поддержка группы, выбирайте вариант с общим чатом и
+            сессиями с Юлией (групповые ответы раз в неделю).
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Сколько времени займёт программа?
+          </div>
+          <div class="faq-a">
+            Программа рассчитана на 2–3 недели комфортного прохождения. Все
+            материалы в записи — вы занимаетесь когда удобно, в своём ритме.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Как записаться и оплатить?
+          </div>
+          <div class="faq-a">
+            Нажмите кнопку «Выбрать» — вы перейдёте в Telegram, где сможете
+            задать вопросы и получить ссылку на оплату. Процесс занимает пару
+            минут.
+          </div>
+        </div>
+
+        <div class="faq-item faq-hidden" id="faqHidden1">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Это обязательно для клиенток Match Match?
+          </div>
+          <div class="faq-a">
+            Нет, участие полностью добровольное. Мы рекомендуем программу,
+            потому что видим, какие результаты она даёт. Но решение — всегда за
+            вами.
+          </div>
+        </div>
+        <div class="faq-item faq-hidden" id="faqHidden2">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Подойдёт ли мне, если я уже работала с психологом?
+          </div>
+          <div class="faq-a">
+            Да, и именно поэтому многие выбирают эту программу. Юлия работает на
+            уровне нейронных связей — это принципиально другой подход.
+          </div>
+        </div>
+        <div class="faq-item faq-hidden" id="faqHidden3">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Как всё устроено технически?
+          </div>
+          <div class="faq-a">
+            После оплаты вы получаете доступ к закрытой платформе с
+            видеоуроками, аудиомедитациями и рабочими материалами. Удобно с
+            телефона или компьютера.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-toggle">
+        <button class="faq-toggle-btn" onclick="toggleMoreFaq()">
+          Ещё вопросы
+        </button>
+      </div>
+    </section>
+
+    <!-- FINAL -->
+    <section class="final" id="contact">
+      <span class="section-label" style="color: rgba(255, 255, 255, 0.3)"
+        >Следующий шаг</span
+      >
+      <h2>
+        Мы хотим, чтобы ваша встреча<br />стала началом
+        <em>настоящей истории любви</em>
+      </h2>
+      <p>
+        Эта программа — наша искренняя рекомендация. Мы верим, что она поможет
+        вам почувствовать себя увереннее и раскрыться навстречу счастью.
+      </p>
+      <div class="final-signature">С любовью, Аня и Мила — Match Match ♥</div>
+      <a href="#program" class="btn btn-glow">Выбрать формат</a>
+      <span class="cta-exclusive">Эксклюзивно для клиенток Match Match</span>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div style="margin-bottom: 12px">
+        <span
+          style="
+            font-family: 'Playfair Display', serif;
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 1px;
+          "
+        >
+          MATCH <span style="color: rgba(192, 57, 43, 0.6)">MATCH</span>
+        </span>
+      </div>
+      <p style="margin-bottom: 8px">International Matchmaking</p>
+      <p style="margin-bottom: 10px">
+        <a href="tel:+79150981866">+7 915 098-18-66</a> ·
+        <a href="mailto:mila@matchmatchagency.com">mila@matchmatchagency.com</a>
+      </p>
+      <p><a href="#">Privacy Policy</a> · <a href="#">Terms & Conditions</a></p>
+      <p style="margin-top: 8px">© 2026 Match Match. All rights reserved.</p>
+    </footer>
+
+    <script>
+      function toggleFaq(el) {
+        const a = el.nextElementSibling;
+        const o = a.classList.contains("open");
+        document
+          .querySelectorAll(".faq-a")
+          .forEach((x) => x.classList.remove("open"));
+        document
+          .querySelectorAll(".faq-q")
+          .forEach((x) => x.classList.remove("open"));
+        if (!o) {
+          a.classList.add("open");
+          el.classList.add("open");
+        }
+      }
+
+      function toggleMoreFaq() {
+        document.getElementById("faqHidden1").classList.toggle("faq-hidden");
+        document.getElementById("faqHidden2").classList.toggle("faq-hidden");
+        document.getElementById("faqHidden3").classList.toggle("faq-hidden");
+        const btn = document.querySelector(".faq-toggle-btn");
+        btn.textContent =
+          btn.textContent === "Ещё вопросы" ? "Скрыть" : "Ещё вопросы";
+      }
+
+      let currentCase = 0;
+      const totalCases = 3;
+      const casesTrack = document.getElementById("casesTrack");
+      const caseNumEl = document.getElementById("caseNum");
+
+      function goToCase(i) {
+        currentCase = i;
+        casesTrack.style.transform = `translateX(-${i * 100}%)`;
+        caseNumEl.textContent = i + 1;
+      }
+
+      function moveCases(dir) {
+        let next = currentCase + dir;
+        if (next < 0) next = totalCases - 1;
+        if (next >= totalCases) next = 0;
+        goToCase(next);
+      }
+
+      let casesTouchX = 0;
+      const casesWrap = document.querySelector(".cases-carousel-wrap");
+      casesWrap.addEventListener(
+        "touchstart",
+        (e) => {
+          casesTouchX = e.touches[0].clientX;
+        },
+        { passive: true }
+      );
+      casesWrap.addEventListener(
+        "touchend",
+        (e) => {
+          const diff = casesTouchX - e.changedTouches[0].clientX;
+          if (Math.abs(diff) > 50) {
+            diff > 0 ? moveCases(1) : moveCases(-1);
+          }
+        },
+        { passive: true }
+      );
+
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.style.opacity = "1";
+              e.target.style.transform = "translateY(0)";
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      document.querySelectorAll(".get-card, .case-slide").forEach((el) => {
+        el.style.opacity = "0";
+        el.style.transform = "translateY(20px)";
+        el.style.transition = "all 0.6s ease";
+        obs.observe(el);
+      });
+    </script>
+  </body>
+</html>
