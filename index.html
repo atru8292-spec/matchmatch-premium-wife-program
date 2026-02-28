@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Match Match — Авторская программа подготовки</title>
+    <title>Жена Миллионера — Match Match</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -16,7 +16,7 @@
       }
       :root {
         --red: #c0392b;
-        --red-soft: rgba(192, 57, 43, 0.06);
+        --gold: #c9a84c;
         --beige: #f3e5cd;
         --beige-hover: #e8d5b8;
         --cream: #ffffff;
@@ -27,6 +27,7 @@
         --text-muted: #999;
         --border: #eee;
         --border-light: #f5f0ea;
+        --white: #ffffff;
       }
       html {
         scroll-behavior: smooth;
@@ -45,6 +46,7 @@
       h4 {
         font-family: "Playfair Display", serif;
         font-weight: 400;
+        color: var(--dark);
       }
       img {
         max-width: 100%;
@@ -125,8 +127,29 @@
         transform: translateY(-2px);
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
       }
-
-      /* ANIMATED BTN */
+      .btn-red {
+        background: var(--red);
+        color: white;
+        padding: 18px 44px;
+        border: none;
+        font-size: 0.72rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.3s;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        justify-content: center;
+      }
+      .btn-red:hover {
+        background: #a03024;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(192, 57, 43, 0.3);
+      }
       .btn-glow {
         position: relative;
         overflow: hidden;
@@ -154,7 +177,6 @@
           transform: translateX(100%) rotate(25deg);
         }
       }
-
       .cta-sticker {
         display: inline-block;
         background: #ffe5e1;
@@ -177,28 +199,6 @@
         100% {
           box-shadow: 0 0 0 0 rgba(192, 57, 43, 0);
         }
-      }
-
-      .cta-block {
-        text-align: center;
-        padding: 45px 20px 10px;
-      }
-      .cta-exclusive {
-        font-family: "Montserrat", sans-serif;
-        font-size: 0.58rem;
-        letter-spacing: 1.5px;
-        text-transform: uppercase;
-        color: var(--text-muted);
-        display: block;
-        margin-top: 10px;
-      }
-      .scarcity-note {
-        font-family: "Montserrat", sans-serif;
-        font-size: 0.68rem;
-        color: var(--red);
-        font-weight: 600;
-        margin-top: 12px;
-        letter-spacing: 0.5px;
       }
 
       /* HERO */
@@ -226,40 +226,54 @@
         letter-spacing: 3px;
         text-transform: uppercase;
         color: var(--red);
-        margin-bottom: 25px;
+        margin-bottom: 20px;
         font-weight: 500;
       }
       .hero h1 {
         font-size: clamp(2rem, 3.8vw, 3rem);
         color: var(--dark);
         line-height: 1.15;
-        margin-bottom: 25px;
+        margin-bottom: 20px;
       }
       .hero h1 em {
         font-style: italic;
         display: block;
+        color: var(--red);
       }
       .hero-text {
-        font-size: 1.02rem;
+        font-size: 1rem;
         color: var(--text-light);
-        margin-bottom: 20px;
+        margin-bottom: 28px;
         max-width: 440px;
         line-height: 1.85;
-      }
-      .hero-cta {
-        margin-top: 15px;
       }
       .hero-price {
         font-family: "Playfair Display", serif;
         font-size: 1.8rem;
         color: var(--dark);
-        margin-top: 20px;
-        margin-bottom: 10px;
+        margin-bottom: 6px;
+      }
+      .hero-price span {
+        color: var(--red);
       }
       .hero-price-note {
-        font-size: 0.85rem;
+        font-size: 0.82rem;
         color: var(--text-muted);
-        margin-bottom: 20px;
+        margin-bottom: 24px;
+      }
+      .hero-cta {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      .hero-cta-note {
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.6rem;
+        color: var(--text-muted);
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        line-height: 1.5;
       }
 
       /* SECTIONS */
@@ -297,10 +311,10 @@
       }
 
       /* LETTER */
-      .letter-mail {
+      .letter-short {
         max-width: 680px;
-        margin: 60px auto 50px auto;
-        padding: 50px 45px 40px 45px;
+        margin: 60px auto 50px;
+        padding: 50px 45px 40px;
         background: #fffdf9;
         border: 1.5px solid #e8d5b8;
         border-radius: 20px;
@@ -308,32 +322,19 @@
         position: relative;
         transition: all 0.3s ease;
       }
-      .letter-mail:hover {
+      .letter-short:hover {
         box-shadow: 0 10px 40px rgba(192, 57, 43, 0.12);
         transform: translateY(-2px);
       }
-      .letter-mail::after {
-        content: "";
-        position: absolute;
-        right: 28px;
-        top: 24px;
-        width: 42px;
-        height: 30px;
-        background: url("https://cdn-icons-png.flaticon.com/512/481/481513.png")
-          center/contain no-repeat;
-        opacity: 0.12;
-        pointer-events: none;
-      }
-      .letter-mail h2 {
+      .letter-short h2 {
         font-family: "Playfair Display", serif;
         font-size: 1.4rem;
         color: var(--red);
         font-style: italic;
         margin-bottom: 28px;
-        letter-spacing: 0.02em;
         line-height: 1.3;
       }
-      .letter-mail p {
+      .letter-short p {
         font-family: "Lora", serif;
         font-size: 1.05rem;
         color: var(--text);
@@ -341,10 +342,19 @@
         line-height: 1.85;
         text-align: left;
       }
-      .letter-mail p:last-of-type {
-        margin-bottom: 0;
+      .letter-short em.highlight {
+        font-style: italic;
+        color: var(--red);
+        font-weight: 500;
       }
-      .letter-mail .signature {
+      .letter-short strong.highlight {
+        color: var(--red);
+        font-weight: 600;
+        background: rgba(192, 57, 43, 0.06);
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+      .letter-signature {
         font-family: "Playfair Display", serif;
         font-style: italic;
         color: #a68a63;
@@ -352,11 +362,11 @@
         margin-top: 32px;
         text-align: right;
         display: block;
-        letter-spacing: 0.01em;
       }
 
       /* EXPERT */
       .expert {
+        background: var(--cream-bg);
         padding: 0;
       }
       .expert-grid {
@@ -366,15 +376,19 @@
       }
       .expert-img-wrap {
         overflow: hidden;
+        position: relative;
       }
       .expert-img-wrap img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: top center;
+        transition: transform 0.6s ease;
+      }
+      .expert-img-wrap:hover img {
+        transform: scale(1.05);
       }
       .expert-content {
-        padding: 80px 55px;
+        padding: 80px 60px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -384,8 +398,11 @@
       }
       .expert-name {
         font-size: clamp(1.9rem, 3.5vw, 2.6rem);
-        margin-bottom: 8px;
+        margin-bottom: 12px;
         line-height: 1.1;
+      }
+      .expert-name em {
+        color: var(--red);
       }
       .expert-role {
         font-size: 0.93rem;
@@ -407,102 +424,200 @@
         color: #555;
         line-height: 1.8;
       }
-
-      /* LEAD MAGNET */
-      .lead-magnet {
-        background: var(--cream-bg);
+      .expert-stats {
+        display: flex;
+        gap: 30px;
+        margin-top: 24px;
+        flex-wrap: wrap;
+      }
+      .expert-stat {
         text-align: center;
       }
-      .lm-box {
-        max-width: 620px;
-        margin: 0 auto;
-        padding: 50px 40px;
-        border: 1px solid var(--border);
-        background: #fff;
-      }
-      .lm-icon {
-        font-size: 1.8rem;
-        margin-bottom: 18px;
-        display: block;
+      .expert-stat-num {
+        font-family: "Playfair Display", serif;
+        font-size: 2rem;
         color: var(--red);
+        line-height: 1;
       }
-      .lm-title {
-        font-size: 1.35rem;
-        font-style: italic;
-        color: var(--dark);
-        margin-bottom: 15px;
-        line-height: 1.3;
-      }
-      .lm-desc {
-        font-size: 0.93rem;
-        color: var(--text-light);
-        line-height: 1.85;
-        margin-bottom: 25px;
-      }
-      .lm-btn {
-        background: var(--dark);
-        color: #fff;
-        padding: 16px 40px;
-        border: none;
-        font-size: 0.7rem;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        cursor: pointer;
-        text-decoration: none;
-        display: inline-block;
-        transition: all 0.3s;
+      .expert-stat-label {
         font-family: "Montserrat", sans-serif;
-        font-weight: 500;
-      }
-      .lm-btn:hover {
-        background: #333;
-        transform: translateY(-2px);
-      }
-      .lm-note {
-        font-size: 0.62rem;
+        font-size: 0.58rem;
         color: var(--text-muted);
-        margin-top: 12px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-top: 4px;
+      }
+
+      /* CTA BLOCK */
+      .cta-block {
+        text-align: center;
+        padding: 80px 20px;
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d1a0e 100%);
+        border-top: 1px solid rgba(192, 57, 43, 0.3);
+        border-bottom: 1px solid rgba(192, 57, 43, 0.3);
+      }
+      .cta-block h2 {
+        font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+        margin-bottom: 16px;
+        color: white;
+      }
+      .cta-block h2 em {
+        font-style: italic;
+        color: var(--beige);
+      }
+      .cta-block p {
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.65);
+        max-width: 520px;
+        margin: 0 auto 32px;
+        line-height: 1.8;
+      }
+      .cta-buttons {
+        display: flex;
+        gap: 18px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .cta-urgency {
+        margin-top: 18px;
         font-family: "Montserrat", sans-serif;
+        font-size: 0.62rem;
+        color: rgba(255, 255, 255, 0.4);
         letter-spacing: 1px;
         text-transform: uppercase;
       }
 
-      /* RESULTS */
-      .get-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
-        gap: 20px;
-        max-width: 1000px;
+      /* CASES */
+      .cases {
+        background: linear-gradient(135deg, #8b1a1a 0%, #c0392b 100%);
+        padding: 100px 20px;
+      }
+      .cases .section-label {
+        color: rgba(255, 255, 255, 0.7);
+      }
+      .cases .section-title {
+        color: var(--white);
+      }
+      .cases .section-title em {
+        color: var(--white);
+      }
+      .cases-carousel-wrap {
+        max-width: 1200px;
         margin: 0 auto;
+        position: relative;
+        overflow: hidden;
       }
-      .get-card {
-        background: #fff;
-        padding: 30px 24px;
-        border-top: 2px solid var(--red);
-        transition: all 0.3s;
+      .cases-carousel-track {
+        display: flex;
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
       }
-      .get-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+      .case-slide {
+        width: 100%;
+        flex: 0 0 100%;
+        padding: 0 15px;
       }
-      .get-num {
-        font-family: "Playfair Display", serif;
-        font-size: 2rem;
+      .case-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+      }
+      .case-col {
+        padding: 50px 38px;
+        min-width: 0;
+        background: rgba(255, 255, 255, 0.95);
+      }
+      .case-col-label {
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.58rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
         color: var(--red);
-        opacity: 0.19;
-        line-height: 1;
-        margin-bottom: 10px;
+        font-weight: 700;
+        margin-bottom: 18px;
+        display: block;
       }
-      .get-card h3 {
-        font-size: 1.02rem;
-        margin-bottom: 10px;
+      .case-col h3 {
+        font-size: 1.25rem;
+        font-style: italic;
+        margin-bottom: 14px;
+        line-height: 1.3;
         color: var(--dark);
-        font-weight: 500;
       }
-      .get-card p {
-        font-size: 0.86rem;
-        color: var(--text-light);
-        line-height: 1.9;
+      .case-col p {
+        font-size: 0.9rem;
+        color: var(--text);
+        line-height: 1.75;
+      }
+      .case-col-result {
+        background: linear-gradient(135deg, #fff5f2 0%, #ffe8e0 100%);
+      }
+      .case-big-number {
+        font-family: "Playfair Display", serif;
+        font-size: 5rem;
+        color: var(--red);
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 16px;
+      }
+      .case-big-number span {
+        font-size: 1.3rem;
+        font-weight: 500;
+        opacity: 0.7;
+      }
+      .case-col-review {
+        background: linear-gradient(135deg, #fdfbf8 0%, #f5f0ea 100%);
+      }
+      .case-col-review blockquote {
+        font-style: italic;
+        font-size: 1rem;
+        color: var(--text);
+        line-height: 1.8;
+        border-left: 4px solid var(--red);
+        padding-left: 20px;
+        margin: 0;
+      }
+      .case-col-author {
+        font-family: "Playfair Display", serif;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--red);
+        margin-top: 16px;
+      }
+      .cases-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        margin-top: 40px;
+      }
+      .cases-btn {
+        width: 50px;
+        height: 50px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        background: transparent;
+        color: var(--white);
+        cursor: pointer;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+        border-radius: 50%;
+      }
+      .cases-btn:hover {
+        background: var(--white);
+        color: var(--red);
+        border-color: var(--white);
+        transform: scale(1.1);
+      }
+      .cases-counter {
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.7);
+        letter-spacing: 1px;
+        font-weight: 600;
       }
 
       /* PROGRAM */
@@ -576,189 +691,334 @@
         line-height: 1.6;
       }
 
-      /* PROGRAM OPTIONS */
-      .program-options {
-        max-width: 650px;
-        margin: 50px auto;
+      /* PRICING */
+      .pricing-section {
+        padding: 80px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        background: var(--cream-bg);
       }
-      .program-options h2 {
-        text-align: center;
-        margin-bottom: 22px;
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+        margin-top: 50px;
+        align-items: stretch;
+      }
+      .pricing-card {
+        background: var(--white);
+        padding: 30px 30px 40px;
+        position: relative;
+        border: 1px solid #e8e0d0;
+        transition: all 0.3s;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+      }
+      .pricing-card:hover {
+        border-color: var(--red);
+        box-shadow: 0 20px 50px rgba(192, 57, 43, 0.12);
+        transform: translateY(-4px);
+      }
+      .pricing-card.featured {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2417 100%);
+        border-color: var(--red);
+      }
+      .pricing-badge-wrap {
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 12px;
+      }
+      .pricing-badge {
+        background: var(--red);
+        color: var(--white);
+        padding: 4px 18px;
+        font-size: 0.6rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        white-space: nowrap;
+        font-weight: 500;
+        font-family: "Montserrat", sans-serif;
+      }
+      .pricing-badge-empty {
+        height: 28px;
+        margin-bottom: 12px;
+      }
+      .pricing-tier {
+        font-size: 0.65rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--red);
+        margin-bottom: 8px;
+        font-weight: 500;
+        font-family: "Montserrat", sans-serif;
+      }
+      .pricing-name {
         font-family: "Playfair Display", serif;
         font-size: 1.6rem;
         color: var(--dark);
-      }
-      .options-grid {
-        display: flex;
-        gap: 24px;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-      .option-card {
-        background: #fff7f2;
-        border: 1px solid #f3e5cd;
-        border-radius: 14px;
-        padding: 32px 28px;
-        max-width: 290px;
-        flex: 1;
-        text-align: center;
-      }
-      .option-card.premium {
-        background: #fffcf7;
-        border: 2px solid #f3e5cd;
-      }
-      .option-card h3 {
-        font-family: "Playfair Display", serif;
-        font-size: 1.25rem;
         margin-bottom: 8px;
-        color: var(--dark);
+        font-weight: 500;
       }
-      .option-card ul {
-        font-size: 0.88rem;
-        line-height: 1.7;
-        margin-bottom: 13px;
-        padding-left: 16px;
-        text-align: left;
-        color: var(--text-light);
+      .pricing-card.featured .pricing-name {
+        color: var(--white);
       }
-      .option-card ul li {
-        margin-bottom: 8px;
+      .pricing-price-wrap {
+        margin: 10px 0 5px;
       }
-      .option-price {
-        font-size: 2rem;
-        color: var(--red);
-        font-weight: 600;
-        font-family: "Playfair Display", serif;
-        margin-bottom: 12px;
-      }
-
-      /* CASES */
-      .cases {
-        background: var(--cream-bg);
-        overflow: hidden;
-      }
-      .cases-carousel-wrap {
-        max-width: 1100px;
-        margin: 0 auto;
-        position: relative;
-        overflow: hidden;
-      }
-      .cases-carousel-track {
-        display: flex;
-        transition: transform 0.5s ease;
-      }
-      .case-slide {
-        width: 100%;
-        flex: 0 0 100%;
-        padding: 0 10px;
-      }
-      .case-row {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        background: #fff;
-        border: 1px solid var(--border);
-      }
-      .case-col {
-        padding: 32px 24px;
-        min-width: 0;
-        overflow-wrap: break-word;
-        word-wrap: break-word;
-      }
-      .case-col + .case-col {
-        border-left: 1px solid var(--border);
-      }
-      .case-col-label {
-        font-family: "Montserrat", sans-serif;
-        font-size: 0.58rem;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: var(--red);
-        font-weight: 600;
-        margin-bottom: 14px;
-        display: block;
-      }
-      .case-col h3 {
-        font-size: 1.1rem;
-        font-style: italic;
-        margin-bottom: 10px;
-        line-height: 1.3;
-        color: var(--dark);
-      }
-      .case-col p {
-        font-size: 0.86rem;
-        color: var(--text-light);
-        line-height: 1.75;
-      }
-      .case-col-result {
-        background: var(--red-soft);
-      }
-      .case-big-number {
+      .pricing-price {
         font-family: "Playfair Display", serif;
         font-size: 2.8rem;
         color: var(--red);
         font-weight: 700;
         line-height: 1;
-        margin-bottom: 8px;
       }
-      .case-big-number span {
-        font-size: 1rem;
-        font-weight: 400;
-        opacity: 0.6;
+      .pricing-note {
+        font-size: 0.72rem;
+        color: #999;
+        margin-bottom: 16px;
       }
-      .case-col-review {
-        background: var(--cream-bg);
+      .pricing-card.featured .pricing-note {
+        color: rgba(255, 255, 255, 0.4);
       }
-      .case-col-review blockquote {
-        font-style: italic;
-        font-size: 0.9rem;
-        color: #555;
-        line-height: 1.75;
-        border-left: 2px solid var(--red);
-        padding-left: 14px;
-        margin: 0;
+      .pricing-group {
+        font-size: 0.7rem;
+        color: #aaa;
+        margin-bottom: 18px;
       }
-      .case-col-author {
-        font-family: "Playfair Display", serif;
-        font-size: 0.82rem;
-        font-weight: 600;
+      .pricing-card.featured .pricing-group {
+        color: rgba(255, 255, 255, 0.35);
+      }
+      .p-divider {
+        height: 1px;
+        background: #e8e0d0;
+        margin: 18px 0;
+      }
+      .pricing-card.featured .p-divider {
+        background: rgba(192, 57, 43, 0.25);
+      }
+      .pricing-features {
+        list-style: none;
+        margin-bottom: 28px;
+        flex: 1;
+        padding-left: 0;
+      }
+      .pricing-features li {
+        padding: 8px 0;
+        font-size: 0.8rem;
+        color: #666;
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        border-bottom: 1px solid #f5f0e8;
+      }
+      .pricing-card.featured .pricing-features li {
+        color: rgba(255, 255, 255, 0.75);
+        border-bottom-color: rgba(192, 57, 43, 0.1);
+      }
+      .pricing-features li::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border: 1px solid var(--red);
+        transform: rotate(45deg);
+        flex-shrink: 0;
+        margin-top: 4px;
+      }
+      .btn-secondary {
+        background: var(--beige);
         color: var(--dark);
-        margin-top: 12px;
-        font-style: normal;
+        padding: 14px 32px;
+        border: 1px solid var(--beige);
+        font-size: 0.7rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.3s;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        display: block;
+        text-align: center;
       }
-      .cases-nav {
+      .btn-secondary:hover {
+        background: var(--beige-hover);
+        transform: translateY(-2px);
+      }
+      .btn-primary {
+        background: var(--red);
+        color: var(--white);
+        padding: 14px 32px;
+        border: 1px solid var(--red);
+        font-size: 0.7rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.3s;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        display: block;
+        text-align: center;
+      }
+      .btn-primary:hover {
+        background: #a03024;
+        transform: translateY(-2px);
+      }
+
+      /* RESULTS */
+      .results {
+        background: var(--cream);
+        padding: 100px 20px;
+      }
+      .get-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+        gap: 20px;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      .get-card {
+        background: #fff;
+        padding: 30px 24px;
+        border-top: 2px solid var(--red);
+        transition: all 0.3s;
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      .get-card.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .get-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+      }
+      .get-num {
+        font-family: "Playfair Display", serif;
+        font-size: 2rem;
+        color: var(--red);
+        opacity: 0.19;
+        line-height: 1;
+        margin-bottom: 10px;
+      }
+      .get-card h3 {
+        font-size: 1.02rem;
+        margin-bottom: 10px;
+        color: var(--dark);
+        font-weight: 500;
+      }
+      .get-card p {
+        font-size: 0.86rem;
+        color: var(--text-light);
+        line-height: 1.9;
+      }
+
+      /* ===== ФОТО КАРУСЕЛЬ ОТЗЫВОВ ===== */
+      .testimonials {
+        background: var(--dark);
+        padding: 100px 20px;
+      }
+      .testimonials .section-label {
+        color: rgba(255, 255, 255, 0.5);
+      }
+      .testimonials .section-title {
+        color: white;
+      }
+      .testimonials .section-title em {
+        color: var(--beige);
+      }
+      .testimonials .section-desc {
+        color: rgba(255, 255, 255, 0.45);
+        margin-bottom: 50px;
+      }
+
+      .photo-carousel-wrap {
+        max-width: 900px;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+      }
+      .photo-carousel-track {
+        display: flex;
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .photo-slide {
+        flex: 0 0 100%;
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 16px;
-        margin-top: 28px;
+        padding: 0 20px;
       }
-      .cases-btn {
-        width: 40px;
-        height: 40px;
-        border: 1px solid var(--border);
+      .photo-slide img {
+        max-height: 600px;
+        width: auto;
+        max-width: 100%;
+        object-fit: contain;
+        border-radius: 4px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      }
+      .photo-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        margin-top: 36px;
+      }
+      .photo-btn {
+        width: 50px;
+        height: 50px;
+        border: 2px solid rgba(255, 255, 255, 0.25);
         background: transparent;
-        color: var(--text);
+        color: white;
         cursor: pointer;
-        font-size: 1rem;
+        font-size: 1.2rem;
         display: flex;
         align-items: center;
         justify-content: center;
         transition: all 0.3s;
-        font-family: "Playfair Display", serif;
+        border-radius: 50%;
       }
-      .cases-btn:hover {
-        background: var(--dark);
-        color: #fff;
-        border-color: var(--dark);
+      .photo-btn:hover {
+        background: white;
+        color: var(--red);
+        border-color: white;
+        transform: scale(1.1);
       }
-      .cases-counter {
+      .photo-dots {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+      .photo-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.25);
+        cursor: pointer;
+        transition: all 0.3s;
+        border: none;
+      }
+      .photo-dot.active {
+        background: var(--beige);
+        width: 20px;
+        border-radius: 3px;
+      }
+      .photo-counter {
         font-family: "Montserrat", sans-serif;
-        font-size: 0.7rem;
-        color: var(--text-muted);
+        font-size: 0.72rem;
+        color: rgba(255, 255, 255, 0.5);
         letter-spacing: 1px;
       }
 
       /* FAQ */
+      .faq {
+        background: var(--cream-bg);
+        padding: 100px 20px;
+      }
       .faq-list {
         max-width: 620px;
         margin: 0 auto;
@@ -799,74 +1059,185 @@
         max-height: 350px;
         padding-top: 15px;
       }
-      .faq-toggle {
+
+      /* LEAD MAGNET */
+      .lead-magnet {
+        background: linear-gradient(135deg, #fff9f0 0%, #fdf0e8 100%);
+        padding: 100px 20px;
         text-align: center;
-        margin-top: 20px;
+        border-top: 1px solid var(--beige);
       }
-      .faq-toggle-btn {
-        background: none;
-        border: 1px solid var(--border);
+      .lm-box {
+        max-width: 680px;
+        margin: 0 auto;
+        padding: 60px 50px;
+        background: white;
+        border: 1.5px solid var(--beige);
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(192, 57, 43, 0.08);
+        position: relative;
+        overflow: hidden;
+      }
+      .lm-box::before {
+        content: "✦";
+        position: absolute;
+        top: -20px;
+        right: 40px;
+        font-size: 6rem;
+        color: var(--beige);
+        line-height: 1;
+        z-index: 0;
+      }
+      .lm-inner {
+        position: relative;
+        z-index: 1;
+      }
+      .lm-tag {
+        display: inline-block;
+        background: var(--red);
+        color: white;
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.58rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        padding: 5px 16px;
+        margin-bottom: 24px;
+      }
+      .lm-title {
+        font-family: "Playfair Display", serif;
+        font-size: 1.7rem;
+        color: var(--dark);
+        margin-bottom: 16px;
+        line-height: 1.3;
+      }
+      .lm-title em {
+        font-style: italic;
+        color: var(--red);
+      }
+      .lm-desc {
+        font-size: 0.95rem;
+        color: var(--text-light);
+        line-height: 1.85;
+        margin-bottom: 30px;
+        max-width: 480px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .lm-checklist {
+        list-style: none;
+        text-align: left;
+        max-width: 380px;
+        margin: 0 auto 30px;
+      }
+      .lm-checklist li {
+        padding: 6px 0 6px 28px;
+        position: relative;
+        font-size: 0.88rem;
         color: var(--text);
-        padding: 12px 32px;
+        border-bottom: 1px solid var(--border-light);
+      }
+      .lm-checklist li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--red);
+        font-weight: 700;
+      }
+      .lm-btn {
+        background: var(--dark);
+        color: #fff;
+        padding: 16px 44px;
+        border: none;
         font-size: 0.7rem;
-        letter-spacing: 1.5px;
+        letter-spacing: 2px;
         text-transform: uppercase;
         cursor: pointer;
-        font-family: "Montserrat", sans-serif;
+        text-decoration: none;
+        display: inline-block;
         transition: all 0.3s;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
       }
-      .faq-toggle-btn:hover {
-        background: var(--cream-bg);
+      .lm-btn:hover {
+        background: var(--red);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(192, 57, 43, 0.25);
       }
-      .faq-hidden {
-        display: none;
+      .lm-note {
+        font-size: 0.62rem;
+        color: var(--text-muted);
+        margin-top: 14px;
+        font-family: "Montserrat", sans-serif;
+        letter-spacing: 1px;
+        text-transform: uppercase;
       }
 
       /* FINAL */
       .final {
         text-align: center;
-        padding: 100px 20px;
-        background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.7)),
+        padding: 120px 20px;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.75)),
           url("https://images.unsplash.com/photo-1494774157365-9e04c6720e47?q=80&w=2940&auto=format&fit=crop")
             center/cover no-repeat;
         color: #fff;
       }
+      .final-label {
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.6rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.4);
+        margin-bottom: 20px;
+        display: block;
+      }
       .final h2 {
-        font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+        font-size: clamp(1.8rem, 4vw, 2.8rem);
         margin-bottom: 20px;
         font-style: italic;
         line-height: 1.3;
         color: #fff;
       }
+      .final h2 em {
+        color: var(--beige);
+      }
       .final p {
-        color: rgba(255, 255, 255, 0.75);
-        font-size: 0.95rem;
-        max-width: 460px;
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 1rem;
+        max-width: 480px;
         margin: 0 auto 12px;
         line-height: 1.8;
       }
       .final-signature {
         font-family: "Playfair Display", serif;
         font-style: italic;
-        color: rgba(255, 255, 255, 0.45);
-        font-size: 0.95rem;
-        margin-bottom: 35px;
-      }
-      .final .btn {
-        background: #fff;
-        color: var(--dark);
-      }
-      .final .btn:hover {
-        background: var(--beige);
-      }
-      .final .cta-exclusive {
         color: rgba(255, 255, 255, 0.4);
+        font-size: 1rem;
+        margin-bottom: 40px;
+        margin-top: 8px;
+        display: block;
+      }
+      .final-cta-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+      }
+      .final .btn-red {
+        font-size: 0.75rem;
+        padding: 20px 52px;
+      }
+      .final-cta-note {
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.6rem;
+        color: rgba(255, 255, 255, 0.3);
+        letter-spacing: 1px;
+        text-transform: uppercase;
       }
 
       /* FOOTER */
       footer {
-        background: #111;
-        padding: 35px 20px;
+        background: #0a0a0a;
+        padding: 40px 20px;
         text-align: center;
         color: rgba(255, 255, 255, 0.3);
         font-size: 0.72rem;
@@ -893,7 +1264,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
         transition: transform 0.3s;
         text-decoration: none;
       }
@@ -916,13 +1287,13 @@
         }
         .hero {
           grid-template-columns: 1fr;
-          margin-top: 52px;
+          margin-top: 58px;
         }
         .hero-image {
-          min-height: 300px;
+          min-height: 280px;
         }
         .hero-content {
-          padding: 45px 22px;
+          padding: 40px 22px;
         }
         section {
           padding: 60px 16px;
@@ -931,7 +1302,10 @@
           grid-template-columns: 1fr;
         }
         .expert-content {
-          padding: 45px 22px;
+          padding: 40px 22px;
+        }
+        .expert-stats {
+          gap: 20px;
         }
         .program-box {
           padding: 30px 18px;
@@ -939,78 +1313,127 @@
         .topics-grid {
           grid-template-columns: 1fr;
         }
-        .final {
-          padding: 60px 16px;
+        .letter-short {
+          max-width: 92%;
+          padding: 36px 24px;
         }
-        .btn {
-          padding: 16px 28px;
-          font-size: 0.65rem;
-          flex-wrap: wrap;
-          justify-content: center;
+        .hero-cta {
+          flex-direction: column;
+        }
+        .cta-buttons {
+          flex-direction: column;
         }
         .case-row {
           grid-template-columns: 1fr;
         }
-        .case-col + .case-col {
-          border-left: none;
-          border-top: 1px solid var(--border);
-        }
         .case-col {
-          padding: 22px 18px;
+          padding: 28px 20px;
         }
         .case-big-number {
-          font-size: 2.2rem;
+          font-size: 3rem;
         }
-        .options-grid {
-          flex-direction: column;
+        .photo-slide img {
+          max-height: 400px;
         }
-        .option-card {
-          max-width: 100%;
+        .lm-box {
+          padding: 40px 24px;
         }
-        .letter-mail {
-          max-width: 90%;
-          padding: 38px 28px 32px 28px;
-          margin: 45px auto 40px auto;
+        .final {
+          padding: 80px 20px;
         }
-        .letter-mail h2 {
-          font-size: 1.25rem;
-          margin-bottom: 22px;
+        .final .btn-red {
+          padding: 16px 32px;
         }
-        .letter-mail p {
-          font-size: 1rem;
-          line-height: 1.8;
-          margin-bottom: 18px;
+
+        /* ТАРИФЫ */
+        .pricing-section {
+          padding: 40px 4px;
         }
-        .letter-mail::after {
-          width: 36px;
-          height: 26px;
-          right: 20px;
-          top: 20px;
+        .pricing-section .section-title {
+          font-size: 1.2rem;
         }
-      }
-      @media (max-width: 480px) {
-        .letter-mail {
-          padding: 32px 22px 28px 22px;
-          margin: 35px auto 30px auto;
-          border-radius: 16px;
-        }
-        .letter-mail h2 {
-          font-size: 1.15rem;
+        .pricing-section .section-desc {
+          font-size: 0.75rem;
           margin-bottom: 20px;
         }
-        .letter-mail p {
-          font-size: 0.95rem;
-          line-height: 1.75;
-          margin-bottom: 16px;
+        .pricing-grid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 3px;
+          margin-top: 12px;
         }
-        .letter-mail .signature {
-          font-size: 1.05rem;
-          margin-top: 26px;
+        .pricing-card {
+          padding: 8px 4px;
+          min-width: 0;
+          overflow: hidden;
+          word-break: break-word;
         }
-        .letter-mail::after {
-          display: none;
+        .pricing-badge-wrap {
+          height: 18px;
+          margin-bottom: 6px;
+        }
+        .pricing-badge-empty {
+          height: 18px;
+          margin-bottom: 6px;
+        }
+        .pricing-badge {
+          padding: 2px 4px;
+          font-size: 0.3rem;
+          letter-spacing: 0.2px;
+        }
+        .pricing-tier {
+          font-size: 0.3rem;
+          margin-bottom: 2px;
+          letter-spacing: 0.2px;
+        }
+        .pricing-name {
+          font-size: 0.52rem;
+          margin-bottom: 2px;
+          line-height: 1.2;
+        }
+        .pricing-card div[style*="line-through"] {
+          font-size: 0.5rem !important;
+          margin-bottom: 1px !important;
+        }
+        .pricing-price {
+          font-size: 0.9rem;
+        }
+        .pricing-price span {
+          font-size: 0.5rem !important;
+        }
+        .pricing-note {
+          font-size: 0.32rem;
+          margin-bottom: 2px;
+        }
+        .pricing-group {
+          font-size: 0.3rem;
+          margin-bottom: 4px;
+        }
+        .p-divider {
+          margin: 4px 0;
+        }
+        .pricing-features {
+          margin-bottom: 6px;
+        }
+        .pricing-features li {
+          padding: 2px 0;
+          font-size: 0.34rem;
+          gap: 2px;
+          line-height: 1.2;
+        }
+        .pricing-features li::before {
+          width: 2px;
+          height: 2px;
+          margin-top: 2px;
+          min-width: 2px;
+        }
+        .btn-primary,
+        .btn-secondary {
+          padding: 5px 2px;
+          font-size: 0.34rem;
+          letter-spacing: 0;
         }
       }
+
       ::-webkit-scrollbar {
         width: 4px;
       }
@@ -1035,15 +1458,16 @@
       </svg>
     </a>
 
+    <!-- NAV -->
     <nav>
       <a href="#top" class="nav-logo">
         <div class="nav-logo-text">Match<br /><span>Match</span></div>
       </a>
       <ul class="nav-links">
-        <li><a href="#letter">Программа</a></li>
         <li><a href="#expert">Эксперт</a></li>
-        <li><a href="#program">Участие</a></li>
         <li><a href="#cases">Истории</a></li>
+        <li><a href="#program">Программа</a></li>
+        <li><a href="#pricing">Тарифы</a></li>
       </ul>
     </nav>
 
@@ -1058,43 +1482,39 @@
           началом настоящей истории — важно чувствовать себя спокойно и уверенно
           изнутри.
         </p>
-        <div class="hero-price">от 7 700 ₽</div>
-        <p class="hero-price-note">Два формата участия на выбор</p>
+        <div class="hero-price">От <span>199$</span></div>
+        <p class="hero-price-note">
+          Специальные цены только для клиенток Match Match
+        </p>
         <div class="hero-cta">
-          <a href="#program" class="btn btn-glow">
-            Выбрать формат
-            <span class="cta-sticker">Осталось 20 мест</span>
-          </a>
+          <a href="#pricing" class="btn-red btn-glow"
+            >Выбрать тариф <span class="cta-sticker">20 мест</span></a
+          >
         </div>
       </div>
     </section>
 
     <!-- LETTER -->
-    <div class="letter-mail">
-      <h2>Приветствуем!</h2>
+    <div class="letter-short">
+      <h2>Почему мы создали эту программу</h2>
       <p>
-        Мы — Аня и Мила, основательницы Match Match.<br />
-        Каждый день нам пишут удивительные женщины с похожими вопросами: «Почему
-        вроде бы всё делаю правильно, а знакомства не переходят в настоящее
-        общение?»
+        Мы — Аня и Мила, основательницы Match Match. Наши клиентки часто
+        спрашивают:
+        <em class="highlight"
+          >«Почему всё делаю правильно, а отношения не складываются?»</em
+        >
       </p>
       <p>
-        За годы работы мы поняли — важна не только внешность и правильные слова,
-        а то, что вы чувствуете внутри. Это настроение, лёгкость, уверенность,
-        спокойствие — именно это мужчины считывают в переписке и на встрече.
+        За годы работы мы поняли: важно не только то, что вы говорите, а
+        <strong class="highlight">то, что чувствуете внутри</strong>. Именно это
+        мужчины считывают на первой встрече.
       </p>
       <p>
-        Мы видели, как многих останавливает волнение, усталость от прошлых
-        опытов или просто неуверенность. Поэтому вместе с Юлией Люмен, экспертом
-        и нейропсихологом, мы собрали простую и практичную программу по вашим
-        запросам: чтобы подготовиться к важной встрече, почувствовать себя легко
-        и быть собой.
+        Вместе с <strong>Юлией Люмен</strong>, нейропсихологом агентства, мы
+        создали программу, которая меняет
+        <strong class="highlight">внутреннее состояние</strong> — не поведение.
       </p>
-      <p>
-        Всё, что в ней — это то, что действительно работает для женщин Match
-        Match. Будем рады видеть вас среди участниц!
-      </p>
-      <div class="signature">Аня и Мила, Match Match agency ♥</div>
+      <div class="letter-signature">С заботой, Аня и Мила ♥</div>
     </div>
 
     <!-- EXPERT -->
@@ -1107,81 +1527,221 @@
           />
         </div>
         <div class="expert-content">
-          <span class="section-label">Автор программы</span>
-          <h2 class="expert-name">Юлия Люмен</h2>
+          <span class="section-label">Психолог агентства Match Match</span>
+          <h2 class="expert-name">
+            Юлия Люмен —<br /><em>автор программы</em>
+          </h2>
           <p class="expert-role">
-            Нейропсихолог · Эксперт по психологии отношений
+            Нейропсихолог · 15 лет практики · Отношения и трансформации
           </p>
           <p class="expert-bio">
-            За моими плечами 20 лет в собственном бизнесе. Всю жизнь я вращаюсь
-            в состоятельных слоях общества, поэтому знаю законы и правила этих
-            людей изнутри.<br /><br />
-            Мужчины высокого уровня за секунды считывают состояние женщины. Моя
-            задача — сделать так, чтобы он увидел в тебе ту единственную.
+            Специализируется на глубинных трансформациях — не поведенческих
+            техниках, а реальных изменениях на уровне нейронных связей.
           </p>
-          <p class="expert-quote">
-            После работы со мной ты не «стараешься» вести себя иначе — ты просто
-            становишься другой. На уровне нейронных связей, а не советов «люби
-            себя». Той, которую выбирают и остаются навсегда.
-          </p>
+          <blockquote class="expert-quote">
+            «После программы вы действительно будете готовы к отношениям мечты —
+            не потому что научились правильно себя вести, а потому что стали
+            другой внутри.»
+          </blockquote>
+          <div class="expert-stats">
+            <div class="expert-stat">
+              <div class="expert-stat-num">500+</div>
+              <div class="expert-stat-label">клиенток</div>
+            </div>
+            <div class="expert-stat">
+              <div class="expert-stat-num">15</div>
+              <div class="expert-stat-label">лет опыта</div>
+            </div>
+            <div class="expert-stat">
+              <div class="expert-stat-num">12</div>
+              <div class="expert-stat-label">стран мира</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ЛИД-МАГНИТ ✅ -->
-    <section class="lead-magnet">
-      <div class="lm-box">
-        <span class="lm-icon">✦</span>
-        <h2 class="lm-title">
-          Бесплатный чек-лист: Проверь его до того, как влюбилась
-
-
-        </h2>
-        <p class="lm-desc">
-          10 честных маркеров, которые помогут избежать разочарований и не попасть в зависимость.
-        </p>
-        <a href="free_guide.html" class="lm-btn">Получить бесплатно</a>
-                <div class="lm-note"> Откроется на отдельной странице</div>
+    <!-- CTA 1 -->
+    <section class="cta-block">
+      <h2>Готовы изменить <em>сценарий вашей жизни?</em></h2>
+      <p>Программа начинается уже через неделю. Осталось 20 мест.</p>
+      <div class="cta-buttons">
+        <a href="#pricing" class="btn-red btn-glow">Забронировать место</a>
+      </div>
+      <div class="cta-urgency">
+        🔒 Только для клиенток Match Match · Безопасная оплата
       </div>
     </section>
 
+    <!-- CASES -->
+    <section class="cases" id="cases">
+      <span class="section-label">Истории успеха</span>
+      <h2 class="section-title">
+        Реальные результаты<br /><em>наших клиенток</em>
+      </h2>
+      <div class="cases-carousel-wrap">
+        <div class="cases-carousel-track" id="casesTrack">
+          <!-- КЕЙС 1 — Екатерина (был 4й, теперь первый) -->
+          <div class="case-slide">
+            <div class="case-row">
+              <div class="case-col">
+                <span class="case-col-label">Кейс</span>
+                <h3>Екатерина, 29 лет</h3>
+                <p>
+                  Работала с психологами 2 года — результата не было.
+                  Чувствовала себя в замкнутом круге без роста и изменений.
+                </p>
+              </div>
+              <div class="case-col case-col-result">
+                <span class="case-col-label">Результат</span>
+                <div class="case-big-number">5 <span>сессий</span></div>
+                <p>
+                  Через 3 сессии получила браслет за 13 000 €. Подняли
+                  внутреннюю ценность — мгновенные результаты на материальном
+                  плане.
+                </p>
+              </div>
+              <div class="case-col case-col-review">
+                <span class="case-col-label">Отзыв</span>
+                <blockquote>
+                  «Покупка сессий — одна из лучших инвестиций этого года и
+                  вообще жизни. Два года с психологом не дали того, что мы за 5
+                  сессий успели настроить. Просто шок в хорошем смысле!»
+                </blockquote>
+                <div class="case-col-author">— Екатерина ★★★★★</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- КЕЙС 2 — Мария -->
+          <div class="case-slide">
+            <div class="case-row">
+              <div class="case-col">
+                <span class="case-col-label">Кейс</span>
+                <h3>Девушка, 32 года</h3>
+                <p>
+                  Не была замужем, долго в роли любовницы. Не видела перспектив
+                  в здоровых отношениях.
+                </p>
+              </div>
+              <div class="case-col case-col-result">
+                <span class="case-col-label">Результат</span>
+                <div class="case-big-number">3 <span>мес.</span></div>
+                <p>
+                  после начала терапии уже была замужем. Переехали в Нью-Йорк.
+                  Крепкие, любящие отношения.
+                </p>
+              </div>
+              <div class="case-col case-col-review">
+                <span class="case-col-label">Отзыв</span>
+                <blockquote>
+                  «Я не верила, что такое возможно. Но после работы с Юлией я
+                  поняла: дело было не в мужчинах — дело было во мне.»
+                </blockquote>
+                <div class="case-col-author">— Мария ★★★★★</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- КЕЙС 3 — Алёна -->
+          <div class="case-slide">
+            <div class="case-row">
+              <div class="case-col">
+                <span class="case-col-label">Кейс</span>
+                <h3>Бизнес-вумен, 38 лет</h3>
+                <p>
+                  Все мужчины были либо слабые, либо абьюзивные. В отношениях
+                  всегда качели.
+                </p>
+              </div>
+              <div class="case-col case-col-result">
+                <span class="case-col-label">Результат</span>
+                <div class="case-big-number">3 <span>сессии</span></div>
+                <p>
+                  потеряла интерес к выматывающим отношениям. Начали появляться
+                  мужчины, которые уважают.
+                </p>
+              </div>
+              <div class="case-col case-col-review">
+                <span class="case-col-label">Отзыв</span>
+                <blockquote>
+                  «Я притягивала то, что было у меня внутри — страх и тревогу.
+                  Когда я изменила себя, изменились и мужчины.»
+                </blockquote>
+                <div class="case-col-author">— Алёна ★★★★★</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- КЕЙС 4 — Анастасия -->
+          <div class="case-slide">
+            <div class="case-row">
+              <div class="case-col">
+                <span class="case-col-label">Кейс</span>
+                <h3>Девушка, 29 лет</h3>
+                <p>
+                  Живёт с богатым мужчиной, но он не вводит её в свой социум,
+                  оставляет дома.
+                </p>
+              </div>
+              <div class="case-col case-col-result">
+                <span class="case-col-label">Результат</span>
+                <div class="case-big-number">4 <span>мес.</span></div>
+                <p>
+                  терапии — он начал её ценить как партнёра. Дал больше
+                  возможностей и власти.
+                </p>
+              </div>
+              <div class="case-col case-col-review">
+                <span class="case-col-label">Отзыв</span>
+                <blockquote>
+                  «Я перестала быть "домашней женой" и стала его партнёром. Он
+                  это почувствовал.»
+                </blockquote>
+                <div class="case-col-author">— Анастасия ★★★★★</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cases-nav">
+          <button class="cases-btn" onclick="moveCases(-1)">←</button>
+          <span class="cases-counter"><span id="caseNum">1</span> / 4</span>
+          <button class="cases-btn" onclick="moveCases(1)">→</button>
+        </div>
+      </div>
+    </section>
     <!-- PROGRAM -->
     <section id="program" style="background: var(--cream)">
       <span class="section-label">Авторская программа</span>
       <h2 class="section-title">
-        Уникальный интенсив<br /><em>«Жена Миллионера»</em>
+        Программа<br /><em>«Жена Миллионера» — 1 ступень</em>
       </h2>
       <p class="section-desc">
-        Материалы в удобном формате — проходите в своём темпе, из любой точки
-        мира.
+        Из любой точки мира, в своём темпе — 11 занятий которые меняют всё.
       </p>
       <div class="program-box">
         <p class="program-intro">
-          Программа создана специально для клиенток агентства Match Match —
-          чтобы вы чувствовали себя увереннее на каждом этапе общения.
+          Создана специально для клиенток Match Match — чтобы вы чувствовали
+          себя увереннее на каждом этапе знакомства и отношений.
         </p>
-        <div style="text-align: left; max-width: 520px; margin: 0 auto">
-          <h3
-            style="font-style: italic; margin-bottom: 18px; text-align: center"
-          >
-            Форматы
-          </h3>
-          <ul class="format-list">
-            <li>
-              <strong>Видеоуроки</strong> — ключевые темы в коротких, ёмких
-              видео
-            </li>
-            <li>
-              <strong>Аудиомедитации</strong> — трансформационные практики для
-              внутреннего состояния
-            </li>
-            <li>
-              <strong>Рабочие материалы</strong> — упражнения и чек-листы для
-              закрепления
-            </li>
-          </ul>
-        </div>
-
+        <h3 style="font-style: italic; margin-bottom: 18px; text-align: center">
+          Структура программы
+        </h3>
+        <ul class="format-list">
+          <li>
+            <strong>11 занятий</strong><br />5 живых Zoom-встреч + 6 медитаций и
+            практик
+          </li>
+          <li>
+            <strong>Групповой чат с поддержкой</strong><br />Вы не одна — обмен
+            опытом и сопровождение куратора
+          </li>
+          <li>
+            <strong>Материалы для самостоятельной работы</strong
+            ><br />Видеоуроки, аудиомедитации, рабочие тетради
+          </li>
+          <li><strong>Доступ к результатам навсегда</strong></li>
+        </ul>
         <h3
           style="
             font-style: italic;
@@ -1190,86 +1750,155 @@
             text-align: center;
           "
         >
-        <h3 style="font-style: italic; margin-bottom: 18px; text-align: center">
           Темы программы
         </h3>
         <div class="topics-grid">
           <div class="topic-item">
-            <strong>Свобода от прошлого</strong>
-            <span>Перестанешь жить страхами и сценариями прошлого — будешь готова к новому без внутреннего сопротивления.</span>
+            <strong>Свобода от прошлого</strong
+            ><span>Перестанешь жить страхами и сценариями прошлого.</span>
           </div>
           <div class="topic-item">
-            <strong>Внутренняя ценность</strong>
-            <span>Ощутишь свою настоящую значимость — уверенность, которая притягивает достойных мужчин.</span>
+            <strong>Внутренняя ценность</strong
+            ><span>Уверенность, которая притягивает достойных мужчин.</span>
           </div>
           <div class="topic-item">
-            <strong>Состояние выбора</strong>
-            <span>Сделаешь шаг из позиции “меня выбрали” в “я выбираю” — свобода и опора внутри.</span>
+            <strong>Состояние выбора</strong
+            ><span>Из позиции "меня выбрали" в "я выбираю".</span>
           </div>
           <div class="topic-item">
-            <strong>Искусство принимать</strong>
-            <span>Научишься с лёгкостью и благодарностью принимать заботу, внимание и подарки.</span>
+            <strong>Искусство принимать</strong
+            ><span>Легко принимать заботу, внимание и подарки.</span>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- 2 ТАРИФА -->
-        <div class="program-options">
-          <h2>Выберите формат участия</h2>
-          <div class="options-grid">
-            <div class="option-card">
-              <h3>Самостоятельно</h3>
-              <ul>
-                <li>Доступ ко всем материалам курса</li>
-                <li>Видеоуроки, практики, аудиомедитации</li>
-                <li>Без чата и обратной связи</li>
-              </ul>
-              <div class="option-price">7 700 ₽</div>
-              <a
-                class="btn"
-                href="https://t.me/JuliaEnergopraktika"
-                target="_blank"
-                >Выбрать</a
-              >
-            </div>
-
-            <div class="option-card premium">
-              <h3>С поддержкой</h3>
-              <ul>
-                <li>Всё из самостоятельного формата</li>
-                <li>Доступ в общий чат участниц</li>
-                <li>Поддержка и обмен опытом в чате</li>
-                <li>1 раз в неделю — ответы Юлии на вопросы группы</li>
-              </ul>
-              <div class="option-price">14 900 ₽</div>
-              <a
-                class="btn"
-                href="https://t.me/JuliaEnergopraktika"
-                target="_blank"
-                >Выбрать</a
-              >
+    <!-- PRICING -->
+    <section class="pricing-section" id="pricing">
+      <p class="section-label">Тарифы</p>
+      <h2 class="section-title">Выберите <em>формат участия</em></h2>
+      <p class="section-desc">
+        Специальные цены только для клиенток Match Match
+      </p>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-badge-empty"></div>
+          <div class="pricing-tier">Тариф Принцесса</div>
+          <div class="pricing-name">Погружение</div>
+          <div
+            style="
+              text-decoration: line-through;
+              color: #999;
+              font-size: 1.1rem;
+              margin-bottom: 6px;
+            "
+          >
+            250$
+          </div>
+          <div class="pricing-price-wrap">
+            <div class="pricing-price">
+              199 <span style="font-size: 1.2rem">$</span>
             </div>
           </div>
+          <div class="pricing-note">(3 400 песо)</div>
+          <div class="pricing-group">Группа 15–30 человек</div>
+          <div class="p-divider"></div>
+          <ul class="pricing-features">
+            <li>Все живые встречи в Zoom (по 2,5 часа)</li>
+            <li>Общий чат с поддержкой участниц</li>
+            <li>Все учебные материалы и медитации</li>
+            <li>Доступ к записям 6 месяцев</li>
+          </ul>
+          <a href="https://t.me/JuliaEnergopraktika" class="btn-secondary"
+            >Начать</a
+          >
         </div>
-
-        <span class="cta-exclusive">Эксклюзивно для клиенток Match Match</span>
+        <div class="pricing-card featured">
+          <div class="pricing-badge-wrap">
+            <div class="pricing-badge">⭐ Лучший выбор</div>
+          </div>
+          <div class="pricing-tier">Тариф Королева</div>
+          <div class="pricing-name">Трансформация</div>
+          <div
+            style="
+              text-decoration: line-through;
+              color: rgba(255, 255, 255, 0.4);
+              font-size: 1.1rem;
+              margin-bottom: 6px;
+            "
+          >
+            550$
+          </div>
+          <div class="pricing-price-wrap">
+            <div class="pricing-price">
+              399 <span style="font-size: 1.2rem">$</span>
+            </div>
+          </div>
+          <div class="pricing-note">(6 900 песо)</div>
+          <div class="pricing-group">Камерная группа 8–12 человек</div>
+          <div class="p-divider"></div>
+          <ul class="pricing-features">
+            <li>Все живые встречи в Zoom (по 2,5 часа)</li>
+            <li>Общий + VIP чат для глубоких вопросов</li>
+            <li>Личная консультация с автором (1,5 часа)</li>
+            <li>Все материалы и медитации</li>
+            <li>Доступ к записям 1 год</li>
+          </ul>
+          <a href="https://t.me/JuliaEnergopraktika" class="btn-primary"
+            >Выбрать</a
+          >
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-badge-empty"></div>
+          <div class="pricing-tier">Тариф Императрица</div>
+          <div class="pricing-name">Реализация</div>
+          <div
+            style="
+              text-decoration: line-through;
+              color: #999;
+              font-size: 1.1rem;
+              margin-bottom: 6px;
+            "
+          >
+            990$
+          </div>
+          <div class="pricing-price-wrap">
+            <div class="pricing-price">
+              888 <span style="font-size: 1.2rem">$</span>
+            </div>
+          </div>
+          <div class="pricing-note">(14 900 песо)</div>
+          <div class="pricing-group">Эксклюзивная группа до 6 человек</div>
+          <div class="p-divider"></div>
+          <ul class="pricing-features">
+            <li>Всё из тарифа «Королева»</li>
+            <li>2 индивидуальные встречи (по 1,5 часа)</li>
+            <li>Беседа с женой миллиардера: вопрос-ответ (2 часа)</li>
+            <li>Интеграция женских энергий через нейрографику (2,5 часа)</li>
+            <li>Доступ к записям навсегда</li>
+          </ul>
+          <a href="https://t.me/JuliaEnergopraktika" class="btn-primary"
+            >Хочу</a
+          >
+        </div>
       </div>
     </section>
 
     <!-- RESULTS -->
-    <section style="background: var(--cream-bg)">
+    <section class="results">
       <span class="section-label">Результаты</span>
       <h2 class="section-title">Что изменится <em>после программы</em></h2>
       <p class="section-desc">
-        Это не временные техники. Это глубокие изменения в том, как вы себя
-        чувствуете — и как вас воспринимают мужчины.
+        Глубокие изменения в том, как вы себя чувствуете — и как вас
+        воспринимают мужчины.
       </p>
       <div class="get-grid">
         <div class="get-card">
           <div class="get-num">01</div>
           <h3>Спокойствие в общении</h3>
           <p>
-            Вы перестанете тревожиться в переписке и на видеозвонках. Появится
-            естественное достоинство — без масок и напряжения.
+            Вы перестанете тревожиться в переписке и на встречах. Появится
+            естественное достоинство.
           </p>
         </div>
         <div class="get-card">
@@ -1285,7 +1914,7 @@
           <h3>Свобода от старых сценариев</h3>
           <p>
             Отношения начнут развиваться по-новому — легко, естественно, без
-            повторения прошлых ошибок.
+            прошлых ошибок.
           </p>
         </div>
         <div class="get-card">
@@ -1293,106 +1922,102 @@
           <h3>Умение принимать</h3>
           <p>
             Внимание, забота и щедрость станут естественной частью жизни. Без
-            тревоги и чувства обязанности.
+            тревоги.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- CASES -->
-<section class="cases" id="cases">
-  <span class="section-label">Истории</span>
-  <h2 class="section-title">
-    Реальные истории<br /><em>наших клиенток</em>
-  </h2>
-  <div class="cases-carousel-wrap">
-    <div class="cases-carousel-track" id="casesTrack">
-      
-      <!-- CASE 1 -->
-      <div class="case-slide">
-        <div class="case-row">
-          <div class="case-col case-col-desc">
-            <span class="case-col-label">Кейс</span>
-            <h3>Девушка, 32 года</h3>
-            <p>Не была замужем, долго в роли любовницы. Не видела перспектив в здоровых отношениях.</p>
+    <!-- CTA 2 -->
+    <section class="cta-block">
+      <h2>Начните трансформацию <em>уже сегодня</em></h2>
+      <p>Осталось всего 20 мест. Программа стартует через 2 недели.</p>
+      <div class="cta-buttons">
+        <a href="#pricing" class="btn-red btn-glow">Забронировать место</a>
+      </div>
+      <div class="cta-urgency">
+        🔒 Только для клиенток Match Match · Безопасная оплата
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS — ФОТО КАРУСЕЛЬ -->
+    <section class="testimonials">
+      <span class="section-label">Отзывы клиенток</span>
+      <h2 class="section-title">Они уже <em>изменили свою жизнь</em></h2>
+      <p class="section-desc">Реальные отзывы клиенток Юлии</p>
+
+      <div class="photo-carousel-wrap">
+        <div class="photo-carousel-track" id="photoTrack">
+          <!-- Слайд 1 — замените src на свою ссылку -->
+          <div class="photo-slide">
+            <img
+              src="https://i.ibb.co/CpFb5kjS/photo-4965330125641681855-y.jpg"
+              alt="Отзыв 1"
+            />
           </div>
-          <div class="case-col case-col-result">
-            <span class="case-col-label">Результат</span>
-            <div class="case-big-number">3 <span>мес.</span></div>
-            <p>после начала терапии уже была замужем. Изменилось всё. Переехали в Нью-Йорк. Она стала психологом. Крепкие, любящие отношения.</p>
+
+          <!-- Слайд 2 -->
+          <div class="photo-slide">
+            <img
+              src="https://i.ibb.co/nN3MzYV0/photo-4999268239951375900-y-1.jpg"
+              alt="Отзыв 2"
+            />
           </div>
-          <div class="case-col case-col-review">
-            <span class="case-col-label">Отзыв</span>
-            <blockquote>«Я не верила, что такое возможно. Но после работы с Юлией я поняла: дело было не в мужчинах — дело было во мне. Я перестала быть "запасным вариантом" и стала той, кого выбирают навсегда.»</blockquote>
+
+          <!-- Слайд 3 -->
+          <div class="photo-slide">
+            <img
+              src="https://i.ibb.co/zWKHNJhw/photo-5059954607425433189-y-1.jpg"
+              alt="Отзыв 3"
+            />
+          </div>
+
+          <!-- Слайд 4 -->
+          <div class="photo-slide">
+            <img
+              src="https://i.ibb.co/XZnxyR1L/photo-4965330125641681854-y.jpg"
+              alt="Отзыв 4"
+            />
+          </div>
+
+          <!-- Слайд 5 -->
+          <div class="photo-slide">
+            <img
+              src="https://i.ibb.co/1tqvfj8c/photo-4965330125641681856-y.jpg"
+              alt="Отзыв 5"
+            />
+          </div>
+
+          <!-- Слайд 6 -->
+          <div class="photo-slide">
+            <img
+              src="https://i.ibb.co/ynB9PDbY/photo-5028772865683598413-y-1.jpg"
+              alt="Отзыв 6"
+            />
           </div>
         </div>
-      </div>
 
-      <!-- CASE 2 -->
-      <div class="case-slide">
-        <div class="case-row">
-          <div class="case-col case-col-desc">
-            <span class="case-col-label">Кейс</span>
-            <h3>Бизнес-вумен, 38 лет</h3>
-            <p>Разводилась с мужем. Все мужчины были либо слабые, либо абьюзивные. В отношениях всегда качели: нет спокойствия, нет стабильности.</p>
-          </div>
-          <div class="case-col case-col-result">
-            <span class="case-col-label">Результат</span>
-            <div class="case-big-number">3 <span>сессии</span></div>
-            <p>потеряла интерес к выматывающим отношениям. Начали появляться мужчины, которые уважают, ухаживают красиво, мужчины с серьёзными намерениями.</p>
-          </div>
-          <div class="case-col case-col-review">
-            <span class="case-col-label">Отзыв</span>
-            <blockquote>«Примерно через три сессии я поняла: я притягивала именно то, что было у меня внутри — страх и тревогу. Когда я изменила себя, изменились и мужчины вокруг меня.»</blockquote>
-          </div>
+        <div class="photo-nav">
+          <button class="photo-btn" onclick="movePhoto(-1)">←</button>
+          <div class="photo-dots" id="photoDots"></div>
+          <button class="photo-btn" onclick="movePhoto(1)">→</button>
         </div>
       </div>
+    </section>
 
-      <!-- CASE 3 -->
-      <div class="case-slide">
-        <div class="case-row">
-          <div class="case-col case-col-desc">
-            <span class="case-col-label">Кейс</span>
-            <h3>Девушка, 29 лет</h3>
-            <p>Живёт с очень богатым мужчиной. Между ними хорошие отношения, но он её не вводит в свой социум, не приглашает, всё время оставляет дома. Это не устраивало.</p>
-          </div>
-          <div class="case-col case-col-result">
-            <span class="case-col-label">Результат</span>
-            <div class="case-big-number">4 <span>мес.</span></div>
-            <p>терапии — отношения очень улучшились. Он начал её ценить не только как женщину, которая сидит дома, а как партнёра, с которой нужно выходить в свет. Дал гораздо больше возможностей и власти.</p>
-          </div>
-          <div class="case-col case-col-review">
-            <span class="case-col-label">Отзыв</span>
-            <blockquote>«Раньше я ждала, что он меня "возьмёт с собой". Теперь я сама выбираю, где мне быть. Я перестала быть "домашней женой" и стала его партнёром. Он это почувствовал и изменил своё отношение.»</blockquote>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="cases-nav">
-      <button class="cases-btn" onclick="moveCases(-1)">←</button>
-      <span class="cases-counter"><span id="caseNum">1</span> / 3</span>
-      <button class="cases-btn" onclick="moveCases(1)">→</button>
-    </div>
-  </div>
-</section>
     <!-- FAQ -->
-    <section id="faq">
+    <section class="faq">
       <span class="section-label">Частые вопросы</span>
-      <h2 class="section-title" style="margin-bottom: 45px">
-        Ответы на <em>ваши вопросы</em>
-      </h2>
+      <h2 class="section-title">Ответы на <em>ваши вопросы</em></h2>
       <div class="faq-list">
         <div class="faq-item">
           <div class="faq-q" onclick="toggleFaq(this)">
-            Какой формат участия выбрать?
+            Какой тариф выбрать?
           </div>
           <div class="faq-a">
-            Если вы хотите пройти программу полностью в своём ритме — выбирайте
-            самостоятельный доступ. Если вам важны общение, разборы типовых
-            ситуаций и поддержка группы, выбирайте вариант с общим чатом и
-            сессиями с Юлией (групповые ответы раз в неделю).
+            Если хотите пройти программу в комфортном темпе — выбирайте
+            «Принцессу». Если важны глубокие разборы — «Королеву». Для
+            максимальной персонализации — «Императрицу».
           </div>
         </div>
         <div class="faq-item">
@@ -1400,8 +2025,8 @@
             Сколько времени займёт программа?
           </div>
           <div class="faq-a">
-            Программа рассчитана на 2–3 недели комфортного прохождения. Все
-            материалы в записи — вы занимаетесь когда удобно, в своём ритме.
+            Программа рассчитана на 2–3 недели. Все материалы в записи —
+            занимайтесь когда удобно, из любой точки мира.
           </div>
         </div>
         <div class="faq-item">
@@ -1409,92 +2034,113 @@
             Как записаться и оплатить?
           </div>
           <div class="faq-a">
-            Нажмите кнопку «Выбрать» — вы перейдёте в Telegram, где сможете
-            задать вопросы и получить ссылку на оплату. Процесс занимает пару
-            минут.
+            Нажмите кнопку «Выбрать» — вы перейдёте в Telegram, где получите все
+            детали и ссылку на оплату.
           </div>
         </div>
-
-        <div class="faq-item faq-hidden" id="faqHidden1">
+        <div class="faq-item">
           <div class="faq-q" onclick="toggleFaq(this)">
             Это обязательно для клиенток Match Match?
           </div>
           <div class="faq-a">
-            Нет, участие полностью добровольное. Мы рекомендуем программу,
-            потому что видим, какие результаты она даёт. Но решение — всегда за
-            вами.
+            Нет, участие добровольное. Мы рекомендуем программу, потому что
+            видим результаты у тех, кто прошёл. Решение — только за вами.
           </div>
         </div>
-        <div class="faq-item faq-hidden" id="faqHidden2">
+        <div class="faq-item">
           <div class="faq-q" onclick="toggleFaq(this)">
-            Подойдёт ли мне, если я уже работала с психологом?
+            Подойдёт ли, если я уже работала с психологом?
           </div>
           <div class="faq-a">
-            Да, и именно поэтому многие выбирают эту программу. Юлия работает на
-            уровне нейронных связей — это принципиально другой подход.
+            Да. Юлия работает на уровне нейронных связей — это принципиально
+            другой подход, который дополняет любую предыдущую работу.
           </div>
         </div>
-        <div class="faq-item faq-hidden" id="faqHidden3">
+        <div class="faq-item">
           <div class="faq-q" onclick="toggleFaq(this)">
-            Как всё устроено технически?
+            Когда я увижу первые результаты?
           </div>
           <div class="faq-a">
-            После оплаты вы получаете доступ к закрытой платформе с
-            видеоуроками, аудиомедитациями и рабочими материалами. Удобно с
-            телефона или компьютера.
+            Многие клиентки замечают изменения уже после первых 2–3 сессий.
+            Внешние результаты — в отношениях — обычно проявляются в течение 1–3
+            месяцев.
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="faq-toggle">
-        <button class="faq-toggle-btn" onclick="toggleMoreFaq()">
-          Ещё вопросы
-        </button>
+    <!-- LEAD MAGNET -->
+    <section class="lead-magnet">
+      <div class="lm-box">
+        <div class="lm-inner">
+          <div class="lm-tag">Бесплатно</div>
+          <h2 class="lm-title">
+            Проверь его<br /><em>до того, как влюбилась</em>
+          </h2>
+          <p class="lm-desc">
+            10 честных маркеров, которые помогут избежать разочарований и не
+            попасть в эмоциональную зависимость.
+          </p>
+          <ul class="lm-checklist">
+            <li>Как отличить интерес от манипуляции</li>
+            <li>Признаки мужчины с серьёзными намерениями</li>
+            <li>Красные флаги, которые легко не заметить</li>
+            <li>Что говорит о нём его отношение к деньгам</li>
+            <li>Как он ведёт себя в конфликте</li>
+          </ul>
+          <a href="free_guide.html" class="lm-btn"
+            >Получить чек-лист бесплатно</a
+          >
+          <div class="lm-note">📩 Откроется сразу · Без регистрации</div>
+        </div>
       </div>
     </section>
 
     <!-- FINAL -->
-    <section class="final" id="contact">
-      <span class="section-label" style="color: rgba(255, 255, 255, 0.3)"
-        >Следующий шаг</span
-      >
+    <section class="final">
+      <span class="final-label">Следующий шаг</span>
       <h2>
-        Мы хотим, чтобы ваша встреча<br />стала началом
-        <em>настоящей истории любви</em>
+        Пусть ваша следующая встреча<br />станет началом
+        <em>настоящей любви</em>
       </h2>
       <p>
-        Эта программа — наша искренняя рекомендация. Мы верим, что она поможет
-        вам почувствовать себя увереннее и раскрыться навстречу счастью.
+        Эта программа — наша искренняя рекомендация каждой клиентке Match Match.
+        Мы верим, что она поможет вам раскрыться навстречу счастью.
       </p>
-      <div class="final-signature">С любовью, Аня и Мила — Match Match ♥</div>
-      <a href="#program" class="btn btn-glow">Выбрать формат</a>
-      <span class="cta-exclusive">Эксклюзивно для клиенток Match Match</span>
+      <span class="final-signature">С любовью, Аня и Мила — Match Match ♥</span>
+      <div class="final-cta-group">
+        <a href="#pricing" class="btn-red btn-glow">Выбрать тариф и начать</a>
+        <span class="final-cta-note"
+          >Осталось 20 мест · Старт через неделю</span
+        >
+      </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
-      <div style="margin-bottom: 12px">
+      <div style="margin-bottom: 14px">
         <span
           style="
             font-family: 'Playfair Display', serif;
-            font-size: 0.95rem;
+            font-size: 1rem;
             color: rgba(255, 255, 255, 0.5);
             letter-spacing: 1px;
           "
         >
-          MATCH <span style="color: rgba(192, 57, 43, 0.6)">MATCH</span>
+          MATCH <span style="color: rgba(192, 57, 43, 0.7)">MATCH</span>
         </span>
       </div>
-      <p style="margin-bottom: 8px">International Matchmaking</p>
+      <p style="margin-bottom: 8px">International Matchmaking Agency</p>
       <p style="margin-bottom: 10px">
         <a href="tel:+79150981866">+7 915 098-18-66</a> ·
         <a href="mailto:mila@matchmatchagency.com">mila@matchmatchagency.com</a>
       </p>
       <p><a href="#">Privacy Policy</a> · <a href="#">Terms & Conditions</a></p>
-      <p style="margin-top: 8px">© 2026 Match Match. All rights reserved.</p>
+      <p style="margin-top: 10px">© 2026 Match Match. All rights reserved.</p>
     </footer>
 
     <script>
+      // FAQ
       function toggleFaq(el) {
         const a = el.nextElementSibling;
         const o = a.classList.contains("open");
@@ -1510,70 +2156,125 @@
         }
       }
 
-      function toggleMoreFaq() {
-        document.getElementById("faqHidden1").classList.toggle("faq-hidden");
-        document.getElementById("faqHidden2").classList.toggle("faq-hidden");
-        document.getElementById("faqHidden3").classList.toggle("faq-hidden");
-        const btn = document.querySelector(".faq-toggle-btn");
-        btn.textContent =
-          btn.textContent === "Ещё вопросы" ? "Скрыть" : "Ещё вопросы";
-      }
-
+      // КЕЙСЫ
       let currentCase = 0;
-      const totalCases = 3;
+      const totalCases = 4;
       const casesTrack = document.getElementById("casesTrack");
       const caseNumEl = document.getElementById("caseNum");
-
       function goToCase(i) {
         currentCase = i;
         casesTrack.style.transform = `translateX(-${i * 100}%)`;
         caseNumEl.textContent = i + 1;
       }
-
       function moveCases(dir) {
         let next = currentCase + dir;
         if (next < 0) next = totalCases - 1;
         if (next >= totalCases) next = 0;
         goToCase(next);
       }
-
-      let casesTouchX = 0;
       const casesWrap = document.querySelector(".cases-carousel-wrap");
-      casesWrap.addEventListener(
-        "touchstart",
-        (e) => {
-          casesTouchX = e.touches[0].clientX;
-        },
-        { passive: true }
-      );
-      casesWrap.addEventListener(
-        "touchend",
-        (e) => {
-          const diff = casesTouchX - e.changedTouches[0].clientX;
-          if (Math.abs(diff) > 50) {
-            diff > 0 ? moveCases(1) : moveCases(-1);
-          }
-        },
-        { passive: true }
-      );
+      let casesTouchX = 0;
+      if (casesWrap) {
+        casesWrap.addEventListener(
+          "touchstart",
+          (e) => {
+            casesTouchX = e.touches[0].clientX;
+          },
+          { passive: true }
+        );
+        casesWrap.addEventListener(
+          "touchend",
+          (e) => {
+            const diff = casesTouchX - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 50) {
+              diff > 0 ? moveCases(1) : moveCases(-1);
+            }
+          },
+          { passive: true }
+        );
+      }
 
+      // ФОТО КАРУСЕЛЬ
+      let currentPhoto = 0;
+      const photoTrack = document.getElementById("photoTrack");
+      const photoSlides = photoTrack
+        ? photoTrack.querySelectorAll(".photo-slide")
+        : [];
+      const totalPhotos = photoSlides.length;
+      const dotsContainer = document.getElementById("photoDots");
+
+      // Создаём точки
+      if (dotsContainer && totalPhotos > 0) {
+        for (let i = 0; i < totalPhotos; i++) {
+          const dot = document.createElement("button");
+          dot.className = "photo-dot" + (i === 0 ? " active" : "");
+          dot.onclick = () => goToPhoto(i);
+          dotsContainer.appendChild(dot);
+        }
+      }
+
+      function goToPhoto(i) {
+        currentPhoto = i;
+        if (photoTrack) photoTrack.style.transform = `translateX(-${i * 100}%)`;
+        document.querySelectorAll(".photo-dot").forEach((d, idx) => {
+          d.classList.toggle("active", idx === i);
+        });
+      }
+      function movePhoto(dir) {
+        let next = currentPhoto + dir;
+        if (next < 0) next = totalPhotos - 1;
+        if (next >= totalPhotos) next = 0;
+        goToPhoto(next);
+      }
+
+      // Свайп для фото
+      const photoWrap = document.querySelector(".photo-carousel-wrap");
+      let photoTouchX = 0;
+      if (photoWrap) {
+        photoWrap.addEventListener(
+          "touchstart",
+          (e) => {
+            photoTouchX = e.touches[0].clientX;
+          },
+          { passive: true }
+        );
+        photoWrap.addEventListener(
+          "touchend",
+          (e) => {
+            const diff = photoTouchX - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 50) {
+              diff > 0 ? movePhoto(1) : movePhoto(-1);
+            }
+          },
+          { passive: true }
+        );
+      }
+
+      // Автопрокрутка фото каждые 4 сек
+      if (totalPhotos > 1) {
+        setInterval(() => movePhoto(1), 4000);
+      }
+
+      // АНИМАЦИЯ КАРТОЧЕК
       const obs = new IntersectionObserver(
         (entries) => {
           entries.forEach((e) => {
-            if (e.isIntersecting) {
-              e.target.style.opacity = "1";
-              e.target.style.transform = "translateY(0)";
-            }
+            if (e.isIntersecting) e.target.classList.add("show");
           });
         },
         { threshold: 0.1 }
       );
+      document.querySelectorAll(".get-card").forEach((el) => obs.observe(el));
 
-      document.querySelectorAll(".get-card, .case-slide").forEach((el) => {
-        el.style.opacity = "0";
-        el.style.transform = "translateY(20px)";
-        el.style.transition = "all 0.6s ease";
-        obs.observe(el);
+      // SMOOTH SCROLL
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
       });
     </script>
   </body>
