@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>10 признаков зрелого мужчины — Бесплатный гид от Match Match</title>
+    <title>Он точно готов — или снова кажется?</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -16,10 +16,9 @@
       }
       :root {
         --red: #c0392b;
-        --red-soft: rgba(192, 57, 43, 0.06);
+        --red-hover: #a03024;
         --beige: #f3e5cd;
         --beige-hover: #e8d5b8;
-        --cream: #ffffff;
         --cream-bg: #fdfbf8;
         --dark: #1a1a1a;
         --text: #2c2c2c;
@@ -27,13 +26,15 @@
         --text-muted: #999;
         --border: #eee;
         --border-light: #f5f0ea;
+        --white: #ffffff;
+        --green: #27ae60;
       }
       html {
         scroll-behavior: smooth;
       }
       body {
         font-family: "Lora", serif;
-        background: var(--cream-bg);
+        background: #fff;
         color: var(--text);
         overflow-x: hidden;
         line-height: 1.75;
@@ -45,10 +46,7 @@
       h4 {
         font-family: "Playfair Display", serif;
         font-weight: 400;
-      }
-      img {
-        max-width: 100%;
-        display: block;
+        color: var(--dark);
       }
 
       /* NAV */
@@ -83,255 +81,401 @@
       .nav-logo-text span {
         color: var(--red);
       }
-
-      /* HEADER */
-      .header {
-        max-width: 780px;
-        margin: 100px auto 60px auto;
-        padding: 0 20px;
-        text-align: center;
-      }
-      .header-kicker {
+      .nav-back {
         font-family: "Montserrat", sans-serif;
+        font-size: 0.65rem;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: var(--text-light);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      .nav-back:hover {
+        color: var(--red);
+      }
+
+      /* HERO */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 140px 20px 80px;
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d1a0e 100%);
+        position: relative;
+        overflow: hidden;
+        margin-top: 57px;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+            ellipse at 30% 50%,
+            rgba(192, 57, 43, 0.12) 0%,
+            transparent 60%
+          ),
+          radial-gradient(
+            ellipse at 70% 50%,
+            rgba(192, 57, 43, 0.07) 0%,
+            transparent 60%
+          );
+        pointer-events: none;
+      }
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 760px;
+      }
+      .hero-badge {
+        display: inline-block;
+        border: 1px solid rgba(192, 57, 43, 0.5);
+        color: rgba(255, 255, 255, 0.6);
+        padding: 6px 20px;
         font-size: 0.62rem;
         letter-spacing: 3px;
         text-transform: uppercase;
-        color: var(--red);
-        margin-bottom: 20px;
+        margin-bottom: 28px;
+        font-family: "Montserrat", sans-serif;
+      }
+      .hero h1 {
+        font-size: clamp(2.2rem, 6vw, 4rem);
+        color: #fff;
+        line-height: 1.1;
+        margin-bottom: 16px;
+      }
+      .hero h1 em {
+        color: var(--beige);
+        font-style: italic;
+        display: block;
+      }
+      .hero-sub {
+        font-size: 0.72rem;
+        color: rgba(255, 255, 255, 0.4);
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 36px;
+        font-family: "Montserrat", sans-serif;
+      }
+      .hero-intro {
+        max-width: 580px;
+        margin: 0 auto 40px;
+      }
+      .hero-intro p {
+        font-size: 0.97rem;
+        color: rgba(255, 255, 255, 0.75);
+        line-height: 1.95;
+        margin-bottom: 16px;
+      }
+      .hero-intro p strong {
+        color: var(--beige);
         font-weight: 500;
       }
-      .header h1 {
-        font-size: clamp(2rem, 4vw, 3.2rem);
-        color: var(--dark);
-        line-height: 1.2;
-        margin-bottom: 20px;
+      .hero-author {
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+        padding: 16px 24px;
+        border: 1px solid rgba(192, 57, 43, 0.25);
+        background: rgba(192, 57, 43, 0.06);
       }
-      .header h1 em {
+      .hero-author-name {
+        font-family: "Playfair Display", serif;
+        font-size: 1rem;
+        color: var(--beige);
         font-style: italic;
+      }
+      .hero-author-role {
+        font-size: 0.62rem;
+        color: rgba(255, 255, 255, 0.35);
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-top: 3px;
+        font-family: "Montserrat", sans-serif;
+      }
+      .scroll-hint {
+        margin-top: 50px;
+        color: rgba(255, 255, 255, 0.2);
+        font-size: 0.62rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-family: "Montserrat", sans-serif;
+      }
+      .scroll-hint span {
         display: block;
         margin-top: 8px;
+        font-size: 1.2rem;
+        animation: bounce 1.5s infinite;
       }
-      .header-subtitle {
-        font-size: 1.08rem;
-        color: var(--text-light);
-        line-height: 1.7;
-        max-width: 640px;
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(6px);
+        }
+      }
+
+      /* QUIZ */
+      .quiz-section {
+        background: var(--cream-bg);
+        padding: 80px 20px;
+      }
+      .quiz-inner {
+        max-width: 820px;
         margin: 0 auto;
       }
-
-      /* INTRO */
-      .intro {
-        max-width: 720px;
-        margin: 0 auto 80px auto;
-        padding: 50px 45px;
-        background: #fff;
-        border: 1px solid var(--border);
-        border-radius: 12px;
-      }
-      .intro p {
-        font-size: 1.05rem;
-        line-height: 1.85;
-        margin-bottom: 18px;
-        color: var(--text);
-      }
-      .intro-fears {
-        margin: 30px 0;
-        padding-left: 0;
-        list-style: none;
-      }
-      .intro-fears li {
-        font-size: 0.98rem;
-        color: #555;
-        font-style: italic;
-        margin-bottom: 12px;
-        padding-left: 26px;
-        position: relative;
-        line-height: 1.7;
-      }
-      .intro-fears li::before {
-        content: '"';
-        position: absolute;
-        left: 0;
-        top: -4px;
-        font-size: 2rem;
+      .section-label {
+        text-align: center;
         color: var(--red);
-        opacity: 0.3;
-        font-family: "Playfair Display", serif;
-      }
-      .intro-author {
-        margin-top: 30px;
-        padding-top: 25px;
-        border-top: 1px solid var(--border-light);
-        font-size: 0.95rem;
-        color: var(--text-light);
-        line-height: 1.75;
-      }
-      .intro-author strong {
-        color: var(--dark);
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.6rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        display: block;
         font-weight: 500;
       }
-
-      /* CHECKLIST */
-      .checklist {
-        max-width: 900px;
-        margin: 0 auto 80px auto;
-        padding: 0 20px;
-      }
-      .checklist-title {
-        font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      .section-title {
         text-align: center;
-        margin-bottom: 15px;
+        font-size: clamp(1.7rem, 3.5vw, 2.5rem);
         color: var(--dark);
-        font-style: italic;
+        margin-bottom: 12px;
+        line-height: 1.25;
       }
-      .checklist-subtitle {
+      .section-title em {
+        font-style: italic;
+        color: var(--red);
+      }
+      .section-desc {
         text-align: center;
-        font-size: 0.95rem;
-        color: var(--text-light);
-        max-width: 600px;
-        margin: 0 auto 50px;
-        line-height: 1.75;
-      }
-      .check-item {
-        background: #fff;
-        border: 1px solid var(--border);
-        border-radius: 12px;
-        padding: 35px 32px;
-        margin-bottom: 24px;
-        transition: all 0.3s;
-      }
-      .check-item:hover {
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
-        transform: translateY(-2px);
-      }
-      .check-item h3 {
-        font-size: 1.25rem;
-        margin-bottom: 20px;
-        color: var(--dark);
-        font-style: italic;
-      }
-      .check-row {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-        margin-bottom: 18px;
-      }
-      .check-col {
-        padding: 18px 20px;
-        border-radius: 8px;
-        font-size: 0.92rem;
-        line-height: 1.7;
-      }
-      .check-col-red {
-        background: #fff5f5;
-        border-left: 3px solid #e74c3c;
-        color: #555;
-      }
-      .check-col-green {
-        background: #f0fdf4;
-        border-left: 3px solid #10b981;
-        color: #555;
-      }
-      .check-col strong {
-        display: block;
-        margin-bottom: 6px;
-        font-size: 0.75rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        font-family: "Montserrat", sans-serif;
-        font-weight: 600;
-      }
-      .check-col-red strong {
-        color: #e74c3c;
-      }
-      .check-col-green strong {
-        color: #10b981;
-      }
-      .check-insight {
         font-size: 0.9rem;
         color: var(--text-light);
-        font-style: italic;
-        margin-top: 12px;
-        padding-left: 20px;
-        border-left: 2px solid var(--beige);
-        line-height: 1.75;
+        margin-bottom: 48px;
+        max-width: 520px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.8;
       }
 
-      /* RESULTS BOX */
-      .results-box {
-        max-width: 720px;
-        margin: 0 auto 80px auto;
-        padding: 45px 40px;
-        background: var(--dark);
-        color: #fff;
-        border-radius: 12px;
+      /* PROGRESS */
+      .quiz-progress {
+        margin-bottom: 32px;
       }
-      .results-box h2 {
-        font-size: 1.6rem;
-        margin-bottom: 25px;
-        text-align: center;
-        font-style: italic;
-        color: #fff;
+      .quiz-progress-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
       }
-      .result-item {
-        margin-bottom: 20px;
-        padding-bottom: 20px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      .quiz-progress-label {
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.65rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: var(--text-muted);
       }
-      .result-item:last-child {
-        border-bottom: none;
-        padding-bottom: 0;
-        margin-bottom: 0;
-      }
-      .result-item strong {
+      .quiz-progress-count {
         font-family: "Playfair Display", serif;
-        font-size: 1.05rem;
-        display: block;
-        margin-bottom: 8px;
-        color: var(--beige);
+        font-size: 1rem;
+        color: var(--red);
       }
-      .result-item p {
-        font-size: 0.92rem;
-        line-height: 1.75;
-        color: rgba(255, 255, 255, 0.8);
+      .quiz-progress-bar {
+        height: 3px;
+        background: var(--border);
+        width: 100%;
+      }
+      .quiz-progress-fill {
+        height: 3px;
+        background: var(--red);
+        transition: width 0.4s ease;
+        width: 0%;
       }
 
-      /* CTA FINAL */
-      .cta-final {
-        max-width: 720px;
-        margin: 0 auto 100px auto;
-        padding: 50px 45px;
-        background: #fff;
+      /* QUIZ CARD */
+      .quiz-card {
+        background: var(--white);
         border: 1px solid var(--border);
-        border-radius: 12px;
-        text-align: center;
+        padding: 40px 40px 36px;
+        display: none;
+        animation: fadeIn 0.35s ease;
       }
-      .cta-final h2 {
-        font-size: 1.8rem;
-        margin-bottom: 20px;
-        font-style: italic;
+      .quiz-card.active {
+        display: block;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .quiz-card-num {
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.6rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        margin-bottom: 10px;
+        display: block;
+      }
+      .quiz-card-q {
+        font-family: "Playfair Display", serif;
+        font-size: 1.35rem;
         color: var(--dark);
+        margin-bottom: 10px;
         line-height: 1.3;
       }
-      .cta-final p {
-        font-size: 1.02rem;
-        line-height: 1.85;
+      .quiz-card-hint {
+        font-size: 0.82rem;
         color: var(--text-light);
-        margin-bottom: 18px;
+        font-style: italic;
+        margin-bottom: 28px;
+        line-height: 1.6;
+        font-family: "Lora", serif;
       }
-      .cta-final .cta-highlight {
-        font-size: 1.08rem;
+      .quiz-options {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+      .quiz-opt {
+        padding: 20px 22px;
+        border: 1.5px solid var(--border);
+        cursor: pointer;
+        transition: all 0.25s;
+        text-align: left;
+        background: var(--white);
+        display: flex;
+        align-items: flex-start;
+      }
+      .quiz-opt:hover {
+        border-color: var(--dark);
+        background: var(--cream-bg);
+      }
+      .quiz-opt.selected-green {
+        border-color: var(--green);
+        background: #f0fff4;
+      }
+      .quiz-opt.selected-red {
+        border-color: var(--red);
+        background: #fff5f5;
+      }
+      .quiz-opt-text {
+        font-size: 0.88rem;
         color: var(--text);
-        font-weight: 500;
-        margin: 25px 0;
-        line-height: 1.75;
+        line-height: 1.7;
+        font-family: "Lora", serif;
       }
 
-      /* BUTTON */
-      .btn {
-        background: var(--beige);
+      /* RESULT */
+      .quiz-result {
+        display: none;
+      }
+      .quiz-result.active {
+        display: block;
+        animation: fadeIn 0.4s ease;
+      }
+      .result-card {
+        border: 1px solid var(--border);
+        overflow: hidden;
+      }
+      .result-card-top {
+        padding: 48px 44px 36px;
+        text-align: center;
+        background: var(--white);
+      }
+      .result-score {
+        font-family: "Playfair Display", serif;
+        font-size: 6rem;
+        color: var(--red);
+        line-height: 1;
+        margin-bottom: 4px;
+      }
+      .result-out-of {
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.65rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        margin-bottom: 28px;
+      }
+      .result-title {
+        font-family: "Playfair Display", serif;
+        font-size: 1.8rem;
         color: var(--dark);
-        padding: 18px 44px;
+        margin-bottom: 16px;
+        line-height: 1.25;
+      }
+      .result-desc {
+        font-size: 0.95rem;
+        color: var(--text-light);
+        line-height: 1.9;
+        max-width: 540px;
+        margin: 0 auto;
+        font-family: "Lora", serif;
+      }
+      .result-cta-box {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d1a0e 100%);
+        padding: 36px 44px;
+        text-align: center;
+        border-top: 2px solid var(--red);
+      }
+      .result-cta-title {
+        font-family: "Playfair Display", serif;
+        font-size: 1.4rem;
+        color: #fff;
+        margin-bottom: 20px;
+        line-height: 1.3;
+        font-style: italic;
+        display: block;
+      }
+      .result-cta-sub {
+        font-size: 0.82rem;
+        color: rgba(255, 255, 255, 0.5);
+        margin-bottom: 24px;
+        font-family: "Lora", serif;
+        display: block;
+      }
+      .result-cta-note {
+        font-size: 0.65rem;
+        color: rgba(255, 255, 255, 0.3);
+        margin-top: 14px;
+        font-family: "Montserrat", sans-serif;
+        letter-spacing: 1px;
+        display: block;
+      }
+      .quiz-restart {
+        margin-top: 20px;
+        text-align: center;
+      }
+      .quiz-restart button {
+        background: none;
+        border: none;
+        color: var(--text-muted);
+        font-size: 0.75rem;
+        font-family: "Montserrat", sans-serif;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        cursor: pointer;
+        padding: 8px 16px;
+        transition: color 0.3s;
+        text-decoration: underline;
+      }
+      .quiz-restart button:hover {
+        color: var(--dark);
+      }
+
+      /* BUTTONS */
+      .btn-red {
+        background: var(--red);
+        color: #fff;
+        padding: 16px 44px;
         border: none;
         font-size: 0.72rem;
         letter-spacing: 2px;
@@ -344,46 +488,371 @@
         transition: all 0.3s;
         font-family: "Montserrat", sans-serif;
         font-weight: 500;
-        justify-content: center;
-        margin-top: 15px;
       }
-      .btn:hover {
+      .btn-red:hover {
+        background: var(--red-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(192, 57, 43, 0.3);
+      }
+      .btn-beige {
+        background: var(--beige);
+        color: var(--dark);
+        padding: 16px 44px;
+        border: none;
+        font-size: 0.72rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.3s;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+      }
+      .btn-beige:hover {
         background: var(--beige-hover);
         transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
-      }
-      .btn-glow {
-        position: relative;
-        overflow: hidden;
-      }
-      .btn-glow::after {
-        content: "";
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(
-          circle,
-          rgba(255, 255, 255, 0.3) 0%,
-          transparent 70%
-        );
-        animation: shimmer 2.5s infinite;
-        pointer-events: none;
-      }
-      @keyframes shimmer {
-        0% {
-          transform: translateX(-100%) rotate(25deg);
-        }
-        100% {
-          transform: translateX(100%) rotate(25deg);
-        }
       }
 
-      /* FOOTER */
+      /* TG BANNER */
+      .tg-banner {
+        background: var(--white);
+        border: 1px solid var(--border);
+        padding: 36px 44px;
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        margin: 32px 0 0;
+      }
+      .tg-banner-icon {
+        font-size: 2.5rem;
+        flex-shrink: 0;
+      }
+      .tg-banner-text h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.2rem;
+        color: var(--dark);
+        margin-bottom: 8px;
+        font-weight: 500;
+      }
+      .tg-banner-text p {
+        font-size: 0.85rem;
+        color: var(--text-light);
+        line-height: 1.75;
+        margin-bottom: 16px;
+        font-family: "Lora", serif;
+      }
+      .tg-note {
+        font-size: 0.65rem;
+        color: var(--text-muted);
+        font-family: "Montserrat", sans-serif;
+        letter-spacing: 1px;
+        display: block;
+        margin-top: 10px;
+      }
+
+      /* CHECKLIST */
+      .checklist-section {
+        padding: 80px 20px;
+        max-width: 820px;
+        margin: 0 auto;
+      }
+      .divider {
+        text-align: center;
+        margin: 20px 0 50px;
+        color: var(--text-muted);
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.6rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      .divider::before,
+      .divider::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: var(--border);
+      }
+      /* CHECKLIST TOGGLE */
+      .checklist-toggle {
+        width: 100%;
+        padding: 20px 28px;
+        background: var(--white);
+        border: 1px solid var(--border);
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: all 0.3s;
+        margin-bottom: 0;
+      }
+      .checklist-toggle:hover {
+        border-color: var(--red);
+        background: var(--cream-bg);
+      }
+      .checklist-toggle-text {
+        font-family: "Playfair Display", serif;
+        font-size: 1.1rem;
+        color: var(--dark);
+        font-weight: 500;
+      }
+      .checklist-toggle-arrow {
+        font-size: 1.2rem;
+        color: var(--red);
+        transition: transform 0.3s;
+        display: inline-block;
+      }
+      .checklist-toggle.open .checklist-toggle-arrow {
+        transform: rotate(180deg);
+      }
+      .checklist-body {
+        display: none;
+      }
+      .checklist-body.open {
+        display: block;
+        animation: fadeIn 0.4s ease;
+      }
+      /* MARKER */
+      .marker {
+        background: var(--white);
+        border: 1px solid var(--border);
+        margin-bottom: 20px;
+        overflow: hidden;
+        transition: box-shadow 0.3s, transform 0.3s;
+      }
+      .marker:hover {
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+        transform: translateY(-2px);
+      }
+      .marker-header {
+        padding: 28px 32px 20px;
+        border-bottom: 1px solid var(--border-light);
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+      }
+      .marker-num {
+        font-family: "Playfair Display", serif;
+        font-size: 3rem;
+        color: rgba(192, 57, 43, 0.12);
+        font-weight: 700;
+        line-height: 1;
+        flex-shrink: 0;
+        min-width: 50px;
+      }
+      .marker-title-wrap {
+        flex: 1;
+      }
+      .marker-label {
+        font-size: 0.58rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--red);
+        font-weight: 500;
+        margin-bottom: 6px;
+        display: block;
+        font-family: "Montserrat", sans-serif;
+      }
+      .marker-title {
+        font-family: "Playfair Display", serif;
+        font-size: 1.35rem;
+        color: var(--dark);
+        font-weight: 500;
+        line-height: 1.2;
+      }
+      .marker-how {
+        padding: 18px 32px;
+        background: var(--cream-bg);
+        border-bottom: 1px solid var(--border-light);
+      }
+      .marker-how-label {
+        font-size: 0.58rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        font-weight: 500;
+        margin-bottom: 8px;
+        display: block;
+        font-family: "Montserrat", sans-serif;
+      }
+      .marker-how p {
+        font-size: 0.88rem;
+        color: var(--text-light);
+        line-height: 1.8;
+        font-style: italic;
+        font-family: "Lora", serif;
+      }
+      .marker-flags {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        border-bottom: 1px solid var(--border-light);
+      }
+      .marker-flag {
+        padding: 22px 26px;
+      }
+      .marker-flag.red {
+        border-right: 1px solid var(--border-light);
+        background: #fff9f9;
+      }
+      .marker-flag.green {
+        background: #f9fff9;
+      }
+      .marker-flag-label {
+        font-size: 0.6rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-family: "Montserrat", sans-serif;
+      }
+      .marker-flag.red .marker-flag-label {
+        color: var(--red);
+      }
+      .marker-flag.green .marker-flag-label {
+        color: var(--green);
+      }
+      .marker-flag p {
+        font-size: 0.85rem;
+        color: var(--text);
+        line-height: 1.75;
+        font-family: "Lora", serif;
+      }
+      .marker-why {
+        padding: 18px 32px;
+        background: linear-gradient(135deg, var(--cream-bg) 0%, #f5ece0 100%);
+        border-top: 2px solid var(--red);
+      }
+      .marker-why-label {
+        font-size: 0.58rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--red);
+        font-weight: 600;
+        margin-bottom: 8px;
+        display: block;
+        font-family: "Montserrat", sans-serif;
+      }
+      .marker-why p {
+        font-size: 0.88rem;
+        color: #555;
+        line-height: 1.8;
+        font-style: italic;
+        font-family: "Lora", serif;
+      }
+      .marker-why p strong {
+        color: var(--dark);
+        font-style: normal;
+      }
+
+      /* EPILOGUE */
+      .epilogue {
+        background: var(--white);
+        border: 1px solid var(--border);
+        padding: 50px 44px;
+        margin: 0 0 40px;
+      }
+      .epilogue h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.6rem;
+        color: var(--dark);
+        margin-bottom: 20px;
+        font-weight: 500;
+        line-height: 1.3;
+        font-style: italic;
+      }
+      .epilogue p {
+        font-size: 0.92rem;
+        color: var(--text-light);
+        line-height: 1.9;
+        margin-bottom: 16px;
+        font-family: "Lora", serif;
+      }
+      .epilogue p strong {
+        color: var(--dark);
+        font-weight: 600;
+      }
+      .neuro-list {
+        list-style: none;
+        padding: 20px 24px;
+        background: var(--cream-bg);
+        border-left: 2px solid var(--red);
+        margin: 20px 0;
+      }
+      .neuro-list li {
+        font-size: 0.9rem;
+        color: var(--text);
+        line-height: 1.8;
+        padding: 4px 0;
+        font-style: italic;
+        font-family: "Lora", serif;
+      }
+      .neuro-list li::before {
+        content: "→ ";
+        color: var(--red);
+        font-style: normal;
+        font-weight: 600;
+      }
+      .epilogue-cta-box {
+        margin-top: 32px;
+        padding: 32px;
+        background: var(--cream-bg);
+        border: 1px solid var(--border-light);
+        text-align: center;
+      }
+      .epilogue-cta-box p {
+        font-size: 0.9rem;
+        color: var(--text-light);
+        margin-bottom: 20px;
+        line-height: 1.8;
+        font-family: "Lora", serif;
+      }
+
+      /* FINAL CTA */
+      .final-cta {
+        text-align: center;
+        padding: 100px 20px;
+        background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.85)),
+          url("https://i.ibb.co/DHSLVMkw/image.jpg") center/cover no-repeat;
+      }
+      .final-cta-label {
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.6rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.5);
+        margin-bottom: 18px;
+        display: block;
+      }
+      .final-cta h2 {
+        font-size: clamp(1.8rem, 4vw, 2.8rem);
+        margin-bottom: 18px;
+        font-style: italic;
+        line-height: 1.3;
+        color: #fff;
+      }
+      .final-cta h2 em {
+        color: var(--beige);
+      }
+      .final-cta p {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.95rem;
+        max-width: 480px;
+        margin: 0 auto 36px;
+        line-height: 1.85;
+        font-family: "Lora", serif;
+      }
+
       footer {
-        background: #111;
-        padding: 35px 20px;
+        background: #0a0a0a;
+        padding: 40px 20px;
         text-align: center;
         color: rgba(255, 255, 255, 0.3);
         font-size: 0.72rem;
@@ -397,370 +866,1101 @@
         color: #fff;
       }
 
-      /* RESPONSIVE */
       @media (max-width: 768px) {
         nav {
           padding: 14px 16px;
         }
-        .header {
-          margin: 80px auto 50px auto;
+        .hero {
+          padding: 100px 16px 60px;
         }
-        .intro,
-        .cta-final {
-          padding: 35px 25px;
+        .quiz-section {
+          padding: 50px 16px;
         }
-        .check-item {
-          padding: 28px 22px;
+        .quiz-card {
+          padding: 28px 20px;
         }
-        .check-row {
+        .quiz-options {
           grid-template-columns: 1fr;
-          gap: 15px;
         }
-        .results-box {
-          padding: 35px 25px;
+        .result-card-top {
+          padding: 36px 24px 28px;
+        }
+        .result-cta-box {
+          padding: 28px 24px;
+        }
+        .tg-banner {
+          flex-direction: column;
+          gap: 20px;
+          padding: 28px 20px;
+          text-align: center;
+        }
+        .checklist-section {
+          padding: 50px 16px;
+        }
+        .marker-header {
+          flex-direction: column;
+          gap: 8px;
+          padding: 20px 18px 14px;
+        }
+        .marker-num {
+          font-size: 2rem;
+          min-width: auto;
+        }
+        .marker-how {
+          padding: 14px 18px;
+        }
+        .marker-flags {
+          grid-template-columns: 1fr;
+        }
+        .marker-flag.red {
+          border-right: none;
+          border-bottom: 1px solid var(--border-light);
+        }
+        .marker-flag {
+          padding: 16px 18px;
+        }
+        .marker-why {
+          padding: 16px 18px;
+        }
+        .epilogue {
+          padding: 36px 20px;
+        }
+        .final-cta {
+          padding: 80px 20px;
         }
       }
-      ::-webkit-scrollbar {
-        width: 4px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #f5f5f5;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #ccc;
-      }
+          /* QUIZ NOTICE */
+    .quiz-notice { display: flex; gap: 20px; background: var(--white); border: 1px solid var(--border); border-left: 3px solid var(--red); padding: 28px 32px; margin-bottom: 36px; }
+    .quiz-notice-icon { font-size: 1.6rem; flex-shrink: 0; line-height: 1; padding-top: 2px; }
+    .quiz-notice-content { flex: 1; }
+    .quiz-notice-title { font-family: "Playfair Display", serif; font-size: 1rem; color: var(--dark); font-weight: 500; margin-bottom: 12px; }
+    .quiz-notice p { font-size: 0.88rem; color: var(--text-light); line-height: 1.85; margin-bottom: 8px; font-family: "Lora", serif; }
+    .quiz-notice p:last-child { margin-bottom: 0; }
+    .quiz-notice p strong { color: var(--dark); font-weight: 600; }
+
+    /* EPILOGUE NOTICE */
+    .epilogue-notice { background: linear-gradient(135deg, #fdfbf8 0%, #f5ece0 100%); border: 1px solid var(--border-light); border-left: 3px solid var(--red); padding: 24px 28px; margin-bottom: 28px; }
+    .epilogue-notice p { font-size: 0.92rem; color: var(--text-light); line-height: 1.9; margin-bottom: 10px; font-family: "Lora", serif; font-style: italic; }
+    .epilogue-notice p:last-child { margin-bottom: 0; }
+    .epilogue-notice p strong { color: var(--dark); font-style: normal; font-weight: 600; }
+
+    @media (max-width: 768px) {
+      .quiz-notice { flex-direction: column; gap: 12px; padding: 20px 18px; }
+      .epilogue-notice { padding: 20px 18px; }
+    }
     </style>
   </head>
   <body>
     <!-- NAV -->
     <nav>
       <a href="index.html" class="nav-logo">
-        <div class="nav-logo-text">Match<br /><span>Match</span></div>
+        <div class="nav-logo-text">Жена<br /><span>Миллионера</span></div>
       </a>
+      <a href="index.html" class="nav-back">← Вернуться на сайт</a>
     </nav>
 
-    <!-- HEADER -->
-    <div class="header">
-      <div class="header-kicker">Бесплатный гид от Match Match</div>
-      <h1>
-        Он точно тот — или снова кажется?
-        <em>10 признаков зрелого мужчины, которые видно сразу</em>
-      </h1>
-      <p class="header-subtitle">
-        (Проверь ДО того, как увлечёшься — и не попадёшь в ловушку)
-      </p>
-    </div>
-
-    <!-- INTRO -->
-    <div class="intro">
-      <p>
-        Ты мечтаешь о достойных отношениях и жизни «как в хорошем фильме», но в
-        голове прокручиваются тревоги:
-      </p>
-
-      <ul class="intro-fears">
-        <li>Если у мужчины деньги, значит он эгоист или абьюзер?</li>
-        <li>В его мире — золотая клетка, в которой нельзя быть собой…</li>
-        <li>Я ему не подхожу, он быстро бросит</li>
-        <li>
-          У таких — все женщины на одну ночь, а свою он выбирает «из лучших»…
-        </li>
-        <li>Я слишком обычная, не из их круга</li>
-        <li>Где-то точно подвох, потому что так хорошо не бывает</li>
-      </ul>
-
-      <p>
-        Эти страхи не из воздуха — у многих они сформировались годами:
-        перекладываешь ответственность, зависишь или просто не знаешь, как
-        по-настоящему ценить себя, а не деньги рядом.
-      </p>
-
-      <div class="intro-author">
-        <strong>Я — Юлия Люмен, нейропсихолог.</strong> За 20 лет работы с
-        женщинами я услышала все эти мысли сотни раз.<br /><br />
-        Проверь этот чек-лист — чтобы не попасть в зависимость и больше не
-        тратить годы на «игру в шанс».
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-badge">✦ Бесплатный чек-лист от Юлии Люмен ✦</div>
+        <h1>Он точно готов —<em>или снова кажется?</em></h1>
+        <p class="hero-sub">
+          10 маркеров зрелого мужчины · видно с первых встреч
+        </p>
+        <div class="hero-intro">
+          <p>
+            Ты умная женщина. И ты уже была влюблена в «почти идеального». Он
+            казался серьёзным. Говорил правильные слова. А через год —
+            <strong>снова то же самое.</strong>
+          </p>
+          <p>
+            Незрелые мужчины научились
+            <strong>отлично имитировать зрелость.</strong> Особенно в начале.
+            Эти 10 маркеров — из тысяч часов реальной практики. Проверь —
+            <strong>до того, как сердце решит за тебя.</strong>
+          </p>
+        </div>
+        <div class="hero-author">
+          <div>
+            <div class="hero-author-name">Юлия Люмен</div>
+            <div class="hero-author-role">
+              Нейропсихолог · 20 лет в бизнесе · 5000+ часов
+            </div>
+          </div>
+        </div>
+        <div class="scroll-hint">Пройди тест ниже <span>↓</span></div>
       </div>
-    </div>
-
-    <!-- CHECKLIST -->
-    <div class="checklist">
-      <h2 class="checklist-title">10 маркеров зрелого мужчины</h2>
-      <p class="checklist-subtitle">
-        Как отличить не просто «богатого», а зрелого, неопасного и НЕ
-        манипулятора — чтобы не попасть в золотую клетку
-      </p>
-
-      <!-- 1 -->
-      <div class="check-item">
-        <h3>1. Как говорит о бывших</h3>
-        <div class="check-row">
-          <div class="check-col check-col-red">
-            <strong>🔴 Тревожный знак</strong>
-            Обесценивает, злится → ищет виноватых во всех женщинах
+    </section>
+       <!-- QUIZ -->
+       <section class="quiz-section" id="quiz">
+        <div class="quiz-inner">
+          <span class="section-label">✦ Интерактивный тест ✦</span>
+          <h2 class="section-title">Проверь <em>прямо сейчас</em></h2>
+          <p class="section-desc">
+            Ответь на 10 вопросов по его реальному поведению — и узнай результат
+          </p>
+  
+          <!-- ПЛАШКА — вот сюда, после section-desc и ДО quiz-progress -->
+          <div class="quiz-notice">
+            <div class="quiz-notice-icon">💡</div>
+            <div class="quiz-notice-content">
+              <div class="quiz-notice-title">Важно — прочитай перед началом</div>
+              <p>Знать — легко, применять — трудно.</p>
+              <p>Большинство женщин умом понимают эти маркеры, но на практике снова и снова попадают в старые сценарии.</p>
+              <p>Этот тест — не про «знание». Он про <strong>честность с собой прямо сейчас.</strong></p>
+              <p>Пройди — и увидишь, какие сценарии работают у тебя не в теории, а в жизни.</p>
+            </div>
           </div>
-          <div class="check-col check-col-green">
-            <strong>🟢 Зрелость</strong>
-            Спокоен, уважительно говорит о прошлом
+
+        <div class="quiz-progress" id="quizProgress">
+          <div class="quiz-progress-top">
+            <span class="quiz-progress-label"
+              >Вопрос <span id="progressCurrent">1</span> из 10</span
+            >
+            <span class="quiz-progress-count" id="greenCount">0 из 10</span>
+          </div>
+          <div class="quiz-progress-bar">
+            <div class="quiz-progress-fill" id="progressFill"></div>
           </div>
         </div>
-        <div class="check-insight">
-          → Богатый, но незрелый обвиняет всех вокруг, зрелый — держит лицо и не
-          вешает ярлыков.
+
+        <!-- Q1 -->
+        <div class="quiz-card active" id="q1">
+          <span class="quiz-card-num">Вопрос 1 из 10</span>
+          <div class="quiz-card-q">Как он говорит о своих бывших?</div>
+          <div class="quiz-card-hint">
+            Вспомни — он упоминал прошлые отношения. Как это звучало?
+          </div>
+          <div class="quiz-options">
+            <div class="quiz-opt" onclick="answer(1,'red',this)">
+              <div class="quiz-opt-text">
+                Все бывшие — «психи» или «не ценили». В расставаниях всегда
+                виноваты они.
+              </div>
+            </div>
+            <div class="quiz-opt" onclick="answer(1,'green',this)">
+              <div class="quiz-opt-text">
+                Говорит спокойно, без злости. «Мы просто были на разных этапах»
+                — и переключается.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="quiz-card" id="q2">
+          <span class="quiz-card-num">Вопрос 2 из 10</span>
+          <div class="quiz-card-q">Как он обращается с твоим временем?</div>
+          <div class="quiz-card-hint">
+            Вспомни первые встречи — он предупреждал заранее или всё было
+            размыто?
+          </div>
+          <div class="quiz-options">
+            <div class="quiz-opt" onclick="answer(2,'red',this)">
+              <div class="quiz-opt-text">
+                Опаздывает, переносит в последний момент. «Созвонимся
+                как-нибудь» — без конкретики.
+              </div>
+            </div>
+            <div class="quiz-opt" onclick="answer(2,'green',this)">
+              <div class="quiz-opt-text">
+                Конкретные дата, время, место. Если опоздал — признаёт сам, без
+                напоминания.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="quiz-card" id="q3">
+          <span class="quiz-card-num">Вопрос 3 из 10</span>
+          <div class="quiz-card-q">Есть ли в его жизни место для тебя?</div>
+          <div class="quiz-card-hint">
+            Через месяц общения — ты вписываешься в «окошко» или он создаёт
+            время?
+          </div>
+          <div class="quiz-options">
+            <div class="quiz-opt" onclick="answer(3,'red',this)">
+              <div class="quiz-opt-text">
+                «Я очень занят» — постоянный фон. Встречи только когда удобно
+                ему.
+              </div>
+            </div>
+            <div class="quiz-opt" onclick="answer(3,'green',this)">
+              <div class="quiz-opt-text">
+                Создаёт время — не находит. Планирует встречи заранее. Твои
+                планы — ориентир.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="quiz-card" id="q4">
+          <span class="quiz-card-num">Вопрос 4 из 10</span>
+          <div class="quiz-card-q">
+            Как он общается с официантом в ресторане?
+          </div>
+          <div class="quiz-card-hint">
+            Люди не держат маску с теми, кто «ниже по статусу».
+          </div>
+          <div class="quiz-options">
+            <div class="quiz-opt" onclick="answer(4,'red',this)">
+              <div class="quiz-opt-text">
+                Снисходителен, щёлкает пальцами, не говорит «спасибо». Или
+                показательно вежлив — на публику.
+              </div>
+            </div>
+            <div class="quiz-opt" onclick="answer(4,'green',this)">
+              <div class="quiz-opt-text">
+                Вежлив естественно, без усилий. Оставляет чаевые — не показывая
+                тебе сумму.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="quiz-card" id="q5">
+          <span class="quiz-card-num">Вопрос 5 из 10</span>
+          <div class="quiz-card-q">Как он ведёт себя с деньгами?</div>
+          <div class="quiz-card-hint">
+            Не сколько у него денег — а как он с ними обращается.
+          </div>
+          <div class="quiz-options">
+            <div class="quiz-opt" onclick="answer(5,'red',this)">
+              <div class="quiz-opt-text">
+                Демонстрирует цены и марки. Или болезненно засекречен. Деньги —
+                тема с напряжением.
+              </div>
+            </div>
+            <div class="quiz-opt" onclick="answer(5,'green',this)">
+              <div class="quiz-opt-text">
+                Тратит спокойно, без демонстрации. Не хвастается и не жалуется.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q6 -->
+        <div class="quiz-card" id="q6">
+          <span class="quiz-card-num">Вопрос 6 из 10</span>
+          <div class="quiz-card-q">
+            Как он реагирует, когда что-то идёт не по плану?
+          </div>
+          <div class="quiz-card-hint">
+            Ресторан закрыт. Машина не едет. Планы рассыпались.
+          </div>
+          <div class="quiz-options">
+            <div class="quiz-opt" onclick="answer(6,'red',this)">
+              <div class="quiz-opt-text">
+                Паникует, злится, обвиняет обстоятельства. Или зависает — и ты
+                решаешь сама.
+              </div>
+            </div>
+            <div class="quiz-opt" onclick="answer(6,'green',this)">
+              <div class="quiz-opt-text">
+                Секунда паузы — и ищет решение. Спокойно, без драмы. Вечер
+                продолжается.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="quiz-card" id="q7">
+          <span class="quiz-card-num">Вопрос 7 из 10</span>
+          <div class="quiz-card-q">Как он реагирует, когда ты отказываешь?</div>
+          <div class="quiz-card-hint">
+            Не хочешь это блюдо. Не можешь в эту дату. Не готова к близости
+            сейчас.
+          </div>
+          <div class="quiz-options">
+            <div class="quiz-opt" onclick="answer(7,'red',this)">
+              <div class="quiz-opt-text">
+                Обижается. Давит. Использует юмор чтобы продавить. «Ну ладно» —
+                с холодом в голосе.
+              </div>
+            </div>
+            <div class="quiz-opt" onclick="answer(7,'green',this)">
+              <div class="quiz-opt-text">
+                Принимает спокойно. Предлагает альтернативу или просто
+                переключается.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="quiz-card" id="q8">
+          <span class="quiz-card-num">Вопрос 8 из 10</span>
+          <div class="quiz-card-q">
+            Он слышит тебя — или ждёт своей очереди говорить?
+          </div>
+          <div class="quiz-card-hint">
+            Расскажи что-то важное для тебя. И замолчи. Что происходит дальше?
+          </div>
+          <div class="quiz-options">
+            <div class="quiz-opt" onclick="answer(8,'red',this)">
+              <div class="quiz-opt-text">
+                Сразу переводит на себя. Или даёт совет, когда ты не просила.
+              </div>
+            </div>
+            <div class="quiz-opt" onclick="answer(8,'green',this)">
+              <div class="quiz-opt-text">
+                Задаёт уточняющий вопрос. Пауза после твоих слов — он думает, не
+                заполняет тишину.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="quiz-card" id="q9">
+          <span class="quiz-card-num">Вопрос 9 из 10</span>
+          <div class="quiz-card-q">Каковы его отношения с семьёй?</div>
+          <div class="quiz-card-hint">
+            Не что он говорит о маме — а как это звучит.
+          </div>
+          <div class="quiz-options">
+            <div class="quiz-opt" onclick="answer(9,'red',this)">
+              <div class="quiz-opt-text">
+                Мама звонит во время свидания — берёт. Все решения согласует с
+                ней. Или полный разрыв с ненавистью.
+              </div>
+            </div>
+            <div class="quiz-opt" onclick="answer(9,'green',this)">
+              <div class="quiz-opt-text">
+                Любит семью — и имеет свою жизнь. Может сказать маме «нет».
+                Границы есть, без войны.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="quiz-card" id="q10">
+          <span class="quiz-card-num">Вопрос 10 из 10</span>
+          <div class="quiz-card-q">Он видит тебя в своём будущем?</div>
+          <div class="quiz-card-hint">
+            Слушай: он строит планы с тобой — или только «увидимся как-нибудь»?
+          </div>
+          <div class="quiz-options">
+            <div class="quiz-opt" onclick="answer(10,'red',this)">
+              <div class="quiz-opt-text">
+                «Зачем загадывать» — на 3-й месяц общения. Никаких планов дальше
+                выходных.
+              </div>
+            </div>
+            <div class="quiz-opt" onclick="answer(10,'green',this)">
+              <div class="quiz-opt-text">
+                «Когда поедем…» «Хочу показать тебе…» — упоминает будущее
+                естественно. Ты в его картине мира.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- РЕЗУЛЬТАТ -->
+        <div class="quiz-result" id="quizResult">
+          <div class="result-card">
+            <div class="result-card-top">
+              <div class="result-score" id="resultScore">0</div>
+              <div class="result-out-of">зелёных маркеров из 10</div>
+              <div class="result-title" id="resultTitle"></div>
+              <p class="result-desc" id="resultDesc"></p>
+            </div>
+            <div class="result-cta-box">
+              <span class="result-cta-title" id="resultCtaTitle"></span>
+              <span class="result-cta-sub"
+                >Бесплатно · без подписки · только твоя ситуация</span
+              >
+              <a
+                href="https://t.me/JuliaEnergopraktika"
+                class="btn-beige"
+                target="_blank"
+                >✉ Написать Юлии в Telegram</a
+              >
+              <span class="result-cta-note"
+                >Ответит лично · обычно в течение дня</span
+              >
+            </div>
+          </div>
+          <div class="quiz-restart">
+            <button onclick="restartQuiz()">↩ Пройти тест заново</button>
+          </div>
+        </div>
+
+        <!-- TG BANNER -->
+<div class="tg-banner" id="tgBanner">
+  <div class="tg-banner-icon">💬</div>
+  <div class="tg-banner-text">
+    <h3>Хочешь личный мини-разбор своей ситуации?</h3>
+    <p>
+      Напиши Юлии в Telegram, опиши свою ситуацию — и получи честную экспертную обратную связь в формате 20-минутной мини-консультации.<br><br>
+      На разборе вместе поймём, нужна ли тебе глубокая программа или решение ближе, чем кажется.
+    </p>
+    <a
+      href="https://t.me/JuliaEnergopraktika"
+      class="btn-red"
+      target="_blank"
+      >Перейти к разбору в Telegram →</a
+    >
+    <span class="tg-note"
+      ></span
+    >
+  </div>
+</div>
+    </section>
+
+   <!-- CHECKLIST -->
+   <section class="checklist-section">
+    <div class="divider">Подробный разбор каждого маркера</div>
+
+    <button class="checklist-toggle" onclick="toggleChecklist(this)">
+      <span class="checklist-toggle-text">📖 Читать подробный разбор всех 10 маркеров</span>
+      <span class="checklist-toggle-arrow">↓</span>
+    </button>
+
+    <div class="checklist-body" id="checklistBody">
+      <span class="section-label" style="text-align:left; margin-top:40px;">✦ Читай внимательно ✦</span>
+      <h2 class="section-title" style="text-align:left; margin-bottom:36px;">10 маркеров, которые <em>не скроешь</em>
+      </h2>
+      <!-- 01 -->
+      <div class="marker">
+        <div class="marker-header">
+          <div class="marker-num">01</div>
+          <div class="marker-title-wrap">
+            <span class="marker-label">Маркер первый</span>
+            <div class="marker-title">Как он говорит о бывших</div>
+          </div>
+        </div>
+        <div class="marker-how">
+          <span class="marker-how-label">Как проверить</span>
+          <p>
+            Просто спроси: «Ты долго был в последних отношениях?» Дальше —
+            только слушай.
+          </p>
+        </div>
+        <div class="marker-flags">
+          <div class="marker-flag red">
+            <div class="marker-flag-label">🔴 Красный флаг</div>
+            <p>
+              Все бывшие — «психи», «использовали», «не ценили». Он всегда
+              жертва. Ноль своей ответственности.
+            </p>
+          </div>
+          <div class="marker-flag green">
+            <div class="marker-flag-label">🟢 Зелёный флаг</div>
+            <p>
+              Говорит спокойно. Без злости. «Мы просто были на разных этапах» —
+              и переключается. Не смакует прошлое.
+            </p>
+          </div>
+        </div>
+        <div class="marker-why">
+          <span class="marker-why-label">Почему это важно</span>
+          <p>
+            Как он говорит о прошлом —
+            <strong>так будет говорить о тебе.</strong> Через год. Следующей
+            женщине.
+          </p>
         </div>
       </div>
 
-      <!-- 2 -->
-      <div class="check-item">
-        <h3>2. Как относится к твоему времени и границам</h3>
-        <div class="check-row">
-          <div class="check-col check-col-red">
-            <strong>🔴 Тревожный знак</strong>
-            Использует, опаздывает, сбрасывает планы
-          </div>
-          <div class="check-col check-col-green">
-            <strong>🟢 Зрелость</strong>
-            Уважает твои «нет» и твои желания
+      <!-- 02 -->
+      <div class="marker">
+        <div class="marker-header">
+          <div class="marker-num">02</div>
+          <div class="marker-title-wrap">
+            <span class="marker-label">Маркер второй</span>
+            <div class="marker-title">Как он обращается с твоим временем</div>
           </div>
         </div>
-        <div class="check-insight">
-          → Для зрелого мужчины твои границы важны, а не только его интерес.
+        <div class="marker-how">
+          <span class="marker-how-label">Как проверить</span>
+          <p>
+            Ничего специально делать не нужно. Просто замечай первые 3–4
+            встречи.
+          </p>
         </div>
-      </div>
-
-      <!-- 3 -->
-      <div class="check-item">
-        <h3>3. Делает ли тебе место в своей жизни</h3>
-        <div class="check-row">
-          <div class="check-col check-col-red">
-            <strong>🔴 Тревожный знак</strong>
-            Ты всегда «на подхвате», нет стабильности
+        <div class="marker-flags">
+          <div class="marker-flag red">
+            <div class="marker-flag-label">🔴 Красный флаг</div>
+            <p>
+              Опаздывает без предупреждения. Переносит в последний момент.
+              «Созвонимся как-нибудь» — без конкретики.
+            </p>
           </div>
-          <div class="check-col check-col-green">
-            <strong>🟢 Зрелость</strong>
-            Планирует, учитывает твои интересы и не манипулирует временем
-          </div>
-        </div>
-        <div class="check-insight">
-          → Не будет золотой клетки — будет поддержка.
-        </div>
-      </div>
-
-      <!-- 4 -->
-      <div class="check-item">
-        <h3>4. Как ведёт себя «под маской»</h3>
-        <div class="check-row">
-          <div class="check-col check-col-red">
-            <strong>🔴 Тревожный знак</strong>
-            На публику щедрый, за дверями — жесткий контроль
-          </div>
-          <div class="check-col check-col-green">
-            <strong>🟢 Зрелость</strong>
-            Естественный, не «выпендривается» статусом
+          <div class="marker-flag green">
+            <div class="marker-flag-label">🟢 Зелёный флаг</div>
+            <p>
+              Предупреждает заранее. Конкретные дата, время, место. Если опоздал
+              — признаёт сам.
+            </p>
           </div>
         </div>
-        <div class="check-insight">
-          → Твой комфорт для него важен и на людях, и в жизни.
+        <div class="marker-why">
+          <span class="marker-why-label">Почему это важно</span>
+          <p>
+            Время — это уважение в действии.
+            <strong
+              >Как он обращается с твоим временем сейчас — это максимум того,
+              что будет потом.</strong
+            >
+          </p>
         </div>
       </div>
 
-      <!-- 5 -->
-      <div class="check-item">
-        <h3>5. Деньги: щедрость или инструмент давления?</h3>
-        <div class="check-row">
-          <div class="check-col check-col-red">
-            <strong>🔴 Тревожный знак</strong>
-            Много тратит, но «напоминает», что ты на содержании
-          </div>
-          <div class="check-col check-col-green">
-            <strong>🟢 Зрелость</strong>
-            Дарит от души, не подчёркивает «кто главный»
+      <!-- 03 -->
+      <div class="marker">
+        <div class="marker-header">
+          <div class="marker-num">03</div>
+          <div class="marker-title-wrap">
+            <span class="marker-label">Маркер третий</span>
+            <div class="marker-title">Есть ли в его жизни место для тебя</div>
           </div>
         </div>
-        <div class="check-insight">
-          → Если появляется тревога «я ему должна» — это не твой сценарий.
+        <div class="marker-how">
+          <span class="marker-how-label">Как проверить</span>
+          <p>
+            Посмотри через месяц общения. Ты вписываешься в «окошко» между
+            делами — или он создаёт время?
+          </p>
         </div>
-      </div>
-
-      <!-- 6 -->
-      <div class="check-item">
-        <h3>6. Реакция на проблемы и стресс</h3>
-        <div class="check-row">
-          <div class="check-col check-col-red">
-            <strong>🔴 Тревожный знак</strong>
-            Абьюзит, обвиняет, пугает, шантажирует
+        <div class="marker-flags">
+          <div class="marker-flag red">
+            <div class="marker-flag-label">🔴 Красный флаг</div>
+            <p>
+              «Я очень занят» — постоянный фон. Встречи только когда удобно ему.
+              Ты подстраиваешься. Всегда.
+            </p>
           </div>
-          <div class="check-col check-col-green">
-            <strong>🟢 Зрелость</strong>
-            Умеет говорить, решать, не «разрушать»
-          </div>
-        </div>
-        <div class="check-insight">
-          → Зрелый не превращает женщину в «жертву».
-        </div>
-      </div>
-
-      <!-- 7 -->
-      <div class="check-item">
-        <h3>7. Твои желания и «нет»</h3>
-        <div class="check-row">
-          <div class="check-col check-col-red">
-            <strong>🔴 Тревожный знак</strong>
-            Давит, исподтишка манипулирует, включает чувство вины
-          </div>
-          <div class="check-col check-col-green">
-            <strong>🟢 Зрелость</strong>
-            Уважает твои решения, не заставляет «зарабатывать любовь»
+          <div class="marker-flag green">
+            <div class="marker-flag-label">🟢 Зелёный флаг</div>
+            <p>
+              Он создаёт время — не находит. Планирует встречи заранее. Твои
+              планы — не помеха, а ориентир.
+            </p>
           </div>
         </div>
-        <div class="check-insight">
-          → Твои «нет» — проверка на зрелость мужчины.
+        <div class="marker-why">
+          <span class="marker-why-label">Почему это важно</span>
+          <p>
+            <strong
+              >Занятой мужчина находит время на то, что для него по-настоящему
+              важно. Всегда.</strong
+            >
+          </p>
         </div>
       </div>
 
-      <!-- 8 -->
-      <div class="check-item">
-        <h3>8. Слышит тебя — или слышит только свои желания</h3>
-        <div class="check-row">
-          <div class="check-col check-col-red">
-            <strong>🔴 Тревожный знак</strong>
-            Переводит всё на себя, шутит оскорбительно
-          </div>
-          <div class="check-col check-col-green">
-            <strong>🟢 Зрелость</strong>
-            Видит, что ты чувствуешь, и считается с этим
+      <!-- 04 -->
+      <div class="marker">
+        <div class="marker-header">
+          <div class="marker-num">04</div>
+          <div class="marker-title-wrap">
+            <span class="marker-label">Маркер четвёртый</span>
+            <div class="marker-title">Тест на социальный интеллект</div>
           </div>
         </div>
-        <div class="check-insight">
-          → Важно не только, что он даёт — но и КАК слушает.
+        <div class="marker-how">
+          <span class="marker-how-label">Как проверить</span>
+          <p>
+            Сходи с ним в ресторан. Не смотри на него — смотри, как он общается
+            с официантом.
+          </p>
+        </div>
+        <div class="marker-flags">
+          <div class="marker-flag red">
+            <div class="marker-flag-label">🔴 Красный флаг</div>
+            <p>
+              Снисходителен. Не говорит «спасибо». Щёлкает пальцами. Или
+              демонстративно добрый — на публику.
+            </p>
+          </div>
+          <div class="marker-flag green">
+            <div class="marker-flag-label">🟢 Зелёный флаг</div>
+            <p>
+              Вежлив естественно, без усилий. Оставляет чаевые — не показывая
+              тебе сумму.
+            </p>
+          </div>
+        </div>
+        <div class="marker-why">
+          <span class="marker-why-label">Почему это важно</span>
+          <p>
+            С теми, кто «ниже по статусу», люди не держат маску.
+            <strong>И однажды она снимется с тобой тоже.</strong>
+          </p>
         </div>
       </div>
 
-      <!-- 9 -->
-      <div class="check-item">
-        <h3>9. Связь с семьёй и своими корнями</h3>
-        <div class="check-row">
-          <div class="check-col check-col-red">
-            <strong>🔴 Тревожный знак</strong>
-            Держит тебя в изоляции («никого не слушай, только я»)
-          </div>
-          <div class="check-col check-col-green">
-            <strong>🟢 Зрелость</strong>
-            Принимает твое окружение, даёт знакомиться с его людьми
+      <!-- 05 -->
+      <div class="marker">
+        <div class="marker-header">
+          <div class="marker-num">05</div>
+          <div class="marker-title-wrap">
+            <span class="marker-label">Маркер пятый</span>
+            <div class="marker-title">
+              Финансовое поведение — не сколько, а как
+            </div>
           </div>
         </div>
-        <div class="check-insight">
-          → Богатый абьюзер делает всё, чтобы ты зависела только от него.
-          Настоящий — за твои связи.
+        <div class="marker-how">
+          <span class="marker-how-label">Как проверить</span>
+          <p>
+            Не спрашивай про деньги напрямую. Наблюдай: хвастается? Скрывает?
+            Или просто живёт?
+          </p>
+        </div>
+        <div class="marker-flags">
+          <div class="marker-flag red">
+            <div class="marker-flag-label">🔴 Красный флаг</div>
+            <p>
+              Демонстрирует цены, марки, счета. Или болезненно засекречен.
+              Деньги — тема с напряжением в любую сторону.
+            </p>
+          </div>
+          <div class="marker-flag green">
+            <div class="marker-flag-label">🟢 Зелёный флаг</div>
+            <p>
+              Тратит спокойно, без демонстрации. Не хвастается и не жалуется.
+              Деньги — инструмент.
+            </p>
+          </div>
+        </div>
+        <div class="marker-why">
+          <span class="marker-why-label">Почему это важно</span>
+          <p>
+            <strong
+              >Как он управляет деньгами — так управляет собой в сложных
+              ситуациях.</strong
+            >
+          </p>
+        </div>
+      </div>
+
+      <!-- 06 -->
+      <div class="marker">
+        <div class="marker-header">
+          <div class="marker-num">06</div>
+          <div class="marker-title-wrap">
+            <span class="marker-label">Маркер шестой</span>
+            <div class="marker-title">Как он решает проблемы</div>
+          </div>
+        </div>
+        <div class="marker-how">
+          <span class="marker-how-label">Как проверить</span>
+          <p>
+            Просто подожди. Жизнь сама подкинет что-нибудь. Машина не едет.
+            Ресторан закрыт.
+          </p>
+        </div>
+        <div class="marker-flags">
+          <div class="marker-flag red">
+            <div class="marker-flag-label">🔴 Красный флаг</div>
+            <p>
+              Паникует, злится, обвиняет. Или зависает и ждёт. Ты в итоге
+              решаешь сама.
+            </p>
+          </div>
+          <div class="marker-flag green">
+            <div class="marker-flag-label">🟢 Зелёный флаг</div>
+            <p>
+              Секунда паузы — и ищет решение. «Окей, тогда вот так» — и вечер
+              продолжается.
+            </p>
+          </div>
+        </div>
+        <div class="marker-why">
+          <span class="marker-why-label">Почему это важно</span>
+          <p>
+            <strong
+              >Ты будешь решать проблемы вдвоём — или снова одна, но с мужчиной
+              рядом.</strong
+            >
+          </p>
+        </div>
+      </div>
+
+      <!-- 07 -->
+      <div class="marker">
+        <div class="marker-header">
+          <div class="marker-num">07</div>
+          <div class="marker-title-wrap">
+            <span class="marker-label">Маркер седьмой</span>
+            <div class="marker-title">Как он принимает твоё «нет»</div>
+          </div>
+        </div>
+        <div class="marker-how">
+          <span class="marker-how-label">Как проверить</span>
+          <p>
+            Откажи в чём-то небольшом. Не хочешь это блюдо. Не можешь в эту
+            дату. Не готова к близости.
+          </p>
+        </div>
+        <div class="marker-flags">
+          <div class="marker-flag red">
+            <div class="marker-flag-label">🔴 Красный флаг</div>
+            <p>
+              Обижается. Давит. Использует юмор чтобы продавить. «Ну ладно» — с
+              холодом в голосе.
+            </p>
+          </div>
+          <div class="marker-flag green">
+            <div class="marker-flag-label">🟢 Зелёный флаг</div>
+            <p>
+              Принимает спокойно. Предлагает альтернативу или переключается.
+              Твоё «нет» — информация, не угроза.
+            </p>
+          </div>
+        </div>
+        <div class="marker-why">
+          <span class="marker-why-label">Почему это важно</span>
+          <p>
+            <strong
+              >Мужчина, который не умеет принимать маленькие «нет» — не примет
+              большие.</strong
+            >
+          </p>
+        </div>
+      </div>
+
+      <!-- 08 -->
+      <div class="marker">
+        <div class="marker-header">
+          <div class="marker-num">08</div>
+          <div class="marker-title-wrap">
+            <span class="marker-label">Маркер восьмой</span>
+            <div class="marker-title">
+              Слышит он тебя — или ждёт своей очереди
+            </div>
+          </div>
+        </div>
+        <div class="marker-how">
+          <span class="marker-how-label">Как проверить</span>
+          <p>
+            Расскажи что-то важное. Не драму — просто что-то, что тебя волнует.
+            И замолчи.
+          </p>
+        </div>
+        <div class="marker-flags">
+          <div class="marker-flag red">
+            <div class="marker-flag-label">🔴 Красный флаг</div>
+            <p>
+              Сразу переводит на себя. «Да, у меня тоже было…» Или даёт совет,
+              когда ты не просила.
+            </p>
+          </div>
+          <div class="marker-flag green">
+            <div class="marker-flag-label">🟢 Зелёный флаг</div>
+            <p>
+              Задаёт уточняющий вопрос. Пауза после твоих слов — он думает, не
+              заполняет тишину.
+            </p>
+          </div>
+        </div>
+        <div class="marker-why">
+          <span class="marker-why-label">Почему это важно</span>
+          <p>Без эмпатии — <strong>годы параллельных монологов.</strong></p>
+        </div>
+      </div>
+
+      <!-- 09 -->
+      <div class="marker">
+        <div class="marker-header">
+          <div class="marker-num">09</div>
+          <div class="marker-title-wrap">
+            <span class="marker-label">Маркер девятый</span>
+            <div class="marker-title">Его отношения с семьёй</div>
+          </div>
+        </div>
+        <div class="marker-how">
+          <span class="marker-how-label">Как проверить</span>
+          <p>
+            Послушай, как и сколько он говорит о маме. Не что говорит — а как
+            это звучит.
+          </p>
+        </div>
+        <div class="marker-flags">
+          <div class="marker-flag red">
+            <div class="marker-flag-label">🔴 Красный флаг</div>
+            <p>
+              Мама звонит во время свидания — берёт. Все решения согласует с
+              ней. Или полный разрыв с ненавистью.
+            </p>
+          </div>
+          <div class="marker-flag green">
+            <div class="marker-flag-label">🟢 Зелёный флаг</div>
+            <p>
+              Любит семью — и имеет свою жизнь. Может сказать маме «нет».
+              Границы есть, без войны.
+            </p>
+          </div>
+        </div>
+        <div class="marker-why">
+          <span class="marker-why-label">Почему это важно</span>
+          <p>
+            <strong
+              >Его отношения с матерью — черновик ваших будущих
+              отношений.</strong
+            >
+            Слово в слово.
+          </p>
         </div>
       </div>
 
       <!-- 10 -->
-      <div class="check-item">
-        <h3>10. Ты — украшение или партнер?</h3>
-        <div class="check-row">
-          <div class="check-col check-col-red">
-            <strong>🔴 Тревожный знак</strong>
-            Требует «соответствовать», держит «на витрине» и внушает
-            малоценность
-          </div>
-          <div class="check-col check-col-green">
-            <strong>🟢 Зрелость</strong>
-            Видит тебя ценной, даже когда у тебя пока нет своих достижений
+      <div class="marker">
+        <div class="marker-header">
+          <div class="marker-num">10</div>
+          <div class="marker-title-wrap">
+            <span class="marker-label">Маркер десятый</span>
+            <div class="marker-title">Он видит тебя в своём будущем</div>
           </div>
         </div>
-        <div class="check-insight">
-          → Если ты чувствуешь «я лишняя, не дотягиваю» — это не мужчина твоей
-          зрелости.
+        <div class="marker-how">
+          <span class="marker-how-label">Как проверить</span>
+          <p>
+            Не спрашивай напрямую. Просто слушай: он строит планы с тобой — или
+            только «увидимся как-нибудь»?
+          </p>
+        </div>
+        <div class="marker-flags">
+          <div class="marker-flag red">
+            <div class="marker-flag-label">🔴 Красный флаг</div>
+            <p>
+              «Зачем загадывать» — на 3-й месяц общения. Никаких планов дальше
+              выходных. Только «здесь и сейчас».
+            </p>
+          </div>
+          <div class="marker-flag green">
+            <div class="marker-flag-label">🟢 Зелёный флаг</div>
+            <p>
+              «Когда поедем…» «Хочу показать тебе…» — упоминает будущее
+              естественно. Ты в его картине мира.
+            </p>
+          </div>
+        </div>
+
+    </div>
+  </section>
+        <div class="marker-why">
+          <span class="marker-why-label">Почему это важно</span>
+          <p>
+            <strong
+              >Мужчина, который хочет тебя в своей жизни — показывает
+              это.</strong
+            >
+            Словами и действиями. С самого начала.
+          </p>
         </div>
       </div>
-    </div>
 
-    <!-- RESULTS BOX -->
-    <div class="results-box">
-      <h2>Как трактовать чек-лист</h2>
-      <div class="result-item">
-        <strong>8–10 зелёных:</strong>
-        <p>
-          Такое бывает! Но ты чувствуешь себя спокойно — и не боишься «быть
-          недостаточной».
-        </p>
-      </div>
-      <div class="result-item">
-        <strong>5–7 зелёных:</strong>
-        <p>
-          Будь внимательна. Боишься — доверяй интуиции, не влюбляйся в иллюзию
-          заботы.
-        </p>
-      </div>
-      <div class="result-item">
-        <strong>Меньше 5:</strong>
-        <p>
-          Ты попала в чужой сценарий. Признай это честно, и решай для себя:
-          хочешь так жить дальше?
-        </p>
-      </div>
-    </div>
+      <!-- ЭПИЛОГ -->
+      <div class="epilogue">
 
-    <!-- CTA FINAL -->
-    <div class="cta-final">
-      <h2>Знать маркеры — это только начало</h2>
+        <!-- ПЛАШКА — первое что внутри epilogue -->
+        <div class="epilogue-notice">
+          <p>99% умных женщин всё это уже слышали или читали.</p>
+          <p>Но проблема — не в знаниях. А в том, <strong>что блокирует применение этих знаний на практике.</strong></p>
+          <p>Моя задача — не научить тебя «что делать». А помочь реально это почувствовать и применить в своей жизни.</p>
+        </div>
+  
+        <h3>Но вот в чём настоящий вопрос</h3>
+        <p>
+          Ты прошла этот чек-лист. Может быть, вспомнила кого-то конкретного. И
+          поняла — ты видела эти знаки. <strong>Видела — и оставалась.</strong>
+        </p>
+        <p>
+          Это не невнимательность. Это не слабость. Это нейронная программа,
+          которая работает автоматически. Которая говорит твоему мозгу:
+        </p>
+        <ul class="neuro-list">
+          <li>«нестабильность = любовь»</li>
+          <li>«тревога = страсть»</li>
+          <li>«если очень стараться — он изменится»</li>
+        </ul>
+        <p>
+          <strong>Знать маркеры — это 20% работы.</strong> Оставшиеся 80% —
+          изменить то, что внутри.
+        </p>
+        <p>
+          Именно этим я занимаюсь на программе «Жена Миллионера». Не учу
+          «правильно себя вести». Меняю нейронные связи, которые снова и снова
+          приводят к одному и тому же.
+        </p>
+        <div class="epilogue-cta-box">
+          <p>
+            Приходи на бесплатный разбор — покажу механизм и с чего начать прямо
+            сейчас.
+          </p>
+          <a
+            href="https://t.me/JuliaEnergopraktika"
+            class="btn-red"
+            target="_blank"
+            >Хочу изменить это →</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+      <span class="final-cta-label">Следующий шаг</span>
+      <h2>Готова перестать тратить годы<br /><em>на не тех?</em></h2>
       <p>
-        Все твои страхи — «не такая», «он бросит», «я попадусь», «слишком хорошо
-        — значит подвох» — это не фантазии, а частые сценарии женщин, которые
-        привыкли жить «деньгами мужчины, не своим весом».
+        Запишись на разбор — узнаешь, что именно в твоей нейронной программе
+        приводит к одному и тому же сценарию.
       </p>
-
-      <p class="cta-highlight">
-        Просто знать маркеры — мало. Всё меняется только тогда, когда меняешь
-        внутреннюю программу: разрешаешь себе быть ценной, не зависящей, и НЕ
-        проигрывающей по умолчанию.
-      </p>
-
-      <p>
-        Именно этому я учу на программе <strong>«Жена Миллионера»</strong>.
-        Здесь не учат «как понравиться», а меняют сценарий глубоко — чтобы
-        притягивать достойных и не бояться жить по-настоящему.
-      </p>
-
-      <p
-        style="
-          margin-top: 30px;
-          margin-bottom: 25px;
-          font-size: 1.05rem;
-          color: var(--text);
-        "
+      <a
+        href="https://t.me/JuliaEnergopraktika"
+        class="btn-beige"
+        target="_blank"
+        >Записаться в Telegram ♛</a
       >
-        Готова встать на свой путь? Жми — и узнай, как стать той, которой
-        достойный мужчина ДАЁТ и уважает, а не забирает и ломает.
-      </p>
+    </section>
 
-      <a href="index.html#program" class="btn btn-glow"
-        >Хочу изменить сценарий</a
-      >
-    </div>
-
-    <!-- FOOTER -->
     <footer>
-      <div style="margin-bottom: 12px">
-        <span
-          style="
-            font-family: 'Playfair Display', serif;
-            font-size: 0.95rem;
-            color: rgba(255, 255, 255, 0.5);
-            letter-spacing: 1px;
-          "
-        >
-          MATCH <span style="color: rgba(192, 57, 43, 0.6)">MATCH</span>
-        </span>
-      </div>
-      <p style="margin-bottom: 8px">International Matchmaking</p>
-      <p style="margin-bottom: 10px">
-        <a href="tel:+79150981866">+7 915 098-18-66</a> ·
-        <a href="mailto:mila@matchmatchagency.com">mila@matchmatchagency.com</a>
+      <p>
+        © 2026 Программа «Жена Миллионера» ·
+        <a href="index.html">Вернуться на сайт</a>
       </p>
-      <p><a href="#">Privacy Policy</a> · <a href="#">Terms & Conditions</a></p>
-      <p style="margin-top: 8px">© 2026 Match Match. All rights reserved.</p>
     </footer>
+
+    <script>
+          function toggleChecklist(btn) {
+      btn.classList.toggle('open');
+      const body = document.getElementById('checklistBody');
+      body.classList.toggle('open');
+      if (body.classList.contains('open')) {
+        setTimeout(() => {
+          body.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+    }
+      const answers = {};
+      let greenCount = 0;
+      const total = 10;
+
+      function answer(qNum, type, el) {
+        answers[qNum] = type;
+        greenCount = Object.values(answers).filter((v) => v === "green").length;
+
+        document.getElementById("greenCount").textContent =
+          greenCount + " из 10";
+
+        const card = document.getElementById("q" + qNum);
+        const opts = card.querySelectorAll(".quiz-opt");
+        opts.forEach((o) =>
+          o.classList.remove("selected-green", "selected-red")
+        );
+        el.classList.add(type === "green" ? "selected-green" : "selected-red");
+
+        setTimeout(() => {
+          if (qNum < total) {
+            goTo(qNum + 1);
+          } else {
+            showResult();
+          }
+        }, 450);
+      }
+
+      function goTo(num) {
+        for (let i = 1; i <= total; i++) {
+          const c = document.getElementById("q" + i);
+          if (c) c.classList.remove("active");
+        }
+        const next = document.getElementById("q" + num);
+        if (next) next.classList.add("active");
+
+        document.getElementById("progressCurrent").textContent = num;
+        const pct = ((num - 1) / total) * 100;
+        document.getElementById("progressFill").style.width = pct + "%";
+
+        document
+          .getElementById("quiz")
+          .scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      function showResult() {
+        for (let i = 1; i <= total; i++) {
+          const c = document.getElementById("q" + i);
+          if (c) c.classList.remove("active");
+        }
+
+        document.getElementById("quizProgress").style.display = "none";
+        document.getElementById("tgBanner").style.display = "none";
+        document.getElementById("progressFill").style.width = "100%";
+
+        const resultEl = document.getElementById("quizResult");
+        resultEl.classList.add("active");
+
+        document.getElementById("resultScore").textContent = greenCount;
+
+        let title, desc, ctaTitle;
+
+        if (greenCount >= 8) {
+          title = "Высокий уровень зрелости";
+          desc =
+            "У тебя " +
+            greenCount +
+            " из 10 зелёных маркеров — это редкость. Перед тобой мужчина, который уже готов к серьёзным отношениям. Важно не упустить этот шанс и не саботировать его своими старыми программами.";
+          ctaTitle = "Напиши Юлии — разберём, как не упустить то, что уже есть";
+        } else if (greenCount >= 5) {
+          title = "Ты на правильном пути — но есть слепые зоны";
+          desc =
+            "У тебя " +
+            greenCount +
+            " из 10 зелёных маркеров. Он в процессе созревания — или ты в процессе выбора. Есть зоны, которые стоит прояснить до того, как вложишь ещё больше времени и сердца.";
+          ctaTitle =
+            "Напиши Юлии — покажу, на что обратить внимание именно в твоей ситуации";
+        } else {
+          title = "Скорее всего, ты попадаешь в один и тот же сценарий";
+          desc =
+            "У тебя " +
+            greenCount +
+            " из 10 зелёных маркеров. Это не приговор — это сигнал. Скорее всего, дело не в нём, а в нейронной программе, которая снова и снова приводит тебя к похожим мужчинам.";
+          ctaTitle =
+            "Напиши Юлии — разберём вместе, что стоит за этим паттерном";
+        }
+
+        document.getElementById("resultTitle").textContent = title;
+        document.getElementById("resultDesc").textContent = desc;
+        document.getElementById("resultCtaTitle").textContent = ctaTitle;
+
+        setTimeout(() => {
+          resultEl.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 100);
+      }
+
+      function restartQuiz() {
+        greenCount = 0;
+        for (const key in answers) delete answers[key];
+
+        document.getElementById("greenCount").textContent = "0 из 10";
+        document.getElementById("progressCurrent").textContent = "1";
+        document.getElementById("progressFill").style.width = "0%";
+        document.getElementById("quizProgress").style.display = "block";
+        document.getElementById("tgBanner").style.display = "flex";
+
+        for (let i = 1; i <= total; i++) {
+          const card = document.getElementById("q" + i);
+          if (card) {
+            card.classList.remove("active");
+            card.querySelectorAll(".quiz-opt").forEach((o) => {
+              o.classList.remove("selected-green", "selected-red");
+            });
+          }
+        }
+
+        document.getElementById("quizResult").classList.remove("active");
+        document.getElementById("q1").classList.add("active");
+        document
+          .getElementById("quiz")
+          .scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    </script>
   </body>
 </html>
