@@ -55,18 +55,19 @@
 
       /* NAV */
       nav {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background: rgba(255, 255, 255, 0.97);
-        backdrop-filter: blur(12px);
-        z-index: 1000;
-        padding: 16px 40px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.04);
-      }
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+  padding: 16px 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
       .nav-logo {
         display: flex;
         align-items: center;
@@ -110,6 +111,7 @@
   background: none;
   border: none;
   padding: 4px;
+  margin-left: auto; /* ← это толкает бургер вправо */
 }
 .nav-burger span {
   display: block;
@@ -1838,10 +1840,11 @@
   </div>
 </div>
     <!-- NAV -->
-    <nav>
-      <a href="#top" class="nav-logo">
-        <div class="nav-logo-text">Match<br /><span>Match</span></div>
-      </a>
+      <!-- NAV -->
+      <nav>
+        <a href="#top" class="nav-logo">
+          <img src="logo.svg" height="60" style="display:block;">
+        </a>
       <button class="nav-burger" id="burgerBtn" aria-label="Меню">
         <span></span><span></span><span></span>
       </button>
@@ -1882,19 +1885,29 @@
       </div>
     </section>
 
-    <!-- LETTER -->
     <div class="letter-short">
+      <!-- ФОТО АНИ И МИЛЫ -->
+      <div style="display:flex; flex-direction:column; align-items:center; margin-bottom:32px;">
+        <img 
+          src="https://i.ibb.co/0VVzFc8N/image.jpg" 
+          alt="Аня и Мила — основательницы Match Match" 
+          style="width:180px; height:180px; border-radius:50%; object-fit:cover; object-position: top; border:3px solid #e8d5b8; box-shadow: 0 8px 30px rgba(192,57,43,0.12); margin-bottom:14px;"
+        >
+        <div style="text-align:center;">
+          <div style="font-family:'Playfair Display',serif; font-size:1.1rem; color:#1a1a1a; margin-bottom:4px;">Аня и Мила</div>
+          <div style="font-family:'Montserrat',sans-serif; font-size:0.58rem; color:#c0392b; letter-spacing:2px; text-transform:uppercase;">Основательницы Match Match</div>
+        </div>
+      </div>
+    
       <h2>Почему мы создали эту программу</h2>
       <p>
         Мы — Аня и Мила, основательницы Match Match. Наши клиентки часто
         спрашивают:
-        <em class="highlight"
-          >«Почему всё делаю правильно, а отношения не складываются?»</em
-        >
+        <em class="highlight">«Почему всё делаю правильно, а отношения не складываются?»</em>
       </p>
       <p>
-        За годы работы мы поняли: важно не только то, что вы говорите, а
-        <strong class="highlight">то, что чувствуете внутри</strong>. Именно это
+        За годы работы мы поняли: важно не только то, что вы говорите, но и то,
+        <strong class="highlight">насколько уверенно вы себя чувствуете</strong>. Именно это
         мужчины считывают на первой встрече.
       </p>
       <p>
@@ -1902,9 +1915,7 @@
         создали программу, которая меняет
         <strong class="highlight">внутреннее состояние</strong> — не поведение.
       </p>
-      <div class="letter-signature">С заботой, Аня и Мила ♥</div>
     </div>
-
     <!-- EXPERT -->
     <section class="expert" id="expert">
       <div class="expert-grid">
@@ -2010,7 +2021,7 @@
   <div class="case-row">
     <div class="case-col">
       <span class="case-col-label">Кейс</span>
-      <h3>Девушка, 32 года</h3>
+      <h3>Мария, 32 года</h3>
       <p>
         Не была замужем, долго в роли любовницы. Не видела перспектив
         в здоровых отношениях.
@@ -2041,7 +2052,7 @@
             <div class="case-row">
               <div class="case-col">
                 <span class="case-col-label">Кейс</span>
-                <h3>Бизнес-вумен, 38 лет</h3>
+                <h3>Алена, 38 лет</h3>
                 <p>
                   Все мужчины были либо слабые, либо абьюзивные. В отношениях
                   всегда качели.
@@ -2071,7 +2082,7 @@
             <div class="case-row">
               <div class="case-col">
                 <span class="case-col-label">Кейс</span>
-                <h3>Девушка, 29 лет</h3>
+                <h3>Анастасия, 29 лет</h3>
                 <p>
                   Живёт с богатым мужчиной, но он не вводит её в свой социум,
                   оставляет дома.
@@ -2355,19 +2366,17 @@
               alt="Отзыв 1"
             />
           </div>
-
-          <!-- Слайд 2 -->
-          <div class="photo-slide">
-            <img
-              src="https://i.ibb.co/nN3MzYV0/photo-4999268239951375900-y-1.jpg"
-              alt="Отзыв 2"
-            />
-          </div>
-
+ <!-- Слайд 2 -->
+ <div class="photo-slide">
+  <img
+    src="https://i.ibb.co/d4PYzQXk/photo-4992800405754416213-y.jpg"
+    alt="Отзыв 2"
+  />
+</div>
           <!-- Слайд 3 -->
           <div class="photo-slide">
             <img
-              src="https://i.ibb.co/zWKHNJhw/photo-5059954607425433189-y-1.jpg"
+              src="https://i.ibb.co/nN3MzYV0/photo-4999268239951375900-y-1.jpg"
               alt="Отзыв 3"
             />
           </div>
@@ -2375,7 +2384,7 @@
           <!-- Слайд 4 -->
           <div class="photo-slide">
             <img
-              src="https://i.ibb.co/XZnxyR1L/photo-4965330125641681854-y.jpg"
+              src="https://i.ibb.co/zWKHNJhw/photo-5059954607425433189-y-1.jpg"
               alt="Отзыв 4"
             />
           </div>
@@ -2383,7 +2392,7 @@
           <!-- Слайд 5 -->
           <div class="photo-slide">
             <img
-              src="https://i.ibb.co/1tqvfj8c/photo-4965330125641681856-y.jpg"
+              src="https://i.ibb.co/XZnxyR1L/photo-4965330125641681854-y.jpg"
               alt="Отзыв 5"
             />
           </div>
@@ -2391,8 +2400,16 @@
           <!-- Слайд 6 -->
           <div class="photo-slide">
             <img
-              src="https://i.ibb.co/ynB9PDbY/photo-5028772865683598413-y-1.jpg"
+              src="https://i.ibb.co/1tqvfj8c/photo-4965330125641681856-y.jpg"
               alt="Отзыв 6"
+            />
+          </div>
+
+          <!-- Слайд 7 -->
+          <div class="photo-slide">
+            <img
+              src="https://i.ibb.co/ynB9PDbY/photo-5028772865683598413-y-1.jpg"
+              alt="Отзыв 7"
             />
           </div>
         </div>
