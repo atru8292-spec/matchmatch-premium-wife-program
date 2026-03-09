@@ -55,19 +55,19 @@
 
       /* NAV */
       nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.97);
-  backdrop-filter: blur(12px);
-  z-index: 1000;
-  padding: 16px 40px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
-}
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.97);
+        backdrop-filter: blur(12px);
+        z-index: 1000;
+        padding: 16px 40px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+      }
       .nav-logo {
         display: flex;
         align-items: center;
@@ -104,52 +104,61 @@
         color: var(--red);
       }
       .nav-burger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  background: none;
-  border: none;
-  padding: 4px;
-  margin-left: auto; /* ← это толкает бургер вправо */
-}
-.nav-burger span {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: var(--dark);
-  transition: all 0.3s;
-}
-.nav-mobile {
-  display: none;
-  position: fixed;
-  top: 58px;
-  left: 0; right: 0;
-  background: rgba(255,255,255,0.98);
-  backdrop-filter: blur(12px);
-  z-index: 999;
-  padding: 10px 24px 20px;
-  border-bottom: 1px solid var(--border);
-  flex-direction: column;
-  list-style: none;
-}
-.nav-mobile.open { display: flex; }
-.nav-mobile li { border-bottom: 1px solid var(--border-light); }
-.nav-mobile li:last-child { border-bottom: none; }
-.nav-mobile a {
-  display: block;
-  padding: 14px 0;
-  text-decoration: none;
-  color: var(--text);
-  font-size: 0.75rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-family: "Montserrat", sans-serif;
-}
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 4px;
+        margin-left: auto;
+      }
+      .nav-burger span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: var(--dark);
+        transition: all 0.3s;
+      }
+      .nav-mobile {
+        display: none;
+        position: fixed;
+        top: 58px;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(12px);
+        z-index: 999;
+        padding: 10px 24px 20px;
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        list-style: none;
+      }
+      .nav-mobile.open {
+        display: flex;
+      }
+      .nav-mobile li {
+        border-bottom: 1px solid var(--border-light);
+      }
+      .nav-mobile li:last-child {
+        border-bottom: none;
+      }
+      .nav-mobile a {
+        display: block;
+        padding: 14px 0;
+        text-decoration: none;
+        color: var(--text);
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-family: "Montserrat", sans-serif;
+      }
 
-@media (max-width: 768px) {
-  .nav-burger { display: flex; }
-}
+      @media (max-width: 768px) {
+        .nav-burger {
+          display: flex;
+        }
+      }
 
       /* BUTTONS */
       .btn {
@@ -534,145 +543,430 @@
         letter-spacing: 1px;
         text-transform: uppercase;
       }
-
-      /* CASES */
+      /* ===== КЕЙСЫ — ПРЕМИУМ ДИЗАЙН ===== */
       .cases {
-        background: linear-gradient(135deg, #8b1a1a 0%, #c0392b 100%);
+        background: linear-gradient(135deg, #fdfbf8 0%, #f5ede3 100%);
         padding: 100px 20px;
-      }
-      .cases .section-label {
-        color: rgba(255, 255, 255, 0.7);
-      }
-      .cases .section-title {
-        color: var(--white);
-      }
-      .cases .section-title em {
-        color: var(--white);
-      }
-      .cases-carousel-wrap {
-        max-width: 1200px;
-        margin: 0 auto;
         position: relative;
         overflow: hidden;
       }
-      .cases-carousel-track {
-        display: flex;
-        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-      .case-slide {
-        width: 100%;
-        flex: 0 0 100%;
-        padding: 0 15px;
-      }
-      .case-row {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 0;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        overflow: hidden;
-      }
-      .case-col {
-        padding: 50px 38px;
-        min-width: 0;
-        background: rgba(255, 255, 255, 0.95);
-      }
-      .case-col-label {
-        font-family: "Montserrat", sans-serif;
-        font-size: 0.58rem;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: var(--red);
-        font-weight: 700;
-        margin-bottom: 18px;
-        display: block;
-      }
-      .case-col h3 {
-        font-size: 1.25rem;
-        font-style: italic;
-        margin-bottom: 14px;
-        line-height: 1.3;
-        color: var(--dark);
-      }
-      .case-col p {
-        font-size: 0.9rem;
-        color: var(--text);
-        line-height: 1.75;
-      }
-      .case-col-result {
-        background: linear-gradient(135deg, #fff5f2 0%, #ffe8e0 100%);
-      }
-      .case-big-number {
-        font-family: "Playfair Display", serif;
-        font-size: 5rem;
-        color: var(--red);
-        font-weight: 700;
-        line-height: 1;
-        margin-bottom: 16px;
-      }
-      .case-big-number span {
-        font-size: 1.3rem;
-        font-weight: 500;
-        opacity: 0.7;
-      }
-      .case-col-review {
-        background: linear-gradient(135deg, #fdfbf8 0%, #f5f0ea 100%);
-      }
-      .case-col-review blockquote {
-        font-style: italic;
-        font-size: 1rem;
-        color: var(--text);
-        line-height: 1.8;
-        border-left: 4px solid var(--red);
-        padding-left: 20px;
-        margin: 0;
-      }
-      .case-col-author {
-        font-family: "Playfair Display", serif;
-        font-size: 0.9rem;
-        font-weight: 600;
-        color: var(--red);
-        margin-top: 16px;
-      }
-      .cases-nav {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 16px;
-        margin-top: 40px;
-      }
-      .cases-btn {
-        width: 50px;
-        height: 50px;
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        background: transparent;
-        color: var(--white);
-        cursor: pointer;
-        font-size: 1.2rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s;
-        border-radius: 50%;
-      }
-      .cases-btn:hover {
-        background: var(--white);
-        color: var(--red);
-        border-color: var(--white);
-        transform: scale(1.1);
-      }
-      .cases-counter {
-        font-family: "Montserrat", sans-serif;
-        font-size: 0.75rem;
-        color: rgba(255, 255, 255, 0.7);
-        letter-spacing: 1px;
-        font-weight: 600;
+
+      /* Декоративный узор на фоне */
+      .cases::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: radial-gradient(
+            circle at 20% 50%,
+            rgba(192, 57, 43, 0.03) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 80%,
+            rgba(192, 57, 43, 0.02) 0%,
+            transparent 50%
+          );
+        pointer-events: none;
       }
 
+      .cases .section-label {
+        color: rgba(192, 57, 43, 0.8);
+        text-shadow: 0 2px 10px rgba(192, 57, 43, 0.1);
+        position: relative;
+        z-index: 1;
+      }
+
+      .cases .section-title {
+        color: #1a1a1a;
+        font-size: clamp(2rem, 4vw, 2.8rem);
+        text-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        position: relative;
+        z-index: 1;
+      }
+
+      .cases .section-title em {
+        color: #c0392b;
+        font-style: italic;
+        display: inline-block;
+        position: relative;
+      }
+
+      .cases .section-title em::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #c0392b, transparent);
+        opacity: 0.4;
+      }
+      /* ФИКС ДЛЯ ВИДИМОСТИ РЕЗУЛЬТАТОВ */
+      .case-section.result {
+        background: linear-gradient(135deg, #c0392b 0%, #8d1a1a 100%);
+        position: relative;
+        overflow: visible; /* ← было hidden */
+        min-height: fit-content; /* ← добавлено */
+        padding-bottom: 40px; /* ← увеличен отступ снизу */
+      }
+
+      .case-result-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        position: relative;
+        z-index: 1;
+        width: 100%; /* ← добавлено */
+      }
+      /* СЕТКА КЕЙСОВ */
+      .cases-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        max-width: 1320px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* КАРТОЧКА КЕЙСА */
+      .case-card {
+        background: white;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        border-radius: 4px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08),
+          0 0 0 1px rgba(192, 57, 43, 0.1);
+        position: relative;
+      }
+
+      /* Декоративный уголок */
+      .case-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(
+          135deg,
+          transparent 50%,
+          rgba(192, 57, 43, 0.05) 50%
+        );
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .case-card:hover {
+        transform: translateY(-12px);
+        box-shadow: 0 30px 70px rgba(192, 57, 43, 0.25),
+          0 0 0 2px rgba(192, 57, 43, 0.2);
+        z-index: 10;
+      }
+
+      /* HEADER КАРТОЧКИ */
+      .case-header {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d1a0e 100%);
+        color: white;
+        padding: 44px 30px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Декоративные линии в header */
+      .case-header::before,
+      .case-header::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        width: 60%;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(243, 229, 205, 0.3),
+          transparent
+        );
+        transform: translateX(-50%);
+      }
+
+      .case-header::before {
+        top: 20px;
+      }
+
+      .case-header::after {
+        bottom: 20px;
+      }
+
+      .case-name {
+        font-family: "Playfair Display", serif;
+        font-size: 2rem;
+        font-style: italic;
+        margin-bottom: 12px;
+        line-height: 1.2;
+        color: #f3e5cd;
+        text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+        position: relative;
+        z-index: 1;
+      }
+
+      .case-age {
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.6rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: rgba(243, 229, 205, 0.6);
+        font-weight: 500;
+      }
+
+      /* СЕКЦИИ КАРТОЧКИ */
+      .case-section {
+        padding: 36px 32px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+
+      .case-section-label {
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.5rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: 18px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .case-section-label::before {
+        content: "";
+        width: 24px;
+        height: 2px;
+        background: currentColor;
+      }
+
+      .case-section-text {
+        font-family: "Lora", serif;
+        font-size: 0.98rem;
+        line-height: 1.85;
+        margin-bottom: 0;
+        font-style: italic;
+        color: #3a3a3a;
+      }
+
+      /* СЕКЦИЯ "ДО" */
+      .case-section.before {
+        background: linear-gradient(135deg, #fdfbf8 0%, #f9f3eb 100%);
+        border-bottom: 1px dashed rgba(192, 57, 43, 0.1);
+      }
+
+      .case-section.before .case-section-label {
+        color: #b8956d;
+      }
+
+      /* СЕКЦИЯ "РЕЗУЛЬТАТ" */
+      .case-section.result {
+        background: linear-gradient(135deg, #c0392b 0%, #8d1a1a 100%);
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Декоративный паттерн */
+      .case-section.result::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle at center,
+          rgba(255, 255, 255, 0.05) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+
+      .case-section.result .case-section-label {
+        color: rgba(255, 255, 255, 0.95);
+        font-weight: 700;
+        letter-spacing: 4px;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* БЕЙДЖ ВРЕМЕНИ */
+      .case-time-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(10px);
+        color: white;
+        padding: 12px 26px;
+        border-radius: 50px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 22px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        align-self: flex-start;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        position: relative;
+        z-index: 1;
+      }
+
+      /* СПИСОК РЕЗУЛЬТАТОВ */
+      .case-result-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        position: relative;
+        z-index: 1;
+      }
+
+      .case-result-list li {
+        font-family: "Lora", serif;
+        font-size: 0.95rem;
+        color: white;
+        line-height: 1.9;
+        padding: 12px 0 12px 32px;
+        position: relative;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .case-result-list li:last-child {
+        border-bottom: none;
+      }
+
+      .case-result-list li::before {
+        content: "◆";
+        position: absolute;
+        left: 0;
+        color: #f3e5cd;
+        font-weight: 400;
+        font-size: 0.9rem;
+        top: 12px;
+      }
+
+      /* СЕКЦИЯ ОТЗЫВА */
+      .case-section.review {
+        background: linear-gradient(135deg, #fdfbf8 0%, #f9f3eb 100%);
+      }
+
+      .case-section.review .case-section-label {
+        color: #c0392b;
+      }
+
+      .case-quote {
+        font-family: "Lora", serif;
+        font-style: italic;
+        font-size: 1.02rem;
+        color: #2c2c2c;
+        line-height: 1.85;
+        border-left: 4px solid #c0392b;
+        padding-left: 24px;
+        margin: 0;
+        position: relative;
+      }
+
+      .case-quote::before {
+        content: '"';
+        position: absolute;
+        left: -10px;
+        top: -10px;
+        font-size: 3rem;
+        color: rgba(192, 57, 43, 0.1);
+        font-family: "Playfair Display", serif;
+        line-height: 1;
+      }
+
+      /* АДАПТИВ */
+      @media (max-width: 1024px) {
+        .cases-grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+
+        .case-card:hover {
+          transform: translateY(-6px);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .cases {
+          padding: 80px 16px;
+        }
+
+        .cases-grid {
+          gap: 30px;
+        }
+
+        .case-header {
+          padding: 36px 24px;
+        }
+
+        .case-name {
+          font-size: 1.7rem;
+        }
+
+        .case-section {
+          padding: 28px 24px;
+        }
+
+        .case-quote {
+          font-size: 0.95rem;
+          padding-left: 20px;
+        }
+
+        .case-time-badge {
+          padding: 10px 20px;
+          font-size: 0.6rem;
+        }
+      }
+
+      /* АНИМАЦИЯ ПОЯВЛЕНИЯ */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .case-card {
+        animation: fadeInUp 0.6s ease forwards;
+      }
+
+      .case-card:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+
+      .case-card:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+
+      .case-card:nth-child(3) {
+        animation-delay: 0.3s;
+      }
       /* PROGRAM */
       .program-box {
         max-width: 780px;
         margin: 0 auto;
-        background: #fff;
+        background: #fbeded;
         border: 1px solid var(--border);
         padding: 55px 45px;
         text-align: center;
@@ -686,59 +980,110 @@
         margin-right: auto;
         line-height: 1.85;
       }
+
+      /* СТРУКТУРА ПРОГРАММЫ — В КАРТОЧКАХ */
+      .program-section {
+        background: #ffffff;
+        border: 1px solid var(--border-light);
+        padding: 32px 30px;
+        margin-bottom: 28px;
+        border-radius: 8px;
+        text-align: left;
+      }
+      .program-section h3 {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+        text-align: center;
+        color: var(--dark);
+      }
       .format-list {
         text-align: left;
-        max-width: 520px;
-        margin: 0 auto 35px;
+        max-width: 100%;
+        margin: 0;
         list-style: none;
       }
       .format-list li {
-        margin-bottom: 14px;
-        padding-left: 25px;
+        margin-bottom: 18px;
+        padding-left: 32px;
         position: relative;
         font-size: 0.93rem;
         color: #444;
-        line-height: 1.7;
+        line-height: 1.75;
+        padding-bottom: 18px;
+        border-bottom: 1px solid #efe8dd;
+      }
+      .format-list li:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
       }
       .format-list li::before {
-        content: "";
+        content: "◆";
         position: absolute;
         left: 0;
-        top: 9px;
-        width: 6px;
-        height: 6px;
-        border: 1px solid var(--red);
-        transform: rotate(45deg);
+        top: 2px;
+        color: var(--red);
+        font-size: 0.8rem;
       }
       .format-list li strong {
+        display: block;
+        font-family: "Playfair Display", serif;
+        font-size: 1.05rem;
+        color: var(--dark);
+        margin-bottom: 6px;
+        font-weight: 500;
+      }
+
+      /* ТЕМЫ ПРОГРАММЫ — СЕТКА */
+      .topics-section {
+        background: rgb(253, 239, 239);
+        border: 1px solid var(--border-light);
+        padding: 32px 30px;
+        border-radius: 8px;
+      }
+      .topics-section h3 {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-size: 1.4rem;
+        margin-bottom: 24px;
+        text-align: center;
         color: var(--dark);
       }
       .topics-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 10px;
-        margin-bottom: 35px;
+        gap: 16px;
+        margin: 0;
       }
       .topic-item {
-        padding: 16px 18px;
-        background: var(--cream-bg);
-        border: 1px solid var(--border-light);
+        padding: 24px 20px;
+        background: #fdfbf8;
+        border: 1px solid #efe8dd;
         text-align: left;
+        border-left: 3px solid var(--red);
+        transition: all 0.3s;
+      }
+      .topic-item:hover {
+        background: #fff;
+        box-shadow: 0 4px 20px rgba(192, 57, 43, 0.08);
+        transform: translateY(-2px);
       }
       .topic-item strong {
         display: block;
         font-family: "Playfair Display", serif;
-        font-size: 0.93rem;
+        font-size: 1.05rem;
         font-weight: 500;
-        margin-bottom: 3px;
+        margin-bottom: 8px;
         color: var(--dark);
       }
       .topic-item span {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
         color: var(--text-light);
-        line-height: 1.6;
+        line-height: 1.7;
+        display: block;
       }
-
       /* PRICING */
       .pricing-section {
         padding: 80px 20px;
@@ -921,37 +1266,6 @@
         background: var(--cream);
         padding: 100px 20px;
       }
-      .get-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
-        gap: 20px;
-        max-width: 1000px;
-        margin: 0 auto;
-      }
-      .get-card {
-        background: #fff;
-        padding: 30px 24px;
-        border-top: 2px solid var(--red);
-        transition: all 0.3s;
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      .get-card.show {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      .get-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
-      }
-      .get-num {
-        font-family: "Playfair Display", serif;
-        font-size: 2rem;
-        color: var(--red);
-        opacity: 0.19;
-        line-height: 1;
-        margin-bottom: 10px;
-      }
       .get-card h3 {
         font-size: 1.02rem;
         margin-bottom: 10px;
@@ -1061,7 +1375,6 @@
         color: rgba(255, 255, 255, 0.5);
         letter-spacing: 1px;
       }
-
       /* FAQ */
       .faq {
         background: var(--cream-bg);
@@ -1326,6 +1639,327 @@
         fill: #fff;
       }
 
+      /* ===== EXIT INTENT POPUP ===== */
+      .ei-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+        z-index: 99999;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        backdrop-filter: blur(3px);
+      }
+      .ei-overlay.show {
+        display: flex;
+      }
+      .ei-popup {
+        background: white;
+        max-width: 500px;
+        width: 100%;
+        padding: 50px 44px 40px;
+        border-radius: 4px;
+        text-align: center;
+        position: relative;
+        animation: eiIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+      }
+      @keyframes eiIn {
+        from {
+          transform: scale(0.85) translateY(20px);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1) translateY(0);
+          opacity: 1;
+        }
+      }
+      .ei-close {
+        position: absolute;
+        top: 14px;
+        right: 18px;
+        font-size: 1.3rem;
+        color: #bbb;
+        cursor: pointer;
+        background: none;
+        border: none;
+        line-height: 1;
+        transition: color 0.2s;
+        padding: 4px 8px;
+      }
+      .ei-close:hover {
+        color: var(--dark);
+      }
+      .ei-tag {
+        display: inline-block;
+        background: var(--red);
+        color: white;
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.55rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        padding: 4px 14px;
+        margin-bottom: 20px;
+      }
+      .ei-popup h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.55rem;
+        font-style: italic;
+        color: var(--dark);
+        margin-bottom: 12px;
+        line-height: 1.3;
+      }
+      .ei-popup h3 em {
+        color: var(--red);
+        font-style: italic;
+      }
+      .ei-popup p {
+        font-size: 0.88rem;
+        color: var(--text-light);
+        line-height: 1.75;
+        margin-bottom: 24px;
+        max-width: 360px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .ei-checklist {
+        list-style: none;
+        text-align: left;
+        max-width: 300px;
+        margin: 0 auto 26px;
+        padding: 0;
+      }
+      .ei-checklist li {
+        padding: 5px 0 5px 22px;
+        position: relative;
+        font-size: 0.82rem;
+        color: var(--text);
+        border-bottom: 1px solid var(--border-light);
+      }
+      .ei-checklist li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--red);
+        font-weight: 700;
+      }
+      .ei-btn {
+        background: var(--red);
+        color: white;
+        padding: 15px 36px;
+        border: none;
+        font-size: 0.7rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.3s;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        position: relative;
+        overflow: hidden;
+      }
+      .ei-btn:hover {
+        background: #a03024;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(192, 57, 43, 0.3);
+      }
+      .ei-skip {
+        display: block;
+        margin-top: 14px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.6rem;
+        color: #bbb;
+        letter-spacing: 1px;
+        cursor: pointer;
+        background: none;
+        border: none;
+        text-transform: uppercase;
+        transition: color 0.2s;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+      .ei-skip:hover {
+        color: var(--text-muted);
+      }
+      .ei-note {
+        font-size: 0.58rem;
+        color: var(--text-muted);
+        margin-top: 10px;
+        font-family: "Montserrat", sans-serif;
+        letter-spacing: 0.5px;
+      }
+
+      /* ===== STICKY BANNER (60 сек таймер) ===== */
+      .sticky-banner {
+        position: fixed;
+        bottom: -100px;
+        left: 0;
+        right: 0;
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d1a0e 100%);
+        border-top: 2px solid var(--red);
+        z-index: 9998;
+        padding: 16px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        transition: bottom 0.5s cubic-bezier(0.34, 1.2, 0.64, 1);
+        box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.3);
+      }
+      .sticky-banner.show {
+        bottom: 0;
+      }
+      .sticky-banner-text {
+        font-family: "Lora", serif;
+        font-size: 0.95rem;
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.4;
+      }
+      .sticky-banner-text em {
+        font-style: italic;
+        color: var(--beige);
+      }
+      .sticky-banner-text strong {
+        color: white;
+      }
+      .sticky-banner-actions {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        flex-shrink: 0;
+      }
+      .sticky-banner-btn {
+        background: var(--red);
+        color: white;
+        padding: 10px 24px;
+        border: none;
+        font-size: 0.65rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.3s;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        white-space: nowrap;
+      }
+      .sticky-banner-btn:hover {
+        background: #a03024;
+        transform: translateY(-1px);
+      }
+      .sticky-banner-close {
+        background: none;
+        border: none;
+        color: rgba(255, 255, 255, 0.4);
+        cursor: pointer;
+        font-size: 1.1rem;
+        padding: 4px 8px;
+        transition: color 0.2s;
+        flex-shrink: 0;
+      }
+      .sticky-banner-close:hover {
+        color: white;
+      }
+
+      /* ===== SUBSCRIBE BLOCK (под lm-box) ===== */
+      .subscribe-box {
+        max-width: 680px;
+        margin: 24px auto 0;
+        padding: 32px 40px;
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d1a0e 100%);
+        border-radius: 16px;
+        text-align: center;
+        border: 1px solid rgba(192, 57, 43, 0.3);
+      }
+      .subscribe-box h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.25rem;
+        font-style: italic;
+        color: white;
+        margin-bottom: 10px;
+        line-height: 1.3;
+      }
+      .subscribe-box h3 em {
+        color: var(--beige);
+      }
+      .subscribe-box p {
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.55);
+        margin-bottom: 20px;
+        line-height: 1.7;
+      }
+      .subscribe-form {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .subscribe-input {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        color: white;
+        padding: 12px 18px;
+        font-size: 0.85rem;
+        font-family: "Lora", serif;
+        width: 260px;
+        outline: none;
+        transition: border-color 0.3s;
+        border-radius: 2px;
+      }
+      .subscribe-input::placeholder {
+        color: rgba(255, 255, 255, 0.3);
+      }
+      .subscribe-input:focus {
+        border-color: var(--red);
+      }
+      .subscribe-btn {
+        background: var(--beige);
+        color: var(--dark);
+        padding: 12px 24px;
+        border: none;
+        font-size: 0.65rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        cursor: pointer;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 600;
+        transition: all 0.3s;
+        white-space: nowrap;
+        border-radius: 2px;
+      }
+      .subscribe-btn:hover {
+        background: var(--beige-hover);
+        transform: translateY(-1px);
+      }
+      .subscribe-note {
+        font-size: 0.58rem;
+        color: rgba(255, 255, 255, 0.25);
+        margin-top: 12px;
+        font-family: "Montserrat", sans-serif;
+        letter-spacing: 0.5px;
+      }
+      .subscribe-success {
+        display: none;
+        color: var(--beige);
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-size: 1rem;
+        padding: 10px 0;
+      }
+      .cta-tg-note {
+        margin-top: 12px;
+        font-family: "Lora", serif;
+        font-size: 0.82rem;
+        color: rgba(255, 255, 255, 0.45);
+        font-style: italic;
+        letter-spacing: 0.3px;
+      }
+
       /* RESPONSIVE */
       @media (max-width: 768px) {
         nav {
@@ -1372,14 +2006,12 @@
         .cta-buttons {
           flex-direction: column;
         }
-        .case-row {
+        .cases-grid {
           grid-template-columns: 1fr;
+          gap: 20px;
         }
-        .case-col {
-          padding: 28px 20px;
-        }
-        .case-big-number {
-          font-size: 3rem;
+        .case-section {
+          padding: 24px 20px;
         }
         .photo-slide img {
           max-height: 400px;
@@ -1393,8 +2025,6 @@
         .final .btn-red {
           padding: 16px 32px;
         }
-
-        /* ТАРИФЫ */
         .pricing-section {
           padding: 40px 4px;
         }
@@ -1481,6 +2111,32 @@
           font-size: 0.34rem;
           letter-spacing: 0;
         }
+        .ei-popup {
+          padding: 40px 22px 32px;
+        }
+        .ei-popup h3 {
+          font-size: 1.25rem;
+        }
+        .sticky-banner {
+          gap: 12px;
+          padding: 14px 16px;
+        }
+        .sticky-banner-text {
+          font-size: 0.82rem;
+          text-align: center;
+          width: 100%;
+        }
+        .subscribe-box {
+          padding: 28px 20px;
+          margin-top: 16px;
+        }
+        .subscribe-input {
+          width: 100%;
+        }
+        .subscribe-form {
+          flex-direction: column;
+          align-items: center;
+        }
       }
 
       ::-webkit-scrollbar {
@@ -1492,309 +2148,6 @@
       ::-webkit-scrollbar-thumb {
         background: #ccc;
       }
-       /* ===== EXIT INTENT POPUP ===== */
-.ei-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.55);
-  z-index: 99999;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  backdrop-filter: blur(3px);
-}
-.ei-overlay.show { display: flex; }
-.ei-popup {
-  background: white;
-  max-width: 500px;
-  width: 100%;
-  padding: 50px 44px 40px;
-  border-radius: 4px;
-  text-align: center;
-  position: relative;
-  animation: eiIn 0.35s cubic-bezier(0.34,1.56,0.64,1);
-  box-shadow: 0 30px 80px rgba(0,0,0,0.25);
-}
-@keyframes eiIn {
-  from { transform: scale(0.85) translateY(20px); opacity: 0; }
-  to   { transform: scale(1) translateY(0); opacity: 1; }
-}
-.ei-close {
-  position: absolute;
-  top: 14px; right: 18px;
-  font-size: 1.3rem;
-  color: #bbb;
-  cursor: pointer;
-  background: none;
-  border: none;
-  line-height: 1;
-  transition: color 0.2s;
-  padding: 4px 8px;
-}
-.ei-close:hover { color: var(--dark); }
-.ei-tag {
-  display: inline-block;
-  background: var(--red);
-  color: white;
-  font-family: "Montserrat", sans-serif;
-  font-size: 0.55rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  padding: 4px 14px;
-  margin-bottom: 20px;
-}
-.ei-popup h3 {
-  font-family: "Playfair Display", serif;
-  font-size: 1.55rem;
-  font-style: italic;
-  color: var(--dark);
-  margin-bottom: 12px;
-  line-height: 1.3;
-}
-.ei-popup h3 em { color: var(--red); font-style: italic; }
-.ei-popup p {
-  font-size: 0.88rem;
-  color: var(--text-light);
-  line-height: 1.75;
-  margin-bottom: 24px;
-  max-width: 360px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.ei-checklist {
-  list-style: none;
-  text-align: left;
-  max-width: 300px;
-  margin: 0 auto 26px;
-  padding: 0;
-}
-.ei-checklist li {
-  padding: 5px 0 5px 22px;
-  position: relative;
-  font-size: 0.82rem;
-  color: var(--text);
-  border-bottom: 1px solid var(--border-light);
-}
-.ei-checklist li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  color: var(--red);
-  font-weight: 700;
-}
-.ei-btn {
-  background: var(--red);
-  color: white;
-  padding: 15px 36px;
-  border: none;
-  font-size: 0.7rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-  transition: all 0.3s;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  position: relative;
-  overflow: hidden;
-}
-.ei-btn:hover {
-  background: #a03024;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(192,57,43,0.3);
-}
-.ei-skip {
-  display: block;
-  margin-top: 14px;
-  font-family: "Montserrat", sans-serif;
-  font-size: 0.6rem;
-  color: #bbb;
-  letter-spacing: 1px;
-  cursor: pointer;
-  background: none;
-  border: none;
-  text-transform: uppercase;
-  transition: color 0.2s;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-.ei-skip:hover { color: var(--text-muted); }
-.ei-note {
-  font-size: 0.58rem;
-  color: var(--text-muted);
-  margin-top: 10px;
-  font-family: "Montserrat", sans-serif;
-  letter-spacing: 0.5px;
-}
-
-/* ===== STICKY BANNER (60 сек таймер) ===== */
-.sticky-banner {
-  position: fixed;
-  bottom: -100px;
-  left: 0; right: 0;
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d1a0e 100%);
-  border-top: 2px solid var(--red);
-  z-index: 9998;
-  padding: 16px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  transition: bottom 0.5s cubic-bezier(0.34,1.2,0.64,1);
-  box-shadow: 0 -8px 30px rgba(0,0,0,0.3);
-}
-.sticky-banner.show { bottom: 0; }
-.sticky-banner-text {
-  font-family: "Lora", serif;
-  font-size: 0.95rem;
-  color: rgba(255,255,255,0.9);
-  line-height: 1.4;
-}
-.sticky-banner-text em {
-  font-style: italic;
-  color: var(--beige);
-}
-.sticky-banner-text strong {
-  color: white;
-}
-.sticky-banner-actions {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  flex-shrink: 0;
-}
-.sticky-banner-btn {
-  background: var(--red);
-  color: white;
-  padding: 10px 24px;
-  border: none;
-  font-size: 0.65rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-  transition: all 0.3s;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  white-space: nowrap;
-}
-.sticky-banner-btn:hover {
-  background: #a03024;
-  transform: translateY(-1px);
-}
-.sticky-banner-close {
-  background: none;
-  border: none;
-  color: rgba(255,255,255,0.4);
-  cursor: pointer;
-  font-size: 1.1rem;
-  padding: 4px 8px;
-  transition: color 0.2s;
-  flex-shrink: 0;
-}
-.sticky-banner-close:hover { color: white; }
-
-/* ===== SUBSCRIBE BLOCK (под lm-box) ===== */
-.subscribe-box {
-  max-width: 680px;
-  margin: 24px auto 0;
-  padding: 32px 40px;
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d1a0e 100%);
-  border-radius: 16px;
-  text-align: center;
-  border: 1px solid rgba(192,57,43,0.3);
-}
-.subscribe-box h3 {
-  font-family: "Playfair Display", serif;
-  font-size: 1.25rem;
-  font-style: italic;
-  color: white;
-  margin-bottom: 10px;
-  line-height: 1.3;
-}
-.subscribe-box h3 em { color: var(--beige); }
-.subscribe-box p {
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.55);
-  margin-bottom: 20px;
-  line-height: 1.7;
-}
-.subscribe-form {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.subscribe-input {
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.15);
-  color: white;
-  padding: 12px 18px;
-  font-size: 0.85rem;
-  font-family: "Lora", serif;
-  width: 260px;
-  outline: none;
-  transition: border-color 0.3s;
-  border-radius: 2px;
-}
-.subscribe-input::placeholder { color: rgba(255,255,255,0.3); }
-.subscribe-input:focus { border-color: var(--red); }
-.subscribe-btn {
-  background: var(--beige);
-  color: var(--dark);
-  padding: 12px 24px;
-  border: none;
-  font-size: 0.65rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  cursor: pointer;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-  transition: all 0.3s;
-  white-space: nowrap;
-  border-radius: 2px;
-}
-.subscribe-btn:hover {
-  background: var(--beige-hover);
-  transform: translateY(-1px);
-}
-.subscribe-note {
-  font-size: 0.58rem;
-  color: rgba(255,255,255,0.25);
-  margin-top: 12px;
-  font-family: "Montserrat", sans-serif;
-  letter-spacing: 0.5px;
-}
-.subscribe-success {
-  display: none;
-  color: var(--beige);
-  font-family: "Playfair Display", serif;
-  font-style: italic;
-  font-size: 1rem;
-  padding: 10px 0;
-}
-
-@media (max-width: 768px) {
-  .ei-popup { padding: 40px 22px 32px; }
-  .ei-popup h3 { font-size: 1.25rem; }
-  .sticky-banner { gap: 12px; padding: 14px 16px; }
-  .sticky-banner-text { font-size: 0.82rem; text-align: center; width: 100%; }
-  .subscribe-box { padding: 28px 20px; margin-top: 16px; }
-  .subscribe-input { width: 100%; }
-  .subscribe-form { flex-direction: column; align-items: center; }
-}
-.cta-tg-note {
-  margin-top: 12px;
-  font-family: "Lora", serif;
-  font-size: 0.82rem;
-  color: rgba(255,255,255,0.45);
-  font-style: italic;
-  letter-spacing: 0.3px;
-}
     </style>
   </head>
   <body>
@@ -1809,42 +2162,61 @@
         />
       </svg>
     </a>
-<!-- EXIT INTENT POPUP -->
-<div class="ei-overlay" id="eiOverlay">
-  <div class="ei-popup">
-    <button class="ei-close" onclick="closeEI()" aria-label="Закрыть">✕</button>
-    <div class="ei-tag">Подарок перед уходом</div>
-    <h3>Подождите —<br /><em>возьмите чек-лист бесплатно</em></h3>
-    <p>10 честных маркеров, которые помогут не ошибиться в мужчине. Откроется сразу.</p>
-    <ul class="ei-checklist">
-      <li>Как отличить интерес от манипуляции</li>
-      <li>Признаки мужчины с серьёзными намерениями</li>
-      <li>Красные флаги, которые легко не заметить</li>
-      <li>Как он ведёт себя в конфликте</li>
-    </ul>
-    <a href="free_guide.html" class="ei-btn" onclick="closeEI()">
-      Получить чек-лист бесплатно
-    </a>
-    <div class="ei-note">📩 Без регистрации · Откроется сразу</div>
-  </div>
-</div>
 
-<!-- STICKY BANNER (появляется через 60 сек) -->
-<div class="sticky-banner" id="stickyBanner">
-  <div class="sticky-banner-text">
-    🎁 <strong>Бесплатно:</strong> чек-лист <em>«Проверь его до того, как влюбилась»</em>
-  </div>
-  <div class="sticky-banner-actions">
-    <a href="free_guide.html" class="sticky-banner-btn">Получить бесплатно</a>
-    <button class="sticky-banner-close" onclick="closeStickyBanner()" aria-label="Закрыть">✕</button>
-  </div>
-</div>
-    <!-- NAV -->
-      <!-- NAV -->
-      <nav>
-        <a href="#top" class="nav-logo">
-          <img src="https://i.ibb.co/vWwP1KZ/Match-Match-logo.png" height="60" style="display:block;">
+    <!-- EXIT INTENT POPUP -->
+    <div class="ei-overlay" id="eiOverlay">
+      <div class="ei-popup">
+        <button class="ei-close" onclick="closeEI()" aria-label="Закрыть">
+          ✕
+        </button>
+        <div class="ei-tag">Подарок перед уходом</div>
+        <h3>Подождите —<br /><em>возьмите чек-лист бесплатно</em></h3>
+        <p>
+          10 честных маркеров, которые помогут не ошибиться в мужчине. Откроется
+          сразу.
+        </p>
+        <ul class="ei-checklist">
+          <li>Как отличить интерес от манипуляции</li>
+          <li>Признаки мужчины с серьёзными намерениями</li>
+          <li>Красные флаги, которые легко не заметить</li>
+          <li>Как он ведёт себя в конфликте</li>
+        </ul>
+        <a href="free_guide.html" class="ei-btn" onclick="closeEI()">
+          Получить чек-лист бесплатно
         </a>
+        <div class="ei-note">📩 Без регистрации · Откроется сразу</div>
+      </div>
+    </div>
+
+    <!-- STICKY BANNER (появляется через 60 сек) -->
+    <div class="sticky-banner" id="stickyBanner">
+      <div class="sticky-banner-text">
+        🎁 <strong>Бесплатно:</strong> чек-лист
+        <em>«Проверь его до того, как влюбилась»</em>
+      </div>
+      <div class="sticky-banner-actions">
+        <a href="free_guide.html" class="sticky-banner-btn"
+          >Получить бесплатно</a
+        >
+        <button
+          class="sticky-banner-close"
+          onclick="closeStickyBanner()"
+          aria-label="Закрыть"
+        >
+          ✕
+        </button>
+      </div>
+    </div>
+
+    <!-- NAV -->
+    <nav>
+      <a href="#top" class="nav-logo">
+        <img
+          src="https://i.ibb.co/vWwP1KZ/Match-Match-logo.png"
+          height="60"
+          style="display: block"
+        />
+      </a>
       <button class="nav-burger" id="burgerBtn" aria-label="Меню">
         <span></span><span></span><span></span>
       </button>
@@ -1887,28 +2259,65 @@
 
     <div class="letter-short">
       <!-- ФОТО АНИ И МИЛЫ -->
-      <div style="display:flex; flex-direction:column; align-items:center; margin-bottom:32px;">
-        <img 
-          src="https://i.ibb.co/0VVzFc8N/image.jpg" 
-          alt="Аня и Мила — основательницы Match Match" 
-          style="width:180px; height:180px; border-radius:50%; object-fit:cover; object-position: top; border:3px solid #e8d5b8; box-shadow: 0 8px 30px rgba(192,57,43,0.12); margin-bottom:14px;"
-        >
-        <div style="text-align:center;">
-          <div style="font-family:'Playfair Display',serif; font-size:1.1rem; color:#1a1a1a; margin-bottom:4px;">Аня и Мила</div>
-          <div style="font-family:'Montserrat',sans-serif; font-size:0.58rem; color:#c0392b; letter-spacing:2px; text-transform:uppercase;">Основательницы Match Match</div>
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-bottom: 32px;
+        "
+      >
+        <img
+          src="https://i.ibb.co/0VVzFc8N/image.jpg"
+          alt="Аня и Мила — основательницы Match Match"
+          style="
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: top;
+            border: 3px solid #e8d5b8;
+            box-shadow: 0 8px 30px rgba(192, 57, 43, 0.12);
+            margin-bottom: 14px;
+          "
+        />
+        <div style="text-align: center">
+          <div
+            style="
+              font-family: 'Playfair Display', serif;
+              font-size: 1.1rem;
+              color: #1a1a1a;
+              margin-bottom: 4px;
+            "
+          >
+            Аня и Мила
+          </div>
+          <div
+            style="
+              font-family: 'Montserrat', sans-serif;
+              font-size: 0.58rem;
+              color: #c0392b;
+              letter-spacing: 2px;
+              text-transform: uppercase;
+            "
+          >
+            Основательницы Match Match
+          </div>
         </div>
       </div>
-    
+
       <h2>Почему мы создали эту программу</h2>
       <p>
         Мы — Аня и Мила, основательницы Match Match. Наши клиентки часто
         спрашивают:
-        <em class="highlight">«Почему всё делаю правильно, а отношения не складываются?»</em>
+        <em class="highlight"
+          >«Почему всё делаю правильно, а отношения не складываются?»</em
+        >
       </p>
       <p>
         За годы работы мы поняли: важно не только то, что вы говорите, но и то,
-        <strong class="highlight">насколько уверенно вы себя чувствуете</strong>. Именно это
-        мужчины считывают на первой встрече.
+        <strong class="highlight">насколько уверенно вы себя чувствуете</strong
+        >. Именно это мужчины считывают на первой встрече.
       </p>
       <p>
         Вместе с <strong>Юлией Люмен</strong>, нейропсихологом агентства, мы
@@ -1916,7 +2325,7 @@
         <strong class="highlight">внутреннее состояние</strong> — не поведение.
       </p>
     </div>
-  </section>
+
     <!-- EXPERT -->
     <section class="expert" id="expert">
       <div class="expert-grid">
@@ -1935,13 +2344,12 @@
             Нейропсихолог · Эксперт по отношениям с мужчинами высокого уровня
           </p>
           <p class="expert-bio">
-            Знает изнутри мир состоятельных мужчин — 20 лет в бизнесе. 
-            Помогает женщинам стать той, которую такой мужчина выберет 
-            и не отпустит.
+            Знает изнутри мир состоятельных мужчин — 20 лет в бизнесе. Помогает
+            женщинам стать той, которую такой мужчина выберет и не отпустит.
           </p>
           <blockquote class="expert-quote">
-            «Ты не будешь "стараться". Ты просто станешь другой — 
-            той, рядом с которой он хочет остаться навсегда.»
+            «Ты не будешь "стараться". Ты просто станешь другой — той, рядом с
+            которой он хочет остаться навсегда.»
           </blockquote>
           <div class="expert-stats">
             <div class="expert-stat">
@@ -1960,7 +2368,6 @@
         </div>
       </div>
     </section>
-    </section>
 
     <!-- CTA 1 -->
     <section class="cta-block">
@@ -1977,141 +2384,121 @@
       </div>
     </section>
 
-    <!-- CASES -->
+    <!-- CASES — ИСПРАВЛЕНО -->
     <section class="cases" id="cases">
-      <span class="section-label">Истории успеха</span>
+      <span class="section-label">Истории трансформации</span>
       <h2 class="section-title">
-        Реальные результаты<br /><em>наших клиенток</em>
+        Реальные результаты<br /><em>работы с Юлией</em>
       </h2>
-      <div class="cases-carousel-wrap">
-        <div class="cases-carousel-track" id="casesTrack">
-          <!-- КЕЙС 1 — Екатерина (был 4й, теперь первый) -->
-          <div class="case-slide">
-            <div class="case-row">
-              <div class="case-col">
-                <span class="case-col-label">Кейс</span>
-                <h3>Екатерина, 29 лет</h3>
-                <p>
-                  Работала с психологами 2 года — результата не было.
-                  Чувствовала себя в замкнутом круге без роста и изменений.
-                </p>
-              </div>
-              <div class="case-col case-col-result">
-                <span class="case-col-label">Результат</span>
-                <div class="case-big-number">5 <span>сессий</span></div>
-                <p>
-                  Через 3 сессии получила браслет за 13 000 €. Подняли
-                  внутреннюю ценность — мгновенные результаты на материальном
-                  плане.
-                </p>
-              </div>
-              <div class="case-col case-col-review">
-                <span class="case-col-label">Отзыв</span>
-                <blockquote>
-                  «Покупка сессий — одна из лучших инвестиций этого года и
-                  вообще жизни. Два года с психологом не дали того, что мы за 5
-                  сессий успели настроить. Просто шок в хорошем смысле!»
-                </blockquote>
-                <div class="case-col-author">— Екатерина ★★★★★</div>
-              </div>
-            </div>
+      <p class="section-desc">
+        Эти женщины прошли терапию с Юлией Люмен и изменили свою жизнь. Теперь
+        они рядом с теми мужчинами, о которых мечтали.
+      </p>
+
+      <div class="cases-grid">
+        <!-- КЕЙС 1: Екатерина -->
+        <div class="case-card">
+          <div class="case-header">
+            <div class="case-name">Екатерина</div>
+            <div class="case-age">29 лет · Москва</div>
           </div>
 
-         <!-- КЕЙС 2 — Мария -->
-<div class="case-slide">
-  <div class="case-row">
-    <div class="case-col">
-      <span class="case-col-label">Кейс</span>
-      <h3>Мария, 32 года</h3>
-      <p>
-        Не была замужем, долго в роли любовницы. Не видела перспектив
-        в здоровых отношениях.
-      </p>
-    </div>
-    <div class="case-col case-col-result">
-      <span class="case-col-label">Результат</span>
-      <div class="case-big-number">1 <span>мес.</span></div>
-      <p>
-        работы — и она встретила будущего мужа. 
-        Через 3 месяца сыграли свадьбу. 
-        Через год переехали из Москвы в Нью-Йорк.
-      </p>
-    </div>
-    <div class="case-col case-col-review">
-      <span class="case-col-label">Отзыв</span>
-      <blockquote>
-        «Я не верила, что такое возможно. Но после работы с Юлией я
-        поняла: дело было не в мужчинах — дело было во мне.»
-      </blockquote>
-      <div class="case-col-author">— Мария ★★★★★</div>
-    </div>
-  </div>
-</div>
-
-          <!-- КЕЙС 3 — Алёна -->
-          <div class="case-slide">
-            <div class="case-row">
-              <div class="case-col">
-                <span class="case-col-label">Кейс</span>
-                <h3>Алена, 38 лет</h3>
-                <p>
-                  Все мужчины были либо слабые, либо абьюзивные. В отношениях
-                  всегда качели.
-                </p>
-              </div>
-              <div class="case-col case-col-result">
-                <span class="case-col-label">Результат</span>
-                <div class="case-big-number">3 <span>сессии</span></div>
-                <p>
-                  потеряла интерес к выматывающим отношениям. Начали появляться
-                  мужчины, которые уважают.
-                </p>
-              </div>
-              <div class="case-col case-col-review">
-                <span class="case-col-label">Отзыв</span>
-                <blockquote>
-                  «Я притягивала то, что было у меня внутри — страх и тревогу.
-                  Когда я изменила себя, изменились и мужчины.»
-                </blockquote>
-                <div class="case-col-author">— Алёна ★★★★★</div>
-              </div>
-            </div>
+          <div class="case-section before">
+            <span class="case-section-label">Было</span>
+            <p class="case-section-text">
+              «2 года работала с психологом — результата не было. Чувствовала
+              тупик, не понимала, что делать дальше.»
+            </p>
           </div>
 
-          <!-- КЕЙС 4 — Анастасия -->
-          <div class="case-slide">
-            <div class="case-row">
-              <div class="case-col">
-                <span class="case-col-label">Кейс</span>
-                <h3>Анастасия, 29 лет</h3>
-                <p>
-                  Живёт с богатым мужчиной, но он не вводит её в свой социум,
-                  оставляет дома.
-                </p>
-              </div>
-              <div class="case-col case-col-result">
-                <span class="case-col-label">Результат</span>
-                <div class="case-big-number">4 <span>мес.</span></div>
-                <p>
-                  терапии — он начал её ценить как партнёра. Дал больше
-                  возможностей и начал спонсировать её арт-проект. Она стала не просто партнёром, но и центром светских мероприятий и вечеринок.
-                </p>
-              </div>
-              <div class="case-col case-col-review">
-                <span class="case-col-label">Отзыв</span>
-                <blockquote>
-                  «Я перестала быть "домашней женой" и стала его партнёром. Он
-                  это почувствовал.»
-                </blockquote>
-                <div class="case-col-author">— Анастасия ★★★★★</div>
-              </div>
-            </div>
+          <div class="case-section result">
+            <span class="case-section-label">Стало</span>
+            <div class="case-time-badge">⏱ За 5 сессий</div>
+            <ul class="case-result-list">
+              <li>
+                Уже на 3-й сессии получила подарок: браслет Cartier за 13 000 €
+              </li>
+              <li>Выросла внутренняя ценность — чувствую это каждый день</li>
+              <li>Изменения настолько сильные, что замечают все вокруг</li>
+            </ul>
+          </div>
+
+          <div class="case-section review">
+            <span class="case-section-label">Её отзыв</span>
+            <blockquote class="case-quote">
+              Покупка сессий — одна из лучших инвестиций этого года и вообще
+              всей моей жизни. Просто шок в хорошем смысле! Я не ожидала таких
+              быстрых результатов.
+            </blockquote>
           </div>
         </div>
-        <div class="cases-nav">
-          <button class="cases-btn" onclick="moveCases(-1)">←</button>
-          <span class="cases-counter"><span id="caseNum">1</span> / 4</span>
-          <button class="cases-btn" onclick="moveCases(1)">→</button>
+
+        <!-- КЕЙС 2: Мария -->
+        <div class="case-card">
+          <div class="case-header">
+            <div class="case-name">Мария</div>
+            <div class="case-age">32 года · Дубай</div>
+          </div>
+
+          <div class="case-section before">
+            <span class="case-section-label">Было</span>
+            <p class="case-section-text">
+              «Долго была в роли любовницы. Не верила, что счастливые отношения
+              вообще возможны для меня.»
+            </p>
+          </div>
+
+          <div class="case-section result">
+            <span class="case-section-label">Стало</span>
+            <div class="case-time-badge">⏱ За 1 месяц</div>
+            <ul class="case-result-list">
+              <li>Встретила будущего мужа — успешного предпринимателя</li>
+              <li>Через 3 месяца после знакомства — свадьба</li>
+              <li>Вместе переехали в Нью-Йорк, начали новую жизнь</li>
+            </ul>
+          </div>
+
+          <div class="case-section review">
+            <span class="case-section-label">Её отзыв</span>
+            <blockquote class="case-quote">
+              Я не верила, что такое возможно. Всё меняется во мне — и мужчины
+              это видят сразу. Теперь я точно знаю свою ценность.
+            </blockquote>
+          </div>
+        </div>
+
+        <!-- КЕЙС 3: Алёна -->
+        <div class="case-card">
+          <div class="case-header">
+            <div class="case-name">Алёна</div>
+            <div class="case-age">38 лет · Лондон</div>
+          </div>
+
+          <div class="case-section before">
+            <span class="case-section-label">Было</span>
+            <p class="case-section-text">
+              «Притягивала только слабых или абьюзивных мужчин. Постоянные
+              эмоциональные качели, токсичность.»
+            </p>
+          </div>
+
+          <div class="case-section result">
+            <span class="case-section-label">Стало</span>
+            <div class="case-time-badge">⏱ За 3 сессии</div>
+            <ul class="case-result-list">
+              <li>Полностью пропал интерес к токсичным отношениям</li>
+              <li>Появились мужчины, которые меня уважают и ценят</li>
+              <li>Стало спокойно и уверенно внутри — чувствую это постоянно</li>
+            </ul>
+          </div>
+
+          <div class="case-section review">
+            <span class="case-section-label">Её отзыв</span>
+            <blockquote class="case-quote">
+              Я всегда притягивала тревогу и страх. Когда изменилась изнутри —
+              пришли совершенно другие мужчины. Теперь я выбираю.
+            </blockquote>
+          </div>
         </div>
       </div>
     </section>
@@ -2122,61 +2509,61 @@
         Программа<br /><em>«Жена Миллионера» — 1 ступень</em>
       </h2>
       <p class="section-desc">
-        Программа 1 ступени длится <strong style="color:var(--dark)">41 день</strong> — 
-        именно столько нужно, чтобы перестроились нейронные связи 
-        и новое поведение стало автоматическим.<br /><br />
-        За 6 недель вас ждут <strong style="color:var(--dark)">11 занятий</strong>: 
-        5 живых встреч в Zoom по 2,5 часа и 6 медитаций с практиками в записи — 
-        слушайте когда и где удобно.
+        Программа 1 ступени длится
+        <strong style="color: var(--dark)">41 день</strong> — именно столько
+        нужно, чтобы перестроились нейронные связи и новое поведение стало
+        автоматическим.<br /><br />
+        За 6 недель вас ждут
+        <strong style="color: var(--dark)">11 занятий</strong>: 5 живых встреч в
+        Zoom по 2,5 часа и 6 медитаций с практиками в записи — слушайте когда и
+        где удобно.
       </p>
+
       <div class="program-box">
         <p class="program-intro">
           Создана специально для клиенток Match Match — чтобы вы чувствовали
           себя увереннее на каждом этапе знакомства и отношений.
         </p>
-        <h3 style="font-style: italic; margin-bottom: 18px; text-align: center">
-          Структура программы
-        </h3>
-        <ul class="format-list">
-          <li>
-            <strong>11 занятий</strong><br />5 живых Zoom-встреч + 6 медитаций и
-            практик
-          </li>
-          <li>
-            <strong>Групповой чат с поддержкой</strong><br />Вы не одна — обмен
-            опытом и сопровождение куратора
-          </li>
-          <li>
-            <strong>Материалы для самостоятельной работы</strong
-            ><br />Видеоуроки, аудиомедитации, рабочие тетради
-          </li>
-        </ul>
-        <h3
-          style="
-            font-style: italic;
-            margin-bottom: 18px;
-            margin-top: 35px;
-            text-align: center;
-          "
-        >
-          Темы программы
-        </h3>
-        <div class="topics-grid">
-          <div class="topic-item">
-            <strong>Свобода от прошлого</strong
-            ><span>Перестанешь жить страхами и сценариями прошлого.</span>
-          </div>
-          <div class="topic-item">
-            <strong>Внутренняя ценность</strong
-            ><span>Уверенность, которая притягивает достойных мужчин.</span>
-          </div>
-          <div class="topic-item">
-            <strong>Состояние выбора</strong
-            ><span>Из позиции "меня выбрали" в "я выбираю".</span>
-          </div>
-          <div class="topic-item">
-            <strong>Искусство принимать</strong
-            ><span>Легко принимать заботу, внимание и подарки.</span>
+
+        <!-- СТРУКТУРА -->
+        <div class="program-section">
+          <h3>Структура программы</h3>
+          <ul class="format-list">
+            <li>
+              <strong>11 занятий</strong>
+              5 живых Zoom-встреч + 6 медитаций и практик
+            </li>
+            <li>
+              <strong>Групповой чат с поддержкой</strong>
+              Вы не одна — обмен опытом и сопровождение куратора
+            </li>
+            <li>
+              <strong>Материалы для самостоятельной работы</strong>
+              Видеоуроки, аудиомедитации, рабочие тетради
+            </li>
+          </ul>
+        </div>
+
+        <!-- ТЕМЫ -->
+        <div class="topics-section">
+          <h3>Темы программы</h3>
+          <div class="topics-grid">
+            <div class="topic-item">
+              <strong>Свобода от прошлого</strong>
+              <span>Перестанешь жить страхами и сценариями прошлого.</span>
+            </div>
+            <div class="topic-item">
+              <strong>Внутренняя ценность</strong>
+              <span>Уверенность, которая притягивает достойных мужчин.</span>
+            </div>
+            <div class="topic-item">
+              <strong>Состояние выбора</strong>
+              <span>Из позиции "меня выбрали" в "я выбираю".</span>
+            </div>
+            <div class="topic-item">
+              <strong>Искусство принимать</strong>
+              <span>Легко принимать заботу, внимание и подарки.</span>
+            </div>
           </div>
         </div>
       </div>
@@ -2337,20 +2724,20 @@
       </div>
     </section>
 
-        <!-- CTA 2 -->
-        <section class="cta-block">
-          <h2>Начните трансформацию <em>уже сегодня</em></h2>
-          <p>Осталось всего 20 мест. Программа стартует через 2 недели.</p>
-          <div class="cta-buttons">
-            <a href="#pricing" class="btn-red btn-glow">Забронировать место</a>
-          </div>
-          <div class="cta-urgency">
-            🔒 Только для клиенток Match Match · Спец цены
-          </div>
-          <div class="cta-tg-note">
-            💬 После заявки — свяжемся лично в Telegram, ответим на любые вопросы
-          </div>
-        </section>
+    <!-- CTA 2 -->
+    <section class="cta-block">
+      <h2>Начните трансформацию <em>уже сегодня</em></h2>
+      <p>Осталось всего 20 мест. Программа стартует через 2 недели.</p>
+      <div class="cta-buttons">
+        <a href="#pricing" class="btn-red btn-glow">Забронировать место</a>
+      </div>
+      <div class="cta-urgency">
+        🔒 Только для клиенток Match Match · Спец цены
+      </div>
+      <div class="cta-tg-note">
+        💬 После заявки — свяжемся лично в Telegram, ответим на любые вопросы
+      </div>
+    </section>
 
     <!-- TESTIMONIALS — ФОТО КАРУСЕЛЬ -->
     <section class="testimonials">
@@ -2360,53 +2747,42 @@
 
       <div class="photo-carousel-wrap">
         <div class="photo-carousel-track" id="photoTrack">
-          <!-- Слайд 1 — замените src на свою ссылку -->
           <div class="photo-slide">
             <img
               src="https://i.ibb.co/CpFb5kjS/photo-4965330125641681855-y.jpg"
               alt="Отзыв 1"
             />
           </div>
- <!-- Слайд 2 -->
- <div class="photo-slide">
-  <img
-    src="https://i.ibb.co/d4PYzQXk/photo-4992800405754416213-y.jpg"
-    alt="Отзыв 2"
-  />
-</div>
-          <!-- Слайд 3 -->
+          <div class="photo-slide">
+            <img
+              src="https://i.ibb.co/d4PYzQXk/photo-4992800405754416213-y.jpg"
+              alt="Отзыв 2"
+            />
+          </div>
           <div class="photo-slide">
             <img
               src="https://i.ibb.co/nN3MzYV0/photo-4999268239951375900-y-1.jpg"
               alt="Отзыв 3"
             />
           </div>
-
-          <!-- Слайд 4 -->
           <div class="photo-slide">
             <img
               src="https://i.ibb.co/zWKHNJhw/photo-5059954607425433189-y-1.jpg"
               alt="Отзыв 4"
             />
           </div>
-
-          <!-- Слайд 5 -->
           <div class="photo-slide">
             <img
               src="https://i.ibb.co/XZnxyR1L/photo-4965330125641681854-y.jpg"
               alt="Отзыв 5"
             />
           </div>
-
-          <!-- Слайд 6 -->
           <div class="photo-slide">
             <img
               src="https://i.ibb.co/1tqvfj8c/photo-4965330125641681856-y.jpg"
               alt="Отзыв 6"
             />
           </div>
-
-          <!-- Слайд 7 -->
           <div class="photo-slide">
             <img
               src="https://i.ibb.co/ynB9PDbY/photo-5028772865683598413-y-1.jpg"
@@ -2427,64 +2803,74 @@
       <span class="section-label">Частые вопросы</span>
       <h2 class="section-title">Ответы на <em>ваши вопросы</em></h2>
       <div class="faq-list">
-    
         <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)">Какой тариф выбрать?</div>
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Какой тариф выбрать?
+          </div>
           <div class="faq-a">
-            Если хотите пройти программу в комфортном темпе — выбирайте «Принцессу».
-            Если важны глубокие разборы — «Королеву». Для максимальной
-            персонализации и личной работы с Юлией — «Императрицу».
+            Если хотите пройти программу в комфортном темпе — выбирайте
+            «Принцессу». Если важны глубокие разборы — «Королеву». Для
+            максимальной персонализации и личной работы с Юлией — «Императрицу».
           </div>
         </div>
-    
+
         <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)">Сколько времени займёт программа?</div>
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Сколько времени займёт программа?
+          </div>
           <div class="faq-a">
-            1 ступень рассчитана на 6 недель. 11 занятий — 5 живых встреч
-            в Zoom (по 2,5 часа, раз в неделю) + 6 медитаций и практик в записи.
-            Чат с сопровождением работает всё время программы.
-            Занимайтесь из любой точки мира.
+            1 ступень рассчитана на 6 недель. 11 занятий — 5 живых встреч в Zoom
+            (по 2,5 часа, раз в неделю) + 6 медитаций и практик в записи. Чат с
+            сопровождением работает всё время программы. Занимайтесь из любой
+            точки мира.
           </div>
         </div>
-    
+
         <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)">Когда я увижу первые результаты?</div>
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Когда я увижу первые результаты?
+          </div>
           <div class="faq-a">
             Уже к концу второй недели многие замечают: мужчины начинают
             проявлять больше инициативы, пропадает тревога перед свиданием,
-            появляется внутреннее спокойствие. Внешние результаты в отношениях
-            — обычно в течение 1–3 месяцев.
+            появляется внутреннее спокойствие. Внешние результаты в отношениях —
+            обычно в течение 1–3 месяцев.
           </div>
         </div>
-    
+
         <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)">Как записаться и оплатить?</div>
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Как записаться и оплатить?
+          </div>
           <div class="faq-a">
             Нажмите кнопку «Выбрать» — вы перейдёте в Telegram, где куратор
-            свяжется с вами в течение нескольких часов, ответит на вопросы
-            и пришлёт ссылку на оплату.
+            свяжется с вами в течение нескольких часов, ответит на вопросы и
+            пришлёт ссылку на оплату.
           </div>
         </div>
-    
+
         <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)">Подойдёт ли, если я уже работала с психологом?</div>
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Подойдёт ли, если я уже работала с психологом?
+          </div>
           <div class="faq-a">
             Да. Юлия работает на уровне нейронных связей — это принципиально
-            другой подход, который дополняет любую предыдущую работу.
-            Многие клиентки говорят, что за 5 сессий получили то,
-            чего не дали годы терапии.
+            другой подход, который дополняет любую предыдущую работу. Многие
+            клиентки говорят, что за 5 сессий получили то, чего не дали годы
+            терапии.
           </div>
         </div>
-    
+
         <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)">Это обязательно для клиенток Match Match?</div>
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Это обязательно для клиенток Match Match?
+          </div>
           <div class="faq-a">
             Нет, участие добровольное. Мы рекомендуем программу, потому что
-            видим: встречи идут лучше, мужчины остаются, когда женщина
-            меняется изнутри. Решение — только за вами.
+            видим: встречи идут лучше, мужчины остаются, когда женщина меняется
+            изнутри. Решение — только за вами.
           </div>
         </div>
-    
       </div>
     </section>
 
@@ -2560,85 +2946,78 @@
 
     <script>
       // ===== EXIT INTENT + STICKY BANNER =====
+      var eiShown = false;
+      var stickyShown = false;
+      var eiDismissed = false;
 
-var eiShown = false;
-var stickyShown = false;
-var eiDismissed = false;
+      function closeEI() {
+        document.getElementById("eiOverlay").classList.remove("show");
+        eiDismissed = true;
+        sessionStorage.setItem("eiDismissed", "1");
+      }
 
-// Закрытие попапа
-function closeEI() {
-  document.getElementById("eiOverlay").classList.remove("show");
-  eiDismissed = true;
-  sessionStorage.setItem("eiDismissed", "1");
-}
+      function closeStickyBanner() {
+        document.getElementById("stickyBanner").classList.remove("show");
+        sessionStorage.setItem("stickyDismissed", "1");
+      }
 
-// Закрытие sticky баннера
-function closeStickyBanner() {
-  document.getElementById("stickyBanner").classList.remove("show");
-  sessionStorage.setItem("stickyDismissed", "1");
-}
+      if (sessionStorage.getItem("eiDismissed")) eiDismissed = true;
 
-// Не показывать повторно в той же сессии
-if (sessionStorage.getItem("eiDismissed")) eiDismissed = true;
+      document.addEventListener("mouseleave", function (e) {
+        if (
+          e.clientY <= 10 &&
+          !eiShown &&
+          !eiDismissed &&
+          window.innerWidth > 768
+        ) {
+          document.getElementById("eiOverlay").classList.add("show");
+          eiShown = true;
+        }
+      });
 
-// EXIT INTENT — мышка уходит вверх (только десктоп)
-document.addEventListener("mouseleave", function(e) {
-  if (
-    e.clientY <= 10 &&
-    !eiShown &&
-    !eiDismissed &&
-    window.innerWidth > 768
-  ) {
-    document.getElementById("eiOverlay").classList.add("show");
-    eiShown = true;
-  }
-});
+      document.addEventListener("click", function (e) {
+        var overlay = document.getElementById("eiOverlay");
+        if (e.target === overlay) closeEI();
+      });
 
-// Закрытие попапа кликом по оверлею
-document.addEventListener("click", function(e) {
-  var overlay = document.getElementById("eiOverlay");
-  if (e.target === overlay) closeEI();
-});
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          closeEI();
+          closeStickyBanner();
+        }
+      });
 
-// Закрытие попапа по Escape
-document.addEventListener("keydown", function(e) {
-  if (e.key === "Escape") {
-    closeEI();
-    closeStickyBanner();
-  }
-});
+      setTimeout(function () {
+        if (
+          !sessionStorage.getItem("stickyDismissed") &&
+          !document.getElementById("eiOverlay").classList.contains("show")
+        ) {
+          document.getElementById("stickyBanner").classList.add("show");
+          stickyShown = true;
+        }
+      }, 60000);
 
-// STICKY BANNER — через 60 секунд
-setTimeout(function() {
-  if (
-    !sessionStorage.getItem("stickyDismissed") &&
-    !document.getElementById("eiOverlay").classList.contains("show")
-  ) {
-    document.getElementById("stickyBanner").classList.add("show");
-    stickyShown = true;
-  }
-}, 60000);
+      if (window.innerWidth <= 768) {
+        setTimeout(function () {
+          if (!eiShown && !eiDismissed) {
+            document.getElementById("eiOverlay").classList.add("show");
+            eiShown = true;
+          }
+        }, 45000);
+      }
 
-// На мобиле — exit intent через 45 сек (нет mouseleave)
-if (window.innerWidth <= 768) {
-  setTimeout(function() {
-    if (!eiShown && !eiDismissed) {
-      document.getElementById("eiOverlay").classList.add("show");
-      eiShown = true;
-    }
-  }, 45000);
-}
       // BURGER MENU
-const burgerBtn = document.getElementById("burgerBtn");
-const navMobile = document.getElementById("navMobile");
-if (burgerBtn) {
-  burgerBtn.addEventListener("click", () => {
-    navMobile.classList.toggle("open");
-  });
-}
-function closeMobileNav() {
-  if (navMobile) navMobile.classList.remove("open");
-}
+      const burgerBtn = document.getElementById("burgerBtn");
+      const navMobile = document.getElementById("navMobile");
+      if (burgerBtn) {
+        burgerBtn.addEventListener("click", () => {
+          navMobile.classList.toggle("open");
+        });
+      }
+      function closeMobileNav() {
+        if (navMobile) navMobile.classList.remove("open");
+      }
+
       // FAQ
       function toggleFaq(el) {
         const a = el.nextElementSibling;
@@ -2655,44 +3034,6 @@ function closeMobileNav() {
         }
       }
 
-      // КЕЙСЫ
-      let currentCase = 0;
-      const totalCases = 4;
-      const casesTrack = document.getElementById("casesTrack");
-      const caseNumEl = document.getElementById("caseNum");
-      function goToCase(i) {
-        currentCase = i;
-        casesTrack.style.transform = `translateX(-${i * 100}%)`;
-        caseNumEl.textContent = i + 1;
-      }
-      function moveCases(dir) {
-        let next = currentCase + dir;
-        if (next < 0) next = totalCases - 1;
-        if (next >= totalCases) next = 0;
-        goToCase(next);
-      }
-      const casesWrap = document.querySelector(".cases-carousel-wrap");
-      let casesTouchX = 0;
-      if (casesWrap) {
-        casesWrap.addEventListener(
-          "touchstart",
-          (e) => {
-            casesTouchX = e.touches[0].clientX;
-          },
-          { passive: true }
-        );
-        casesWrap.addEventListener(
-          "touchend",
-          (e) => {
-            const diff = casesTouchX - e.changedTouches[0].clientX;
-            if (Math.abs(diff) > 50) {
-              diff > 0 ? moveCases(1) : moveCases(-1);
-            }
-          },
-          { passive: true }
-        );
-      }
-
       // ФОТО КАРУСЕЛЬ
       let currentPhoto = 0;
       const photoTrack = document.getElementById("photoTrack");
@@ -2702,7 +3043,6 @@ function closeMobileNav() {
       const totalPhotos = photoSlides.length;
       const dotsContainer = document.getElementById("photoDots");
 
-      // Создаём точки
       if (dotsContainer && totalPhotos > 0) {
         for (let i = 0; i < totalPhotos; i++) {
           const dot = document.createElement("button");
@@ -2719,6 +3059,7 @@ function closeMobileNav() {
           d.classList.toggle("active", idx === i);
         });
       }
+
       function movePhoto(dir) {
         let next = currentPhoto + dir;
         if (next < 0) next = totalPhotos - 1;
@@ -2726,7 +3067,6 @@ function closeMobileNav() {
         goToPhoto(next);
       }
 
-      // Свайп для фото
       const photoWrap = document.querySelector(".photo-carousel-wrap");
       let photoTouchX = 0;
       if (photoWrap) {
@@ -2749,7 +3089,6 @@ function closeMobileNav() {
         );
       }
 
-      // Автопрокрутка фото каждые 4 сек
       if (totalPhotos > 1) {
         setInterval(() => movePhoto(1), 4000);
       }
