@@ -74,18 +74,6 @@
         gap: 10px;
         text-decoration: none;
       }
-      .nav-logo-text {
-        font-family: "Playfair Display", serif;
-        font-size: 1.05rem;
-        color: var(--dark);
-        font-weight: 500;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        line-height: 1.1;
-      }
-      .nav-logo-text span {
-        color: var(--red);
-      }
       .nav-links {
         display: flex;
         gap: 28px;
@@ -324,14 +312,6 @@
         flex-wrap: wrap;
         align-items: center;
       }
-      .hero-cta-note {
-        font-family: "Montserrat", sans-serif;
-        font-size: 0.6rem;
-        color: var(--text-muted);
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        line-height: 1.5;
-      }
 
       /* SECTIONS */
       section {
@@ -410,15 +390,6 @@
         background: rgba(192, 57, 43, 0.06);
         padding: 2px 6px;
         border-radius: 4px;
-      }
-      .letter-signature {
-        font-family: "Playfair Display", serif;
-        font-style: italic;
-        color: #a68a63;
-        font-size: 1.15rem;
-        margin-top: 32px;
-        text-align: right;
-        display: block;
       }
 
       /* EXPERT */
@@ -543,15 +514,22 @@
         letter-spacing: 1px;
         text-transform: uppercase;
       }
-      /* ===== КЕЙСЫ — ПРЕМИУМ ДИЗАЙН (ПОЛНАЯ ВЕРСИЯ) ===== */
+      .cta-tg-note {
+        margin-top: 12px;
+        font-family: "Lora", serif;
+        font-size: 0.82rem;
+        color: rgba(255, 255, 255, 0.45);
+        font-style: italic;
+        letter-spacing: 0.3px;
+      }
+
+      /* CASES */
       .cases {
         background: linear-gradient(135deg, #fdfbf8 0%, #f5ede3 100%);
         padding: 100px 20px;
         position: relative;
         overflow: hidden;
       }
-
-      /* Декоративный узор на фоне */
       .cases::before {
         content: "";
         position: absolute;
@@ -571,29 +549,23 @@
           );
         pointer-events: none;
       }
-
       .cases .section-label {
         color: rgba(192, 57, 43, 0.8);
-        text-shadow: 0 2px 10px rgba(192, 57, 43, 0.1);
         position: relative;
         z-index: 1;
       }
-
       .cases .section-title {
         color: #1a1a1a;
         font-size: clamp(2rem, 4vw, 2.8rem);
-        text-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
         position: relative;
         z-index: 1;
       }
-
       .cases .section-title em {
         color: #c0392b;
         font-style: italic;
         display: inline-block;
         position: relative;
       }
-
       .cases .section-title em::after {
         content: "";
         position: absolute;
@@ -604,7 +576,6 @@
         background: linear-gradient(90deg, transparent, #c0392b, transparent);
         opacity: 0.4;
       }
-
       .cases .section-desc {
         text-align: center;
         font-size: 0.93rem;
@@ -615,8 +586,6 @@
         position: relative;
         z-index: 1;
       }
-
-      /* СЕТКА КЕЙСОВ */
       .cases-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -626,8 +595,6 @@
         position: relative;
         z-index: 1;
       }
-
-      /* КАРТОЧКА КЕЙСА */
       .case-card {
         background: white;
         transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -641,8 +608,6 @@
         height: auto;
         min-height: auto;
       }
-
-      /* Декоративный уголок */
       .case-card::before {
         content: "";
         position: absolute;
@@ -658,15 +623,12 @@
         pointer-events: none;
         z-index: 1;
       }
-
       .case-card:hover {
         transform: translateY(-12px);
         box-shadow: 0 30px 70px rgba(192, 57, 43, 0.25),
           0 0 0 2px rgba(192, 57, 43, 0.2);
         z-index: 10;
       }
-
-      /* HEADER КАРТОЧКИ */
       .case-header {
         background: linear-gradient(135deg, #1a1a1a 0%, #2d1a0e 100%);
         color: white;
@@ -676,8 +638,6 @@
         overflow: hidden;
         flex-shrink: 0;
       }
-
-      /* Декоративные линии в header */
       .case-header::before,
       .case-header::after {
         content: "";
@@ -693,15 +653,12 @@
         );
         transform: translateX(-50%);
       }
-
       .case-header::before {
         top: 20px;
       }
-
       .case-header::after {
         bottom: 20px;
       }
-
       .case-name {
         font-family: "Playfair Display", serif;
         font-size: 2rem;
@@ -709,11 +666,9 @@
         margin-bottom: 12px;
         line-height: 1.2;
         color: #f3e5cd;
-        text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
         position: relative;
         z-index: 1;
       }
-
       .case-age {
         font-family: "Montserrat", sans-serif;
         font-size: 0.6rem;
@@ -722,8 +677,6 @@
         color: rgba(243, 229, 205, 0.6);
         font-weight: 500;
       }
-
-      /* СЕКЦИИ КАРТОЧКИ */
       .case-section {
         padding: 36px 32px;
         display: flex;
@@ -733,7 +686,6 @@
         height: auto;
         flex-shrink: 0;
       }
-
       .case-section-label {
         font-family: "Montserrat", sans-serif;
         font-size: 0.5rem;
@@ -746,7 +698,6 @@
         gap: 10px;
         flex-shrink: 0;
       }
-
       .case-section-label::before {
         content: "";
         width: 24px;
@@ -754,7 +705,6 @@
         background: currentColor;
         flex-shrink: 0;
       }
-
       .case-section-text {
         font-family: "Lora", serif;
         font-size: 0.98rem;
@@ -763,18 +713,13 @@
         font-style: italic;
         color: #3a3a3a;
       }
-
-      /* СЕКЦИЯ "БЫЛО" */
       .case-section.before {
         background: linear-gradient(135deg, #fdfbf8 0%, #f9f3eb 100%);
         border-bottom: 1px dashed rgba(192, 57, 43, 0.1);
       }
-
       .case-section.before .case-section-label {
         color: #b8956d;
       }
-
-      /* СЕКЦИЯ "СТАЛО" (РЕЗУЛЬТАТ) */
       .case-section.result {
         background: linear-gradient(135deg, #c0392b 0%, #8d1a1a 100%);
         position: relative;
@@ -783,8 +728,6 @@
         height: auto;
         padding-bottom: 50px;
       }
-
-      /* Декоративный паттерн */
       .case-section.result::before {
         content: "";
         position: absolute;
@@ -800,7 +743,6 @@
         pointer-events: none;
         z-index: 0;
       }
-
       .case-section.result .case-section-label {
         color: rgba(255, 255, 255, 0.95);
         font-weight: 700;
@@ -808,8 +750,6 @@
         position: relative;
         z-index: 1;
       }
-
-      /* БЕЙДЖ ВРЕМЕНИ */
       .case-time-badge {
         display: inline-flex;
         align-items: center;
@@ -832,8 +772,6 @@
         z-index: 1;
         flex-shrink: 0;
       }
-
-      /* СПИСОК РЕЗУЛЬТАТОВ */
       .case-result-list {
         list-style: none;
         padding: 0;
@@ -843,7 +781,6 @@
         width: 100%;
         flex-shrink: 0;
       }
-
       .case-result-list li {
         font-family: "Lora", serif;
         font-size: 0.95rem;
@@ -854,12 +791,10 @@
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         margin-bottom: 0;
       }
-
       .case-result-list li:last-child {
         border-bottom: none;
         padding-bottom: 12px;
       }
-
       .case-result-list li::before {
         content: "◆";
         position: absolute;
@@ -869,16 +804,12 @@
         font-size: 0.9rem;
         top: 12px;
       }
-
-      /* СЕКЦИЯ ОТЗЫВА */
       .case-section.review {
         background: linear-gradient(135deg, #fdfbf8 0%, #f9f3eb 100%);
       }
-
       .case-section.review .case-section-label {
         color: #c0392b;
       }
-
       .case-quote {
         font-family: "Lora", serif;
         font-style: italic;
@@ -890,7 +821,6 @@
         margin: 0;
         position: relative;
       }
-
       .case-quote::before {
         content: '"';
         position: absolute;
@@ -902,137 +832,6 @@
         line-height: 1;
       }
 
-      /* АДАПТИВ ДЛЯ ПЛАНШЕТОВ */
-      @media (max-width: 1024px) {
-        .cases-grid {
-          grid-template-columns: 1fr;
-          gap: 40px;
-        }
-
-        .case-card:hover {
-          transform: translateY(-6px);
-        }
-      }
-
-      /* АДАПТИВ ДЛЯ МОБИЛЬНЫХ */
-      @media (max-width: 768px) {
-        .cases {
-          padding: 80px 16px;
-        }
-
-        .cases-grid {
-          gap: 30px;
-        }
-
-        .case-header {
-          padding: 36px 24px;
-        }
-
-        .case-name {
-          font-size: 1.7rem;
-        }
-
-        .case-age {
-          font-size: 0.55rem;
-        }
-
-        .case-section {
-          padding: 28px 24px;
-          min-height: auto;
-          height: auto;
-        }
-
-        .case-section.result {
-          padding: 28px 24px 60px 24px;
-          overflow: visible;
-          min-height: auto;
-          height: auto;
-        }
-
-        .case-section-label {
-          font-size: 0.48rem;
-          letter-spacing: 2px;
-        }
-
-        .case-section-text {
-          font-size: 0.9rem;
-        }
-
-        .case-time-badge {
-          padding: 10px 20px;
-          font-size: 0.6rem;
-          margin-bottom: 20px;
-        }
-
-        .case-result-list {
-          margin-bottom: 20px;
-        }
-
-        .case-result-list li {
-          font-size: 0.88rem;
-          line-height: 1.8;
-          padding: 10px 0 10px 28px;
-        }
-
-        .case-result-list li::before {
-          font-size: 0.8rem;
-          top: 10px;
-        }
-
-        .case-result-list li:last-child {
-          padding-bottom: 10px;
-        }
-
-        .case-quote {
-          font-size: 0.95rem;
-          padding-left: 20px;
-          line-height: 1.75;
-        }
-
-        .case-quote::before {
-          font-size: 2.5rem;
-          left: -8px;
-          top: -8px;
-        }
-
-        .case-card {
-          min-height: auto;
-          height: auto;
-        }
-
-        .case-card:hover {
-          transform: translateY(-4px);
-        }
-      }
-
-      /* АНИМАЦИЯ ПОЯВЛЕНИЯ */
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .case-card {
-        animation: fadeInUp 0.6s ease forwards;
-        opacity: 0;
-      }
-
-      .case-card:nth-child(1) {
-        animation-delay: 0.1s;
-      }
-
-      .case-card:nth-child(2) {
-        animation-delay: 0.2s;
-      }
-
-      .case-card:nth-child(3) {
-        animation-delay: 0.3s;
-      }
       /* PROGRAM */
       .program-box {
         max-width: 780px;
@@ -1051,8 +850,6 @@
         margin-right: auto;
         line-height: 1.85;
       }
-
-      /* СТРУКТУРА ПРОГРАММЫ — В КАРТОЧКАХ */
       .program-section {
         background: #ffffff;
         border: 1px solid var(--border-light);
@@ -1106,8 +903,6 @@
         margin-bottom: 6px;
         font-weight: 500;
       }
-
-      /* ТЕМЫ ПРОГРАММЫ — СЕТКА */
       .topics-section {
         background: rgb(253, 239, 239);
         border: 1px solid var(--border-light);
@@ -1155,6 +950,7 @@
         line-height: 1.7;
         display: block;
       }
+
       /* PRICING */
       .pricing-section {
         padding: 80px 20px;
@@ -1349,7 +1145,7 @@
         line-height: 1.9;
       }
 
-      /* ===== ФОТО КАРУСЕЛЬ ОТЗЫВОВ ===== */
+      /* TESTIMONIALS */
       .testimonials {
         background: var(--dark);
         padding: 100px 20px;
@@ -1367,7 +1163,6 @@
         color: rgba(255, 255, 255, 0.45);
         margin-bottom: 50px;
       }
-
       .photo-carousel-wrap {
         max-width: 900px;
         margin: 0 auto;
@@ -1440,12 +1235,7 @@
         width: 20px;
         border-radius: 3px;
       }
-      .photo-counter {
-        font-family: "Montserrat", sans-serif;
-        font-size: 0.72rem;
-        color: rgba(255, 255, 255, 0.5);
-        letter-spacing: 1px;
-      }
+
       /* FAQ */
       .faq {
         background: var(--cream-bg);
@@ -1492,118 +1282,6 @@
         padding-top: 15px;
       }
 
-      /* LEAD MAGNET */
-      .lead-magnet {
-        background: linear-gradient(135deg, #fff9f0 0%, #fdf0e8 100%);
-        padding: 100px 20px;
-        text-align: center;
-        border-top: 1px solid var(--beige);
-      }
-      .lm-box {
-        max-width: 680px;
-        margin: 0 auto;
-        padding: 60px 50px;
-        background: white;
-        border: 1.5px solid var(--beige);
-        border-radius: 20px;
-        box-shadow: 0 20px 60px rgba(192, 57, 43, 0.08);
-        position: relative;
-        overflow: hidden;
-      }
-      .lm-box::before {
-        content: "✦";
-        position: absolute;
-        top: -20px;
-        right: 40px;
-        font-size: 6rem;
-        color: var(--beige);
-        line-height: 1;
-        z-index: 0;
-      }
-      .lm-inner {
-        position: relative;
-        z-index: 1;
-      }
-      .lm-tag {
-        display: inline-block;
-        background: var(--red);
-        color: white;
-        font-family: "Montserrat", sans-serif;
-        font-size: 0.58rem;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        padding: 5px 16px;
-        margin-bottom: 24px;
-      }
-      .lm-title {
-        font-family: "Playfair Display", serif;
-        font-size: 1.7rem;
-        color: var(--dark);
-        margin-bottom: 16px;
-        line-height: 1.3;
-      }
-      .lm-title em {
-        font-style: italic;
-        color: var(--red);
-      }
-      .lm-desc {
-        font-size: 0.95rem;
-        color: var(--text-light);
-        line-height: 1.85;
-        margin-bottom: 30px;
-        max-width: 480px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .lm-checklist {
-        list-style: none;
-        text-align: left;
-        max-width: 380px;
-        margin: 0 auto 30px;
-      }
-      .lm-checklist li {
-        padding: 6px 0 6px 28px;
-        position: relative;
-        font-size: 0.88rem;
-        color: var(--text);
-        border-bottom: 1px solid var(--border-light);
-      }
-      .lm-checklist li::before {
-        content: "✓";
-        position: absolute;
-        left: 0;
-        color: var(--red);
-        font-weight: 700;
-      }
-      .lm-btn {
-        background: var(--dark);
-        color: #fff;
-        padding: 16px 44px;
-        border: none;
-        font-size: 0.7rem;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        cursor: pointer;
-        text-decoration: none;
-        display: inline-block;
-        transition: all 0.3s;
-        font-family: "Montserrat", sans-serif;
-        font-weight: 500;
-      }
-      .lm-btn:hover {
-        background: var(--red);
-        transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(192, 57, 43, 0.25);
-      }
-      .lm-note {
-        font-size: 0.62rem;
-        color: var(--text-muted);
-        margin-top: 14px;
-        font-family: "Montserrat", sans-serif;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-      }
-
       /* FINAL */
       .final {
         text-align: center;
@@ -1627,7 +1305,6 @@
         font-style: italic;
         line-height: 1.3;
         color: #fff;
-        text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
       }
       .final h2 em {
         color: var(--beige);
@@ -1638,7 +1315,6 @@
         max-width: 480px;
         margin: 0 auto 12px;
         line-height: 1.8;
-        text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
       }
       .final-signature {
         font-family: "Playfair Display", serif;
@@ -1648,7 +1324,6 @@
         margin-bottom: 40px;
         margin-top: 8px;
         display: block;
-        text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
       }
       .final-cta-group {
         display: flex;
@@ -1667,6 +1342,7 @@
         letter-spacing: 1px;
         text-transform: uppercase;
       }
+
       /* FOOTER */
       footer {
         background: #0a0a0a;
@@ -1710,328 +1386,94 @@
         fill: #fff;
       }
 
-      /* ===== EXIT INTENT POPUP ===== */
-      .ei-overlay {
+      /* COPY TOAST */
+      .copy-toast-overlay {
         position: fixed;
         inset: 0;
-        background: rgba(0, 0, 0, 0.55);
-        z-index: 99999;
-        display: none;
+        background: rgba(0, 0, 0, 0.45);
+        z-index: 10000;
+        display: flex;
         align-items: center;
         justify-content: center;
-        padding: 20px;
-        backdrop-filter: blur(3px);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s;
       }
-      .ei-overlay.show {
-        display: flex;
+      .copy-toast-overlay.active {
+        opacity: 1;
+        pointer-events: auto;
       }
-      .ei-popup {
-        background: white;
-        max-width: 500px;
-        width: 100%;
-        padding: 50px 44px 40px;
-        border-radius: 4px;
+      .copy-toast {
+        background: #fff;
+        border-radius: 20px;
+        padding: 36px 32px;
+        max-width: 380px;
+        width: 90%;
         text-align: center;
-        position: relative;
-        animation: eiIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+        transform: scale(0.85);
+        transition: transform 0.3s;
       }
-      @keyframes eiIn {
-        from {
-          transform: scale(0.85) translateY(20px);
-          opacity: 0;
-        }
-        to {
-          transform: scale(1) translateY(0);
-          opacity: 1;
-        }
+      .copy-toast-overlay.active .copy-toast {
+        transform: scale(1);
       }
-      .ei-close {
-        position: absolute;
-        top: 14px;
-        right: 18px;
-        font-size: 1.3rem;
-        color: #bbb;
-        cursor: pointer;
-        background: none;
-        border: none;
-        line-height: 1;
-        transition: color 0.2s;
-        padding: 4px 8px;
-      }
-      .ei-close:hover {
-        color: var(--dark);
-      }
-      .ei-tag {
-        display: inline-block;
-        background: var(--red);
-        color: white;
-        font-family: "Montserrat", sans-serif;
-        font-size: 0.55rem;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        padding: 4px 14px;
-        margin-bottom: 20px;
-      }
-      .ei-popup h3 {
-        font-family: "Playfair Display", serif;
-        font-size: 1.55rem;
-        font-style: italic;
-        color: var(--dark);
+      .copy-toast-icon {
+        font-size: 3rem;
         margin-bottom: 12px;
-        line-height: 1.3;
       }
-      .ei-popup h3 em {
-        color: var(--red);
-        font-style: italic;
-      }
-      .ei-popup p {
-        font-size: 0.88rem;
-        color: var(--text-light);
-        line-height: 1.75;
-        margin-bottom: 24px;
-        max-width: 360px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .ei-checklist {
-        list-style: none;
-        text-align: left;
-        max-width: 300px;
-        margin: 0 auto 26px;
-        padding: 0;
-      }
-      .ei-checklist li {
-        padding: 5px 0 5px 22px;
-        position: relative;
-        font-size: 0.82rem;
-        color: var(--text);
-        border-bottom: 1px solid var(--border-light);
-      }
-      .ei-checklist li::before {
-        content: "✓";
-        position: absolute;
-        left: 0;
-        color: var(--red);
-        font-weight: 700;
-      }
-      .ei-btn {
-        background: var(--red);
-        color: white;
-        padding: 15px 36px;
-        border: none;
-        font-size: 0.7rem;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        cursor: pointer;
-        text-decoration: none;
-        display: inline-block;
-        transition: all 0.3s;
-        font-family: "Montserrat", sans-serif;
-        font-weight: 500;
-        position: relative;
-        overflow: hidden;
-      }
-      .ei-btn:hover {
-        background: #a03024;
-        transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(192, 57, 43, 0.3);
-      }
-      .ei-skip {
-        display: block;
-        margin-top: 14px;
-        font-family: "Montserrat", sans-serif;
-        font-size: 0.6rem;
-        color: #bbb;
-        letter-spacing: 1px;
-        cursor: pointer;
-        background: none;
-        border: none;
-        text-transform: uppercase;
-        transition: color 0.2s;
-        text-decoration: underline;
-        text-underline-offset: 3px;
-      }
-      .ei-skip:hover {
-        color: var(--text-muted);
-      }
-      .ei-note {
-        font-size: 0.58rem;
-        color: var(--text-muted);
-        margin-top: 10px;
-        font-family: "Montserrat", sans-serif;
-        letter-spacing: 0.5px;
-      }
-
-      /* ===== STICKY BANNER (60 сек таймер) ===== */
-      .sticky-banner {
-        position: fixed;
-        bottom: -100px;
-        left: 0;
-        right: 0;
-        background: linear-gradient(135deg, #1a1a1a 0%, #2d1a0e 100%);
-        border-top: 2px solid var(--red);
-        z-index: 9998;
-        padding: 16px 24px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
-        flex-wrap: wrap;
-        transition: bottom 0.5s cubic-bezier(0.34, 1.2, 0.64, 1);
-        box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.3);
-      }
-      .sticky-banner.show {
-        bottom: 0;
-      }
-      .sticky-banner-text {
-        font-family: "Lora", serif;
-        font-size: 0.95rem;
-        color: rgba(255, 255, 255, 0.9);
-        line-height: 1.4;
-      }
-      .sticky-banner-text em {
-        font-style: italic;
-        color: var(--beige);
-      }
-      .sticky-banner-text strong {
-        color: white;
-      }
-      .sticky-banner-actions {
-        display: flex;
-        gap: 12px;
-        align-items: center;
-        flex-shrink: 0;
-      }
-      .sticky-banner-btn {
-        background: var(--red);
-        color: white;
-        padding: 10px 24px;
-        border: none;
-        font-size: 0.65rem;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        cursor: pointer;
-        text-decoration: none;
-        display: inline-block;
-        transition: all 0.3s;
-        font-family: "Montserrat", sans-serif;
-        font-weight: 500;
-        white-space: nowrap;
-      }
-      .sticky-banner-btn:hover {
-        background: #a03024;
-        transform: translateY(-1px);
-      }
-      .sticky-banner-close {
-        background: none;
-        border: none;
-        color: rgba(255, 255, 255, 0.4);
-        cursor: pointer;
-        font-size: 1.1rem;
-        padding: 4px 8px;
-        transition: color 0.2s;
-        flex-shrink: 0;
-      }
-      .sticky-banner-close:hover {
-        color: white;
-      }
-
-      /* ===== SUBSCRIBE BLOCK (под lm-box) ===== */
-      .subscribe-box {
-        max-width: 680px;
-        margin: 24px auto 0;
-        padding: 32px 40px;
-        background: linear-gradient(135deg, #1a1a1a 0%, #2d1a0e 100%);
-        border-radius: 16px;
-        text-align: center;
-        border: 1px solid rgba(192, 57, 43, 0.3);
-      }
-      .subscribe-box h3 {
+      .copy-toast h3 {
         font-family: "Playfair Display", serif;
         font-size: 1.25rem;
-        font-style: italic;
-        color: white;
-        margin-bottom: 10px;
-        line-height: 1.3;
-      }
-      .subscribe-box h3 em {
-        color: var(--beige);
-      }
-      .subscribe-box p {
-        font-size: 0.85rem;
-        color: rgba(255, 255, 255, 0.55);
-        margin-bottom: 20px;
-        line-height: 1.7;
-      }
-      .subscribe-form {
-        display: flex;
-        gap: 10px;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-      .subscribe-input {
-        background: rgba(255, 255, 255, 0.08);
-        border: 1px solid rgba(255, 255, 255, 0.15);
-        color: white;
-        padding: 12px 18px;
-        font-size: 0.85rem;
-        font-family: "Lora", serif;
-        width: 260px;
-        outline: none;
-        transition: border-color 0.3s;
-        border-radius: 2px;
-      }
-      .subscribe-input::placeholder {
-        color: rgba(255, 255, 255, 0.3);
-      }
-      .subscribe-input:focus {
-        border-color: var(--red);
-      }
-      .subscribe-btn {
-        background: var(--beige);
         color: var(--dark);
-        padding: 12px 24px;
-        border: none;
-        font-size: 0.65rem;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        cursor: pointer;
+        margin-bottom: 10px;
+      }
+      .copy-toast p {
+        font-size: 0.88rem;
+        color: var(--text-light);
+        line-height: 1.7;
+        margin-bottom: 18px;
+      }
+      .copy-toast .msg-preview {
+        background: #f8f4f0;
+        border-left: 3px solid var(--red);
+        padding: 12px 16px;
+        border-radius: 8px;
+        font-size: 0.82rem;
+        color: var(--dark);
+        text-align: left;
+        margin-bottom: 20px;
+        font-style: italic;
+        line-height: 1.6;
+      }
+      .copy-toast .btn-go {
+        display: inline-block;
+        background: linear-gradient(135deg, var(--red), #e74c3c);
+        color: #fff;
+        padding: 14px 36px;
+        border-radius: 30px;
+        text-decoration: none;
         font-family: "Montserrat", sans-serif;
         font-weight: 600;
-        transition: all 0.3s;
-        white-space: nowrap;
-        border-radius: 2px;
-      }
-      .subscribe-btn:hover {
-        background: var(--beige-hover);
-        transform: translateY(-1px);
-      }
-      .subscribe-note {
-        font-size: 0.58rem;
-        color: rgba(255, 255, 255, 0.25);
-        margin-top: 12px;
-        font-family: "Montserrat", sans-serif;
+        font-size: 0.9rem;
         letter-spacing: 0.5px;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
       }
-      .subscribe-success {
-        display: none;
-        color: var(--beige);
-        font-family: "Playfair Display", serif;
-        font-style: italic;
-        font-size: 1rem;
-        padding: 10px 0;
-      }
-      .cta-tg-note {
-        margin-top: 12px;
-        font-family: "Lora", serif;
-        font-size: 0.82rem;
-        color: rgba(255, 255, 255, 0.45);
-        font-style: italic;
-        letter-spacing: 0.3px;
+      .copy-toast .btn-go:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(192, 57, 43, 0.35);
       }
 
       /* RESPONSIVE */
+      @media (max-width: 1024px) {
+        .cases-grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+        .case-card:hover {
+          transform: translateY(-6px);
+        }
+      }
       @media (max-width: 768px) {
         nav {
           padding: 14px 16px;
@@ -2077,18 +1519,78 @@
         .cta-buttons {
           flex-direction: column;
         }
+        .cases {
+          padding: 80px 16px;
+        }
         .cases-grid {
-          grid-template-columns: 1fr;
-          gap: 20px;
+          gap: 30px;
+        }
+        .case-header {
+          padding: 36px 24px;
+        }
+        .case-name {
+          font-size: 1.7rem;
+        }
+        .case-age {
+          font-size: 0.55rem;
         }
         .case-section {
-          padding: 24px 20px;
+          padding: 28px 24px;
+          min-height: auto;
+          height: auto;
+        }
+        .case-section.result {
+          padding: 28px 24px 60px 24px;
+          overflow: visible;
+          min-height: auto;
+          height: auto;
+        }
+        .case-section-label {
+          font-size: 0.48rem;
+          letter-spacing: 2px;
+        }
+        .case-section-text {
+          font-size: 0.9rem;
+        }
+        .case-time-badge {
+          padding: 10px 20px;
+          font-size: 0.6rem;
+          margin-bottom: 20px;
+        }
+        .case-result-list {
+          margin-bottom: 20px;
+        }
+        .case-result-list li {
+          font-size: 0.88rem;
+          line-height: 1.8;
+          padding: 10px 0 10px 28px;
+        }
+        .case-result-list li::before {
+          font-size: 0.8rem;
+          top: 10px;
+        }
+        .case-result-list li:last-child {
+          padding-bottom: 10px;
+        }
+        .case-quote {
+          font-size: 0.95rem;
+          padding-left: 20px;
+          line-height: 1.75;
+        }
+        .case-quote::before {
+          font-size: 2.5rem;
+          left: -8px;
+          top: -8px;
+        }
+        .case-card {
+          min-height: auto;
+          height: auto;
+        }
+        .case-card:hover {
+          transform: translateY(-4px);
         }
         .photo-slide img {
           max-height: 400px;
-        }
-        .lm-box {
-          padding: 40px 24px;
         }
         .final {
           padding: 80px 20px;
@@ -2182,32 +1684,30 @@
           font-size: 0.34rem;
           letter-spacing: 0;
         }
-        .ei-popup {
-          padding: 40px 22px 32px;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
         }
-        .ei-popup h3 {
-          font-size: 1.25rem;
+        to {
+          opacity: 1;
+          transform: translateY(0);
         }
-        .sticky-banner {
-          gap: 12px;
-          padding: 14px 16px;
-        }
-        .sticky-banner-text {
-          font-size: 0.82rem;
-          text-align: center;
-          width: 100%;
-        }
-        .subscribe-box {
-          padding: 28px 20px;
-          margin-top: 16px;
-        }
-        .subscribe-input {
-          width: 100%;
-        }
-        .subscribe-form {
-          flex-direction: column;
-          align-items: center;
-        }
+      }
+      .case-card {
+        animation: fadeInUp 0.6s ease forwards;
+        opacity: 0;
+      }
+      .case-card:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .case-card:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .case-card:nth-child(3) {
+        animation-delay: 0.3s;
       }
 
       ::-webkit-scrollbar {
@@ -2234,48 +1734,27 @@
       </svg>
     </a>
 
-    <!-- EXIT INTENT POPUP -->
-    <div class="ei-overlay" id="eiOverlay">
-      <div class="ei-popup">
-        <button class="ei-close" onclick="closeEI()" aria-label="Закрыть">
-          ✕
-        </button>
-        <div class="ei-tag">Подарок перед уходом</div>
-        <h3>Подождите —<br /><em>возьмите чек-лист бесплатно</em></h3>
+    <!-- COPY TOAST POPUP -->
+    <div class="copy-toast-overlay" id="copyToast">
+      <div class="copy-toast">
+        <div class="copy-toast-icon">💌</div>
+        <h3>Сообщение скопировано!</h3>
         <p>
-          10 честных маркеров, которые помогут не ошибиться в мужчине. Откроется
-          сразу.
+          Сейчас откроется Telegram — просто <strong>вставь сообщение</strong> в
+          чат и отправь:
         </p>
-        <ul class="ei-checklist">
-          <li>Как отличить интерес от манипуляции</li>
-          <li>Признаки мужчины с серьёзными намерениями</li>
-          <li>Красные флаги, которые легко не заметить</li>
-          <li>Как он ведёт себя в конфликте</li>
-        </ul>
-        <a href="free_guide.html" class="ei-btn" onclick="closeEI()">
-          Получить чек-лист бесплатно
-        </a>
-        <div class="ei-note">📩 Без регистрации · Откроется сразу</div>
-      </div>
-    </div>
-
-    <!-- STICKY BANNER (появляется через 60 сек) -->
-    <div class="sticky-banner" id="stickyBanner">
-      <div class="sticky-banner-text">
-        🎁 <strong>Бесплатно:</strong> чек-лист
-        <em>«Проверь его до того, как влюбилась»</em>
-      </div>
-      <div class="sticky-banner-actions">
-        <a href="free_guide.html" class="sticky-banner-btn"
-          >Получить бесплатно</a
+        <div class="msg-preview" id="copyToastMsg"></div>
+        <button class="btn-go" id="copyToastBtn">Открыть Telegram →</button>
+        <p
+          style="
+            font-size: 0.75rem;
+            color: #999;
+            margin-top: 12px;
+            margin-bottom: 0;
+          "
         >
-        <button
-          class="sticky-banner-close"
-          onclick="closeStickyBanner()"
-          aria-label="Закрыть"
-        >
-          ✕
-        </button>
+          Юлия ответит в течение часа 💕
+        </p>
       </div>
     </div>
 
@@ -2334,7 +1813,6 @@
     >
       <div style="max-width: 500px; margin: 0 auto">
         <h2 class="section-title">Слушай <em>внимательно</em></h2>
-
         <div
           style="
             position: relative;
@@ -2360,14 +1838,12 @@
             title="Послание"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen
-          >
-          </iframe>
+          ></iframe>
         </div>
       </div>
     </section>
 
     <div class="letter-short">
-      <!-- ФОТО АНИ И МИЛЫ -->
       <div
         style="
           display: flex;
@@ -2492,125 +1968,65 @@
         💬 После заявки — свяжемся лично в Telegram, ответим на любые вопросы
       </div>
     </section>
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+      <span class="section-label">Отзывы клиенток</span>
+      <h2 class="section-title">Они уже <em>изменили свою жизнь</em></h2>
+      <p class="section-desc">Реальные отзывы клиенток Юлии</p>
 
-    <!-- CASES — ИСПРАВЛЕНО -->
-    <section class="cases" id="cases">
-      <span class="section-label">Истории трансформации</span>
-      <h2 class="section-title">
-        Реальные результаты<br /><em>работы с Юлией</em>
-      </h2>
-      <p class="section-desc">
-        Эти женщины прошли терапию с Юлией Люмен и изменили свою жизнь. Теперь
-        они рядом с теми мужчинами, о которых мечтали.
-      </p>
-
-      <div class="cases-grid">
-        <!-- КЕЙС 1: Екатерина -->
-        <div class="case-card">
-          <div class="case-header">
-            <div class="case-name">Екатерина</div>
-            <div class="case-age">29 лет · Москва</div>
+      <div class="photo-carousel-wrap">
+        <div class="photo-carousel-track" id="photoTrack">
+          <div class="photo-slide">
+            <img
+              src="https://i.ibb.co/CpFb5kjS/photo-4965330125641681855-y.jpg"
+              alt="Отзыв 1"
+            />
           </div>
-
-          <div class="case-section before">
-            <span class="case-section-label">Было</span>
-            <p class="case-section-text">
-              «2 года работала с психологом — результата не было. Чувствовала
-              тупик, не понимала, что делать дальше.»
-            </p>
+          <div class="photo-slide">
+            <img
+              src="https://i.ibb.co/d4PYzQXk/photo-4992800405754416213-y.jpg"
+              alt="Отзыв 2"
+            />
           </div>
-
-          <div class="case-section result">
-            <span class="case-section-label">Стало</span>
-            <div class="case-time-badge">⏱ За 5 сессий</div>
-            <ul class="case-result-list">
-              <li>
-                Уже на 3-й сессии получила подарок: браслет Cartier за 13 000 €
-              </li>
-              <li>Выросла внутренняя ценность — чувствую это каждый день</li>
-              <li>Изменения настолько сильные, что замечают все вокруг</li>
-            </ul>
+          <div class="photo-slide">
+            <img
+              src="https://i.ibb.co/nN3MzYV0/photo-4999268239951375900-y-1.jpg"
+              alt="Отзыв 3"
+            />
           </div>
-
-          <div class="case-section review">
-            <span class="case-section-label">Её отзыв</span>
-            <blockquote class="case-quote">
-              Покупка сессий — одна из лучших инвестиций этого года и вообще
-              всей моей жизни. Просто шок в хорошем смысле! Я не ожидала таких
-              быстрых результатов.
-            </blockquote>
+          <div class="photo-slide">
+            <img
+              src="https://i.ibb.co/zWKHNJhw/photo-5059954607425433189-y-1.jpg"
+              alt="Отзыв 4"
+            />
           </div>
-        </div>
-
-        <!-- КЕЙС 2: Мария -->
-        <div class="case-card">
-          <div class="case-header">
-            <div class="case-name">Мария</div>
-            <div class="case-age">32 года · Дубай</div>
+          <div class="photo-slide">
+            <img
+              src="https://i.ibb.co/XZnxyR1L/photo-4965330125641681854-y.jpg"
+              alt="Отзыв 5"
+            />
           </div>
-
-          <div class="case-section before">
-            <span class="case-section-label">Было</span>
-            <p class="case-section-text">
-              «Долго была в роли любовницы. Не верила, что счастливые отношения
-              вообще возможны для меня.»
-            </p>
+          <div class="photo-slide">
+            <img
+              src="https://i.ibb.co/1tqvfj8c/photo-4965330125641681856-y.jpg"
+              alt="Отзыв 6"
+            />
           </div>
-
-          <div class="case-section result">
-            <span class="case-section-label">Стало</span>
-            <div class="case-time-badge">⏱ За 1 месяц</div>
-            <ul class="case-result-list">
-              <li>Встретила будущего мужа — успешного предпринимателя</li>
-              <li>Через 3 месяца после знакомства — свадьба</li>
-              <li>Вместе переехали в Нью-Йорк, начали новую жизнь</li>
-            </ul>
-          </div>
-
-          <div class="case-section review">
-            <span class="case-section-label">Её отзыв</span>
-            <blockquote class="case-quote">
-              Я не верила, что такое возможно. Всё меняется во мне — и мужчины
-              это видят сразу. Теперь я точно знаю свою ценность.
-            </blockquote>
+          <div class="photo-slide">
+            <img
+              src="https://i.ibb.co/ynB9PDbY/photo-5028772865683598413-y-1.jpg"
+              alt="Отзыв 7"
+            />
           </div>
         </div>
-
-        <!-- КЕЙС 3: Алёна -->
-        <div class="case-card">
-          <div class="case-header">
-            <div class="case-name">Алёна</div>
-            <div class="case-age">38 лет · Лондон</div>
-          </div>
-
-          <div class="case-section before">
-            <span class="case-section-label">Было</span>
-            <p class="case-section-text">
-              «Притягивала только слабых или абьюзивных мужчин. Постоянные
-              эмоциональные качели, токсичность.»
-            </p>
-          </div>
-
-          <div class="case-section result">
-            <span class="case-section-label">Стало</span>
-            <div class="case-time-badge">⏱ За 3 сессии</div>
-            <ul class="case-result-list">
-              <li>Полностью пропал интерес к токсичным отношениям</li>
-              <li>Появились мужчины, которые меня уважают и ценят</li>
-              <li>Стало спокойно и уверенно внутри — чувствую это постоянно</li>
-            </ul>
-          </div>
-
-          <div class="case-section review">
-            <span class="case-section-label">Её отзыв</span>
-            <blockquote class="case-quote">
-              Я всегда притягивала тревогу и страх. Когда изменилась изнутри —
-              пришли совершенно другие мужчины. Теперь я выбираю.
-            </blockquote>
-          </div>
+        <div class="photo-nav">
+          <button class="photo-btn" onclick="movePhoto(-1)">←</button>
+          <div class="photo-dots" id="photoDots"></div>
+          <button class="photo-btn" onclick="movePhoto(1)">→</button>
         </div>
       </div>
     </section>
+
     <!-- PROGRAM -->
     <section id="program" style="background: var(--cream)">
       <span class="section-label">Авторская программа</span>
@@ -2634,26 +2050,24 @@
           себя увереннее на каждом этапе знакомства и отношений.
         </p>
 
-        <!-- СТРУКТУРА -->
         <div class="program-section">
           <h3>Структура программы</h3>
           <ul class="format-list">
             <li>
-              <strong>11 занятий</strong>
-              5 живых Zoom-встреч + 6 медитаций и практик
+              <strong>11 занятий</strong>5 живых Zoom-встреч + 6 медитаций и
+              практик
             </li>
             <li>
-              <strong>Групповой чат с поддержкой</strong>
-              Вы не одна — обмен опытом и сопровождение куратора
+              <strong>Групповой чат с поддержкой</strong>Вы не одна — обмен
+              опытом и сопровождение куратора
             </li>
             <li>
-              <strong>Материалы для самостоятельной работы</strong>
-              Видеоуроки, аудиомедитации, рабочие тетради
+              <strong>Материалы для самостоятельной работы</strong>Видеоуроки,
+              аудиомедитации, рабочие тетради
             </li>
           </ul>
         </div>
 
-        <!-- ТЕМЫ -->
         <div class="topics-section">
           <h3>Темы программы</h3>
           <div class="topics-grid">
@@ -2677,7 +2091,495 @@
         </div>
       </div>
     </section>
+    <!-- CASES -->
+    <section class="cases" id="cases">
+      <span class="section-label">Истории трансформации</span>
+      <h2 class="section-title">
+        Реальные результаты<br /><em>работы с Юлией</em>
+      </h2>
+      <p class="section-desc">
+        Эти женщины прошли терапию с Юлией Люмен и изменили свою жизнь. Теперь
+        они рядом с теми мужчинами, о которых мечтали.
+      </p>
 
+      <div class="cases-grid">
+        <div class="case-card">
+          <div class="case-header">
+            <div class="case-name">Екатерина</div>
+            <div class="case-age">29 лет · Москва</div>
+          </div>
+          <div class="case-section before">
+            <span class="case-section-label">Было</span>
+            <p class="case-section-text">
+              «2 года работала с психологом — результата не было. Чувствовала
+              тупик, не понимала, что делать дальше.»
+            </p>
+          </div>
+          <div class="case-section result">
+            <span class="case-section-label">Стало</span>
+            <div class="case-time-badge">⏱ За 5 сессий</div>
+            <ul class="case-result-list">
+              <li>
+                Уже на 3-й сессии получила подарок: браслет Cartier за 13 000 €
+              </li>
+              <li>Выросла внутренняя ценность — чувствую это каждый день</li>
+              <li>Изменения настолько сильные, что замечают все вокруг</li>
+            </ul>
+          </div>
+          <div class="case-section review">
+            <span class="case-section-label">Её отзыв</span>
+            <blockquote class="case-quote">
+              Покупка сессий — одна из лучших инвестиций этого года и вообще
+              всей моей жизни. Просто шок в хорошем смысле! Я не ожидала таких
+              быстрых результатов.
+            </blockquote>
+          </div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-header">
+            <div class="case-name">Мария</div>
+            <div class="case-age">32 года · Дубай</div>
+          </div>
+          <div class="case-section before">
+            <span class="case-section-label">Было</span>
+            <p class="case-section-text">
+              «Долго была в роли любовницы. Не верила, что счастливые отношения
+              вообще возможны для меня.»
+            </p>
+          </div>
+          <div class="case-section result">
+            <span class="case-section-label">Стало</span>
+            <div class="case-time-badge">⏱ За 1 месяц</div>
+            <ul class="case-result-list">
+              <li>Встретила будущего мужа — успешного предпринимателя</li>
+              <li>Через 3 месяца после знакомства — свадьба</li>
+              <li>Вместе переехали в Нью-Йорк, начали новую жизнь</li>
+            </ul>
+          </div>
+          <div class="case-section review">
+            <span class="case-section-label">Её отзыв</span>
+            <blockquote class="case-quote">
+              Я не верила, что такое возможно. Всё меняется во мне — и мужчины
+              это видят сразу. Теперь я точно знаю свою ценность.
+            </blockquote>
+          </div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-header">
+            <div class="case-name">Алёна</div>
+            <div class="case-age">38 лет · Лондон</div>
+          </div>
+          <div class="case-section before">
+            <span class="case-section-label">Было</span>
+            <p class="case-section-text">
+              «Притягивала только слабых или абьюзивных мужчин. Постоянные
+              эмоциональные качели, токсичность.»
+            </p>
+          </div>
+          <div class="case-section result">
+            <span class="case-section-label">Стало</span>
+            <div class="case-time-badge">⏱ За 3 сессии</div>
+            <ul class="case-result-list">
+              <li>Полностью пропал интерес к токсичным отношениям</li>
+              <li>Появились мужчины, которые меня уважают и ценят</li>
+              <li>Стало спокойно и уверенно внутри — чувствую это постоянно</li>
+            </ul>
+          </div>
+          <div class="case-section review">
+            <span class="case-section-label">Её отзыв</span>
+            <blockquote class="case-quote">
+              Я всегда притягивала тревогу и страх. Когда изменилась изнутри —
+              пришли совершенно другие мужчины. Теперь я выбираю.
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ПРЕДОПЛАТА + БОНУС -->
+    <section
+      style="
+        padding: 60px 20px 20px;
+        background: var(--cream-bg);
+        text-align: center;
+      "
+    >
+      <div
+        style="
+          max-width: 720px;
+          margin: 0 auto;
+          background: linear-gradient(135deg, #fff9f0 0%, #fdf0e8 100%);
+          border: 1.5px solid var(--beige);
+          border-radius: 20px;
+          padding: 44px 36px;
+          box-shadow: 0 10px 40px rgba(192, 57, 43, 0.08);
+        "
+      >
+        <div
+          style="
+            display: inline-block;
+            background: var(--red);
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.6rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 5px 16px;
+            margin-bottom: 18px;
+          "
+        >
+          Бонус при записи
+        </div>
+        <h3
+          style="
+            font-family: 'Playfair Display', serif;
+            font-size: 1.55rem;
+            font-style: italic;
+            color: var(--dark);
+            margin-bottom: 14px;
+            line-height: 1.3;
+          "
+        >
+          Забронируйте место сегодня —<br />и
+          <em style="color: var(--red)">получите бонус</em>
+        </h3>
+        <p
+          style="
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 24px;
+            max-width: 540px;
+            margin-left: auto;
+            margin-right: auto;
+          "
+        >
+          При записи в ближайшие 24 часа вам откроется эксклюзивный
+          подготовительный курс от Юлии — ещё до начала программы. Эти материалы
+          не входят ни в один тариф и не продаются отдельно.
+        </p>
+
+        <!-- ТАЙМЕР -->
+        <div id="bonusTimerWrap" style="margin-bottom: 28px">
+          <p
+            style="
+              font-family: 'Montserrat', sans-serif;
+              font-size: 0.58rem;
+              color: var(--text-muted);
+              letter-spacing: 1.5px;
+              text-transform: uppercase;
+              margin-bottom: 10px;
+            "
+          >
+            Бонус доступен ещё
+          </p>
+          <div
+            id="bonusTimer"
+            style="display: inline-flex; gap: 12px; align-items: center"
+          >
+            <div style="text-align: center">
+              <div
+                id="tHours"
+                style="
+                  font-family: 'Playfair Display', serif;
+                  font-size: 2.2rem;
+                  color: var(--red);
+                  line-height: 1;
+                  min-width: 54px;
+                "
+              >
+                23
+              </div>
+              <div
+                style="
+                  font-family: 'Montserrat', sans-serif;
+                  font-size: 0.48rem;
+                  color: var(--text-muted);
+                  letter-spacing: 1px;
+                  text-transform: uppercase;
+                  margin-top: 4px;
+                "
+              >
+                часов
+              </div>
+            </div>
+            <span
+              style="
+                font-family: 'Playfair Display', serif;
+                font-size: 1.6rem;
+                color: var(--beige-hover);
+                margin-top: -14px;
+              "
+              >:</span
+            >
+            <div style="text-align: center">
+              <div
+                id="tMins"
+                style="
+                  font-family: 'Playfair Display', serif;
+                  font-size: 2.2rem;
+                  color: var(--red);
+                  line-height: 1;
+                  min-width: 54px;
+                "
+              >
+                59
+              </div>
+              <div
+                style="
+                  font-family: 'Montserrat', sans-serif;
+                  font-size: 0.48rem;
+                  color: var(--text-muted);
+                  letter-spacing: 1px;
+                  text-transform: uppercase;
+                  margin-top: 4px;
+                "
+              >
+                минут
+              </div>
+            </div>
+            <span
+              style="
+                font-family: 'Playfair Display', serif;
+                font-size: 1.6rem;
+                color: var(--beige-hover);
+                margin-top: -14px;
+              "
+              >:</span
+            >
+            <div style="text-align: center">
+              <div
+                id="tSecs"
+                style="
+                  font-family: 'Playfair Display', serif;
+                  font-size: 2.2rem;
+                  color: var(--red);
+                  line-height: 1;
+                  min-width: 54px;
+                "
+              >
+                59
+              </div>
+              <div
+                style="
+                  font-family: 'Montserrat', sans-serif;
+                  font-size: 0.48rem;
+                  color: var(--text-muted);
+                  letter-spacing: 1px;
+                  text-transform: uppercase;
+                  margin-top: 4px;
+                "
+              >
+                секунд
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- БОНУС ИСТЁК (скрыт по умолчанию) -->
+        <div
+          id="bonusExpired"
+          style="
+            display: none;
+            margin-bottom: 28px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.03);
+            border-radius: 12px;
+          "
+        >
+          <p
+            style="
+              font-size: 0.9rem;
+              color: var(--text-light);
+              line-height: 1.7;
+            "
+          >
+            Время на бонус истекло, но вы всё ещё можете записаться на программу
+            🤍
+          </p>
+        </div>
+
+        <p
+          style="
+            font-size: 0.92rem;
+            color: var(--dark);
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-weight: 500;
+          "
+        >
+          🔓 Что откроется сразу после записи:
+        </p>
+
+        <ul
+          id="bonusList"
+          style="
+            list-style: none;
+            padding: 0;
+            max-width: 540px;
+            margin: 0 auto 28px;
+            text-align: left;
+          "
+        >
+          <li
+            style="
+              padding: 14px 0 14px 32px;
+              position: relative;
+              border-bottom: 1px solid var(--border-light);
+            "
+          >
+            <span
+              style="
+                position: absolute;
+                left: 0;
+                top: 14px;
+                color: var(--red);
+                font-weight: 700;
+                font-size: 1.1rem;
+              "
+              >✓</span
+            >
+            <strong
+              style="
+                display: block;
+                font-size: 0.95rem;
+                color: var(--dark);
+                margin-bottom: 3px;
+              "
+              >Тест «10 маркеров зрелого мужчины» + подробный разбор</strong
+            >
+            <span
+              style="
+                font-size: 0.85rem;
+                color: var(--text-light);
+                line-height: 1.65;
+              "
+              >Поймёте, какой мужчина рядом с вами на самом деле — и где вы,
+              возможно, закрываете глаза</span
+            >
+          </li>
+          <li
+            style="
+              padding: 14px 0 14px 32px;
+              position: relative;
+              border-bottom: 1px solid var(--border-light);
+            "
+          >
+            <span
+              style="
+                position: absolute;
+                left: 0;
+                top: 14px;
+                color: var(--red);
+                font-weight: 700;
+                font-size: 1.1rem;
+              "
+              >✓</span
+            >
+            <strong
+              style="
+                display: block;
+                font-size: 0.95rem;
+                color: var(--dark);
+                margin-bottom: 3px;
+              "
+              >Видео «3 ловушки мышления в отношениях»</strong
+            >
+            <span
+              style="
+                font-size: 0.85rem;
+                color: var(--text-light);
+                line-height: 1.65;
+              "
+              >Почему вы всё понимаете — но снова оказываетесь в том же
+              сценарии</span
+            >
+          </li>
+          <li
+            style="
+              padding: 14px 0 14px 32px;
+              position: relative;
+              border-bottom: 1px solid var(--border-light);
+            "
+          >
+            <span
+              style="
+                position: absolute;
+                left: 0;
+                top: 14px;
+                color: var(--red);
+                font-weight: 700;
+                font-size: 1.1rem;
+              "
+              >✓</span
+            >
+            <strong
+              style="
+                display: block;
+                font-size: 0.95rem;
+                color: var(--dark);
+                margin-bottom: 3px;
+              "
+              >Аудиопрактика-визуализация (символдрама, 20 мин)</strong
+            >
+            <span
+              style="
+                font-size: 0.85rem;
+                color: var(--text-light);
+                line-height: 1.65;
+              "
+              >Подсознание покажет ваши стратегии, страхи и сильные стороны в
+              отношениях</span
+            >
+          </li>
+          <li style="padding: 14px 0 14px 32px; position: relative">
+            <span
+              style="
+                position: absolute;
+                left: 0;
+                top: 14px;
+                color: var(--red);
+                font-weight: 700;
+                font-size: 1.1rem;
+              "
+              >✓</span
+            >
+            <strong
+              style="
+                display: block;
+                font-size: 0.95rem;
+                color: var(--dark);
+                margin-bottom: 3px;
+              "
+              >Разбор «3 типа не тех мужчин» + ваш тип</strong
+            >
+            <span
+              style="
+                font-size: 0.85rem;
+                color: var(--text-light);
+                line-height: 1.65;
+              "
+              >Увидите, к какому типу вас тянет и почему — первый шаг, чтобы
+              перестать выбирать таких</span
+            >
+          </li>
+        </ul>
+
+        <p
+          style="
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.62rem;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-top: 8px;
+          "
+        >
+          Выберите тариф ниже ↓
+        </p>
+      </div>
+    </section>
     <!-- PRICING -->
     <section class="pricing-section" id="pricing">
       <p class="section-label">Тарифы</p>
@@ -2714,9 +2616,9 @@
             <li>Все учебные материалы и медитации</li>
             <li>Доступ к записям 6 месяцев</li>
           </ul>
-          <a href="https://t.me/JuliaEnergopraktika" class="btn-secondary"
-            >Начать</a
-          >
+          <button class="btn-secondary tariff-btn" data-tariff="Принцесса">
+            Начать
+          </button>
         </div>
         <div class="pricing-card featured">
           <div class="pricing-badge-wrap">
@@ -2749,9 +2651,9 @@
             <li>Все материалы и медитации</li>
             <li>Доступ к записям 1 год</li>
           </ul>
-          <a href="https://t.me/JuliaEnergopraktika" class="btn-primary"
-            >Выбрать</a
-          >
+          <button class="btn-primary tariff-btn" data-tariff="Королева">
+            Выбрать
+          </button>
         </div>
         <div class="pricing-card">
           <div class="pricing-badge-empty"></div>
@@ -2782,9 +2684,9 @@
             <li>Интеграция женских энергий через нейрографику (2,5 часа)</li>
             <li>Доступ к записям навсегда</li>
           </ul>
-          <a href="https://t.me/JuliaEnergopraktika" class="btn-primary"
-            >Хочу</a
-          >
+          <button class="btn-primary tariff-btn" data-tariff="Императрица">
+            Хочу
+          </button>
         </div>
       </div>
     </section>
@@ -2848,66 +2750,7 @@
       </div>
     </section>
 
-    <!-- TESTIMONIALS — ФОТО КАРУСЕЛЬ -->
-    <section class="testimonials">
-      <span class="section-label">Отзывы клиенток</span>
-      <h2 class="section-title">Они уже <em>изменили свою жизнь</em></h2>
-      <p class="section-desc">Реальные отзывы клиенток Юлии</p>
-
-      <div class="photo-carousel-wrap">
-        <div class="photo-carousel-track" id="photoTrack">
-          <div class="photo-slide">
-            <img
-              src="https://i.ibb.co/CpFb5kjS/photo-4965330125641681855-y.jpg"
-              alt="Отзыв 1"
-            />
-          </div>
-          <div class="photo-slide">
-            <img
-              src="https://i.ibb.co/d4PYzQXk/photo-4992800405754416213-y.jpg"
-              alt="Отзыв 2"
-            />
-          </div>
-          <div class="photo-slide">
-            <img
-              src="https://i.ibb.co/nN3MzYV0/photo-4999268239951375900-y-1.jpg"
-              alt="Отзыв 3"
-            />
-          </div>
-          <div class="photo-slide">
-            <img
-              src="https://i.ibb.co/zWKHNJhw/photo-5059954607425433189-y-1.jpg"
-              alt="Отзыв 4"
-            />
-          </div>
-          <div class="photo-slide">
-            <img
-              src="https://i.ibb.co/XZnxyR1L/photo-4965330125641681854-y.jpg"
-              alt="Отзыв 5"
-            />
-          </div>
-          <div class="photo-slide">
-            <img
-              src="https://i.ibb.co/1tqvfj8c/photo-4965330125641681856-y.jpg"
-              alt="Отзыв 6"
-            />
-          </div>
-          <div class="photo-slide">
-            <img
-              src="https://i.ibb.co/ynB9PDbY/photo-5028772865683598413-y-1.jpg"
-              alt="Отзыв 7"
-            />
-          </div>
-        </div>
-
-        <div class="photo-nav">
-          <button class="photo-btn" onclick="movePhoto(-1)">←</button>
-          <div class="photo-dots" id="photoDots"></div>
-          <button class="photo-btn" onclick="movePhoto(1)">→</button>
-        </div>
-      </div>
-    </section>
-
+    <!-- FAQ -->
     <section class="faq">
       <span class="section-label">Частые вопросы</span>
       <h2 class="section-title">Ответы на <em>ваши вопросы</em></h2>
@@ -2922,7 +2765,6 @@
             максимальной персонализации и личной работы с Юлией — «Императрицу».
           </div>
         </div>
-
         <div class="faq-item">
           <div class="faq-q" onclick="toggleFaq(this)">
             Сколько времени займёт программа?
@@ -2934,7 +2776,6 @@
             точки мира.
           </div>
         </div>
-
         <div class="faq-item">
           <div class="faq-q" onclick="toggleFaq(this)">
             Когда я увижу первые результаты?
@@ -2946,18 +2787,17 @@
             обычно в течение 1–3 месяцев.
           </div>
         </div>
-
         <div class="faq-item">
           <div class="faq-q" onclick="toggleFaq(this)">
             Как записаться и оплатить?
           </div>
           <div class="faq-a">
-            Нажмите кнопку «Выбрать» — вы перейдёте в Telegram, где куратор
-            свяжется с вами в течение нескольких часов, ответит на вопросы и
-            пришлёт ссылку на оплату.
+            Нажмите кнопку «Выбрать» под нужным тарифом — короткое сообщение
+            скопируется автоматически, откроется Telegram. Просто вставьте
+            сообщение и отправьте — Юлия ответит в течение часа, расскажет
+            детали и поможет с оформлением.
           </div>
         </div>
-
         <div class="faq-item">
           <div class="faq-q" onclick="toggleFaq(this)">
             Подойдёт ли, если я уже работала с психологом?
@@ -2969,7 +2809,6 @@
             терапии.
           </div>
         </div>
-
         <div class="faq-item">
           <div class="faq-q" onclick="toggleFaq(this)">
             Это обязательно для клиенток Match Match?
@@ -2979,33 +2818,6 @@
             видим: встречи идут лучше, мужчины остаются, когда женщина меняется
             изнутри. Решение — только за вами.
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- LEAD MAGNET -->
-    <section class="lead-magnet">
-      <div class="lm-box">
-        <div class="lm-inner">
-          <div class="lm-tag">Бесплатно</div>
-          <h2 class="lm-title">
-            Проверь его<br /><em>до того, как влюбилась</em>
-          </h2>
-          <p class="lm-desc">
-            10 честных маркеров, которые помогут избежать разочарований и не
-            попасть в эмоциональную зависимость.
-          </p>
-          <ul class="lm-checklist">
-            <li>Как отличить интерес от манипуляции</li>
-            <li>Признаки мужчины с серьёзными намерениями</li>
-            <li>Красные флаги, которые легко не заметить</li>
-            <li>Что говорит о нём его отношение к деньгам</li>
-            <li>Как он ведёт себя в конфликте</li>
-          </ul>
-          <a href="free_guide.html" class="lm-btn"
-            >Получить чек-лист бесплатно</a
-          >
-          <div class="lm-note">📩 Откроется сразу · Без регистрации</div>
         </div>
       </div>
     </section>
@@ -3054,72 +2866,94 @@
     </footer>
 
     <script>
-      // ===== EXIT INTENT + STICKY BANNER =====
-      var eiShown = false;
-      var stickyShown = false;
-      var eiDismissed = false;
+      // ===== TARIFF BUTTONS — COPY + TELEGRAM =====
+      var TG_LINK = "https://t.me/JuliaEnergopraktika";
+      var tariffMessages = {
+        Принцесса:
+          "Привет! Хочу на программу «Жена Миллионера», тариф Принцесса 💎",
+        Королева:
+          "Привет! Хочу на программу «Жена Миллионера», тариф Королева 👑",
+        Императрица:
+          "Привет! Хочу на программу «Жена Миллионера», тариф Императрица 🏆",
+      };
 
-      function closeEI() {
-        document.getElementById("eiOverlay").classList.remove("show");
-        eiDismissed = true;
-        sessionStorage.setItem("eiDismissed", "1");
-      }
+      document.querySelectorAll(".tariff-btn").forEach(function (btn) {
+        btn.addEventListener("click", function (e) {
+          e.preventDefault();
+          var tariff = this.getAttribute("data-tariff");
+          var msg = tariffMessages[tariff] || tariffMessages["Королева"];
 
-      function closeStickyBanner() {
-        document.getElementById("stickyBanner").classList.remove("show");
-        sessionStorage.setItem("stickyDismissed", "1");
-      }
-
-      if (sessionStorage.getItem("eiDismissed")) eiDismissed = true;
-
-      document.addEventListener("mouseleave", function (e) {
-        if (
-          e.clientY <= 10 &&
-          !eiShown &&
-          !eiDismissed &&
-          window.innerWidth > 768
-        ) {
-          document.getElementById("eiOverlay").classList.add("show");
-          eiShown = true;
-        }
-      });
-
-      document.addEventListener("click", function (e) {
-        var overlay = document.getElementById("eiOverlay");
-        if (e.target === overlay) closeEI();
-      });
-
-      document.addEventListener("keydown", function (e) {
-        if (e.key === "Escape") {
-          closeEI();
-          closeStickyBanner();
-        }
-      });
-
-      setTimeout(function () {
-        if (
-          !sessionStorage.getItem("stickyDismissed") &&
-          !document.getElementById("eiOverlay").classList.contains("show")
-        ) {
-          document.getElementById("stickyBanner").classList.add("show");
-          stickyShown = true;
-        }
-      }, 60000);
-
-      if (window.innerWidth <= 768) {
-        setTimeout(function () {
-          if (!eiShown && !eiDismissed) {
-            document.getElementById("eiOverlay").classList.add("show");
-            eiShown = true;
+          // Копируем в буфер
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard
+              .writeText(msg)
+              .then(function () {
+                showCopyToast(msg);
+              })
+              .catch(function () {
+                fallbackCopy(msg);
+                showCopyToast(msg);
+              });
+          } else {
+            fallbackCopy(msg);
+            showCopyToast(msg);
           }
-        }, 45000);
+        });
+      });
+
+      function fallbackCopy(text) {
+        var ta = document.createElement("textarea");
+        ta.value = text;
+        ta.style.position = "fixed";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
+        try {
+          document.execCommand("copy");
+        } catch (e) {}
+        document.body.removeChild(ta);
       }
 
-      // BURGER MENU
-      const burgerBtn = document.getElementById("burgerBtn");
-      const navMobile = document.getElementById("navMobile");
+      function showCopyToast(msg) {
+        var overlay = document.getElementById("copyToast");
+        var msgEl = document.getElementById("copyToastMsg");
+        var btnGo = document.getElementById("copyToastBtn");
+        msgEl.textContent = msg;
+        overlay.classList.add("active");
+
+        btnGo.onclick = function () {
+          window.open(TG_LINK, "_blank");
+          closeCopyToast();
+        };
+
+        // Автоматически открыть ТГ через 2.5 сек
+        setTimeout(function () {
+          window.open(TG_LINK, "_blank");
+        }, 2500);
+      }
+
+      function closeCopyToast() {
+        document.getElementById("copyToast").classList.remove("active");
+      }
+
+      // Закрыть по клику на фон
+      document
+        .getElementById("copyToast")
+        .addEventListener("click", function (e) {
+          if (e.target === this) closeCopyToast();
+        });
+
+      // Закрыть по Escape
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closeCopyToast();
+      });
+
+      // ===== BURGER MENU =====
+      var burgerBtn = document.getElementById("burgerBtn");
+      var navMobile = document.getElementById("navMobile");
       if (burgerBtn) {
-        burgerBtn.addEventListener("click", () => {
+        burgerBtn.addEventListener("click", function () {
           navMobile.classList.toggle("open");
         });
       }
@@ -3127,69 +2961,73 @@
         if (navMobile) navMobile.classList.remove("open");
       }
 
-      // FAQ
+      // ===== FAQ =====
       function toggleFaq(el) {
-        const a = el.nextElementSibling;
-        const o = a.classList.contains("open");
-        document
-          .querySelectorAll(".faq-a")
-          .forEach((x) => x.classList.remove("open"));
-        document
-          .querySelectorAll(".faq-q")
-          .forEach((x) => x.classList.remove("open"));
+        var a = el.nextElementSibling;
+        var o = a.classList.contains("open");
+        document.querySelectorAll(".faq-a").forEach(function (x) {
+          x.classList.remove("open");
+        });
+        document.querySelectorAll(".faq-q").forEach(function (x) {
+          x.classList.remove("open");
+        });
         if (!o) {
           a.classList.add("open");
           el.classList.add("open");
         }
       }
 
-      // ФОТО КАРУСЕЛЬ
-      let currentPhoto = 0;
-      const photoTrack = document.getElementById("photoTrack");
-      const photoSlides = photoTrack
+      // ===== PHOTO CAROUSEL =====
+      var currentPhoto = 0;
+      var photoTrack = document.getElementById("photoTrack");
+      var photoSlides = photoTrack
         ? photoTrack.querySelectorAll(".photo-slide")
         : [];
-      const totalPhotos = photoSlides.length;
-      const dotsContainer = document.getElementById("photoDots");
+      var totalPhotos = photoSlides.length;
+      var dotsContainer = document.getElementById("photoDots");
 
       if (dotsContainer && totalPhotos > 0) {
-        for (let i = 0; i < totalPhotos; i++) {
-          const dot = document.createElement("button");
+        for (var i = 0; i < totalPhotos; i++) {
+          var dot = document.createElement("button");
           dot.className = "photo-dot" + (i === 0 ? " active" : "");
-          dot.onclick = () => goToPhoto(i);
+          dot.setAttribute("data-idx", i);
+          dot.onclick = function () {
+            goToPhoto(parseInt(this.getAttribute("data-idx")));
+          };
           dotsContainer.appendChild(dot);
         }
       }
 
       function goToPhoto(i) {
         currentPhoto = i;
-        if (photoTrack) photoTrack.style.transform = `translateX(-${i * 100}%)`;
-        document.querySelectorAll(".photo-dot").forEach((d, idx) => {
+        if (photoTrack)
+          photoTrack.style.transform = "translateX(-" + i * 100 + "%)";
+        document.querySelectorAll(".photo-dot").forEach(function (d, idx) {
           d.classList.toggle("active", idx === i);
         });
       }
 
       function movePhoto(dir) {
-        let next = currentPhoto + dir;
+        var next = currentPhoto + dir;
         if (next < 0) next = totalPhotos - 1;
         if (next >= totalPhotos) next = 0;
         goToPhoto(next);
       }
 
-      const photoWrap = document.querySelector(".photo-carousel-wrap");
-      let photoTouchX = 0;
+      var photoWrap = document.querySelector(".photo-carousel-wrap");
+      var photoTouchX = 0;
       if (photoWrap) {
         photoWrap.addEventListener(
           "touchstart",
-          (e) => {
+          function (e) {
             photoTouchX = e.touches[0].clientX;
           },
           { passive: true }
         );
         photoWrap.addEventListener(
           "touchend",
-          (e) => {
-            const diff = photoTouchX - e.changedTouches[0].clientX;
+          function (e) {
+            var diff = photoTouchX - e.changedTouches[0].clientX;
             if (Math.abs(diff) > 50) {
               diff > 0 ? movePhoto(1) : movePhoto(-1);
             }
@@ -3199,30 +3037,85 @@
       }
 
       if (totalPhotos > 1) {
-        setInterval(() => movePhoto(1), 4000);
+        setInterval(function () {
+          movePhoto(1);
+        }, 4000);
       }
 
-      // АНИМАЦИЯ КАРТОЧЕК
-      const obs = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e) => {
+      // ===== ANIMATION =====
+      var obs = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (e) {
             if (e.isIntersecting) e.target.classList.add("show");
           });
         },
         { threshold: 0.1 }
       );
-      document.querySelectorAll(".get-card").forEach((el) => obs.observe(el));
+      document.querySelectorAll(".get-card").forEach(function (el) {
+        obs.observe(el);
+      });
 
-      // SMOOTH SCROLL
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      // ===== SMOOTH SCROLL =====
+      document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
         anchor.addEventListener("click", function (e) {
-          const target = document.querySelector(this.getAttribute("href"));
+          var target = document.querySelector(this.getAttribute("href"));
           if (target) {
             e.preventDefault();
             target.scrollIntoView({ behavior: "smooth", block: "start" });
           }
         });
       });
+      // ===== ПЕРСОНАЛЬНЫЙ ТАЙМЕР 24 ЧАСА =====
+      (function () {
+        var TIMER_KEY = "bonus_timer_start";
+        var DURATION = 24 * 60 * 60 * 1000; // 24 часа
+
+        // Запоминаем время первого визита
+        var startTime = localStorage.getItem(TIMER_KEY);
+        if (!startTime) {
+          startTime = Date.now();
+          localStorage.setItem(TIMER_KEY, startTime);
+        }
+        startTime = parseInt(startTime);
+
+        var hEl = document.getElementById("tHours");
+        var mEl = document.getElementById("tMins");
+        var sEl = document.getElementById("tSecs");
+        var timerWrap = document.getElementById("bonusTimerWrap");
+        var expiredWrap = document.getElementById("bonusExpired");
+        var bonusList = document.getElementById("bonusList");
+
+        function pad(n) {
+          return n < 10 ? "0" + n : n;
+        }
+
+        function tick() {
+          var elapsed = Date.now() - startTime;
+          var remaining = DURATION - elapsed;
+
+          if (remaining <= 0) {
+            // Таймер истёк
+            timerWrap.style.display = "none";
+            expiredWrap.style.display = "block";
+            bonusList.style.opacity = "0.4";
+            bonusList.style.pointerEvents = "none";
+            return;
+          }
+
+          var totalSec = Math.floor(remaining / 1000);
+          var h = Math.floor(totalSec / 3600);
+          var m = Math.floor((totalSec % 3600) / 60);
+          var s = totalSec % 60;
+
+          hEl.textContent = pad(h);
+          mEl.textContent = pad(m);
+          sEl.textContent = pad(s);
+
+          setTimeout(tick, 1000);
+        }
+
+        tick();
+      })();
     </script>
   </body>
 </html>
